@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定價偏好調查 — 安圖教育</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="主要導覽">
+    <div class="site-nav__inner">
+      <a href="../index.html#research" class="site-nav__back" aria-label="返回首頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+      <a href="../index.html" class="site-nav__logo">
+        <span class="site-nav__logo-dot" aria-hidden="true"></span>
+        安圖教育
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">市場研究</p>
+      <h1 class="page-header__title">定價偏好調查（Van Westendorp 價格敏感度）</h1>
+      <p class="page-header__desc">找出家長對家教平台服務費的可接受價格區間。您的回答將協助我們制定合理的收費方案，所有資料均匿名處理。</p>
+    </div>
+  </header>
+
+  <!-- Main form -->
+  <main>
+    <div class="form-wrapper">
+      <form action="https://formspree.io/f/mbdznqrk" method="POST">
+        <input type="hidden" name="_next" value="../index.html#research">
+        <input type="hidden" name="_subject" value="定價偏好調查（Van Westendorp 價格敏感度）">
+
+        <!-- Q1–Q4: Basic background -->
+        <div class="form-section">
+          <p class="subsection-heading">基本資料</p>
+
+          <!-- Q1: Identity -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                1. 您的身份是？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="identity" value="家長" required>
+                  家長
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="identity" value="臺大醫學系學生">
+                  臺大醫學系學生
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="identity" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q2: Current hourly rate paid -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                2. 您目前每小時支付 / 收取多少家教費用？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="current_rate_paid" value="NT$800以下" required>
+                  NT$800 以下
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="current_rate_paid" value="NT$800-1200">
+                  NT$800–1,200
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="current_rate_paid" value="NT$1200-1500">
+                  NT$1,200–1,500
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="current_rate_paid" value="NT$1500-2000">
+                  NT$1,500–2,000
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="current_rate_paid" value="NT$2000以上">
+                  NT$2,000 以上
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="current_rate_paid" value="尚未聘用家教">
+                  尚未聘用家教
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q3: Fair hourly rate (number input) -->
+          <div class="form-group">
+            <label class="field-label" for="fair_hourly_rate">
+              3. 您認為臺大醫學系家教的合理時薪是多少？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-prefix-group">
+              <span class="input-prefix">NT$</span>
+              <input type="number" id="fair_hourly_rate" name="fair_hourly_rate" placeholder="例如：1500" min="0"
+                step="100" required>
+            </div>
+          </div>
+
+          <!-- Q4: Platform service fee reasonableness -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                4. 如果在家教時薪外，平台收取費用（包含師資驗證、測驗系統、作業批改、成效分析、完課保障），您認為合理嗎？<span class="required-star"
+                  aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="service_fee_reasonable" value="非常合理" required>
+                  非常合理
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="service_fee_reasonable" value="合理">
+                  合理
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="service_fee_reasonable" value="需視金額而定">
+                  需視金額而定
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="service_fee_reasonable" value="不合理">
+                  不合理
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="service_fee_reasonable" value="完全不接受">
+                  完全不接受
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q5–Q8: Van Westendorp -->
+        <div class="form-section">
+          <p class="subsection-heading">Van Westendorp 價格敏感度分析</p>
+          <p style="font-size:.875rem; color:var(--color-muted); margin-bottom:1.25rem; line-height:1.6;">以下 4
+            題協助我們找到合理的服務費定價區間，請依直覺回答。所有金額均指每堂課的平台服務費。</p>
+
+          <!-- Q5: Too cheap to trust -->
+          <div class="form-group">
+            <label class="field-label" for="psm_too_cheap">
+              5. 低於多少錢，您會覺得這個平台服務的品質不可信？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-prefix-group">
+              <span class="input-prefix">NT$</span>
+              <input type="number" id="psm_too_cheap" name="psm_too_cheap" placeholder="NT$" min="0" step="100"
+                required>
+            </div>
+          </div>
+
+          <!-- Q6: Bargain price -->
+          <div class="form-group">
+            <label class="field-label" for="psm_bargain">
+              6. 多少錢，您覺得這個服務非常划算、物超所值？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-prefix-group">
+              <span class="input-prefix">NT$</span>
+              <input type="number" id="psm_bargain" name="psm_bargain" placeholder="NT$" min="0" step="100" required>
+            </div>
+          </div>
+
+          <!-- Q7: Getting expensive -->
+          <div class="form-group">
+            <label class="field-label" for="psm_getting_expensive">
+              7. 多少錢，您開始覺得有點貴、但還是可能考慮？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-prefix-group">
+              <span class="input-prefix">NT$</span>
+              <input type="number" id="psm_getting_expensive" name="psm_getting_expensive" placeholder="NT$" min="0"
+                step="100" required>
+            </div>
+          </div>
+
+          <!-- Q8: Too expensive to use -->
+          <div class="form-group">
+            <label class="field-label" for="psm_too_expensive">
+              8. 超過多少錢，不管品質多好您都絕對不會使用？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-prefix-group">
+              <span class="input-prefix">NT$</span>
+              <input type="number" id="psm_too_expensive" name="psm_too_expensive" placeholder="NT$" min="0" step="100"
+                required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q9–Q12: Payment preferences -->
+        <div class="form-section">
+          <p class="subsection-heading">付款偏好</p>
+
+          <!-- Q9: Billing model preference -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                9. 您偏好哪種收費方式？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="billing_model" value="按堂收費" required>
+                  按堂收費，每堂加收固定服務費
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="billing_model" value="月費制">
+                  月費制，固定月費無限堂
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="billing_model" value="年費制">
+                  年費制，享折扣
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="billing_model" value="無偏好">
+                  無偏好
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q10: Payment method (checkbox) -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                10. 您偏好哪種付款方式？（可複選）<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="group">
+                <label class="option-item">
+                  <input type="checkbox" name="payment_method" value="信用卡">
+                  信用卡
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="payment_method" value="銀行轉帳">
+                  銀行轉帳
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="payment_method" value="Line Pay">
+                  Line Pay
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="payment_method" value="街口支付">
+                  街口支付
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="payment_method" value="Apple Pay">
+                  Apple Pay
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="payment_method" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q11: Open-ended pricing thoughts -->
+          <div class="form-group">
+            <label class="field-label" for="pricing_comments">
+              11. 其他對定價的想法？
+            </label>
+            <textarea id="pricing_comments" name="pricing_comments" rows="4"
+              placeholder="請自由填寫任何關於定價的意見或建議…"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">提交</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/form-handler.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 安圖科技有限公司</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>競爭分析紀錄 — 安圖教育</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="主要導覽">
+    <div class="site-nav__inner">
+      <a href="../index.html#research" class="site-nav__back" aria-label="返回首頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+      <a href="../index.html" class="site-nav__logo">
+        <span class="site-nav__logo-dot" aria-hidden="true"></span>
+        安圖教育
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">市場研究</p>
+      <h1 class="page-header__title">競爭分析紀錄（神秘客調查）</h1>
+      <p class="page-header__desc">記錄現有家教平台的使用體驗，協助識別市場缺口。請於完成神秘客調查後，依據真實操作體驗填寫本表單。</p>
+    </div>
+  </header>
+
+  <!-- Main form -->
+  <main>
+    <div class="form-wrapper">
+      <form action="https://formspree.io/f/mbdznqrk" method="POST">
+        <input type="hidden" name="_next" value="../index.html#research">
+        <input type="hidden" name="_subject" value="競爭分析紀錄（神秘客調查）">
+
+        <!-- Q1 & Q2 & Q3: Survey date and platform -->
+        <div class="form-section">
+
+          <!-- Q1: Survey date -->
+          <div class="form-group">
+            <label class="field-label" for="survey_date">
+              1. 調查日期<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input type="date" id="survey_date" name="survey_date" required>
+          </div>
+
+          <!-- Q2: Platform (checkbox) -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                2. 調查平台（可複選）<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="group">
+                <label class="option-item">
+                  <input type="checkbox" name="platform" value="1111家教網">
+                  1111 家教網
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="platform" value="104家教">
+                  104 家教
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="platform" value="AmazingTalker">
+                  AmazingTalker
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="platform" value="Facebook家教社團">
+                  Facebook 家教社團
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="platform" value="Line群組">
+                  Line 群組
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="platform" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q3: Other platform name -->
+          <div class="form-group">
+            <label class="field-label" for="platform_other">
+              3. 如選「其他」，請說明平台名稱
+            </label>
+            <input type="text" id="platform_other" name="platform_other" placeholder="請輸入平台名稱…">
+          </div>
+        </div>
+
+        <!-- Q4 & Q5: Verification & matching ease -->
+        <div class="form-section">
+
+          <!-- Q4: Tutor verification method -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                4. 該平台如何驗證家教師資？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="verification_method" value="無驗證" required>
+                  無驗證
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="verification_method" value="自填學歷">
+                  自填學歷
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="verification_method" value="上傳證件">
+                  上傳證件
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="verification_method" value="視訊面試">
+                  視訊面試
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="verification_method" value="不清楚">
+                  不清楚
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="verification_method" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q5: Matching ease (1–5 scale) -->
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                5. 完成配對的難易度如何？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <p style="font-size:.875rem; color:var(--color-muted); margin-bottom:.75rem;">1 = 非常困難，5 = 非常容易</p>
+              <div class="options-list options-list--scale" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="matching_ease" value="1" required>
+                  1
+                  <span class="scale-label">非常困難</span>
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="matching_ease" value="2">
+                  2
+                  <span class="scale-label"></span>
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="matching_ease" value="3">
+                  3
+                  <span class="scale-label">普通</span>
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="matching_ease" value="4">
+                  4
+                  <span class="scale-label"></span>
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="matching_ease" value="5">
+                  5
+                  <span class="scale-label">非常容易</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q6–Q9: Qualitative observations -->
+        <div class="form-section">
+          <p class="subsection-heading">質性觀察：請依據真實體驗詳細描述</p>
+
+          <!-- Q6: Common parent complaints -->
+          <div class="form-group">
+            <label class="field-label" for="parent_complaints">
+              6. 家長在該平台上最常抱怨什麼？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="parent_complaints" name="parent_complaints" rows="4" placeholder="例如：師資資格不透明、配對速度慢、取消率高…"
+              required></textarea>
+          </div>
+
+          <!-- Q7: Biggest service gap -->
+          <div class="form-group">
+            <label class="field-label" for="service_gap">
+              7. 您認為該平台最大的服務缺口是什麼？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="service_gap" name="service_gap" rows="4" placeholder="例如：缺乏完課保障、沒有學習進度追蹤…"
+              required></textarea>
+          </div>
+
+          <!-- Q8: Missing features vs ideal -->
+          <div class="form-group">
+            <label class="field-label" for="missing_features">
+              8. 與您理想中的家教平台相比，此平台缺少什麼？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="missing_features" name="missing_features" rows="4" placeholder="例如：無法驗證學歷真偽、沒有學習報告、溝通流程繁瑣…"
+              required></textarea>
+          </div>
+
+          <!-- Q9: Trust issues / red flags -->
+          <div class="form-group">
+            <label class="field-label" for="trust_issues">
+              9. 您在此平台上發現了哪些信任問題或紅旗（red flags）？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="trust_issues" name="trust_issues" rows="4" placeholder="例如：假冒學歷、評價刷單跡象、款項糾紛…"
+              required></textarea>
+          </div>
+
+          <!-- Q10: Other notes -->
+          <div class="form-group">
+            <label class="field-label" for="other_notes">
+              10. 備註（其他觀察）
+            </label>
+            <textarea id="other_notes" name="other_notes" rows="4" placeholder="其他值得記錄的觀察…"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">提交</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/form-handler.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 安圖科技有限公司</p>
+  </footer>
+
+</body>
+
+</html>

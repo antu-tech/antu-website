@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>醫學生/醫師家教供給調查 — 安圖教育</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="主要導覽">
+    <div class="site-nav__inner">
+      <a href="../index.html#research" class="site-nav__back" aria-label="返回首頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+      <a href="../index.html" class="site-nav__logo">
+        <span class="site-nav__logo-dot" aria-hidden="true"></span>
+        安圖教育
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">市場研究</p>
+      <h1 class="page-header__title">醫學生/醫師家教供給調查</h1>
+      <p class="page-header__desc">協助我們了解醫學背景教育工作者的需求與供給意願。您的回饋將幫助我們建立更公平且高效的媒合機制。</p>
+    </div>
+  </header>
+
+  <!-- Main form -->
+  <main>
+    <div class="form-wrapper">
+      <form action="https://formspree.io/f/mbdznqrk" method="POST" id="supply-form">
+        <input type="hidden" name="_next" value="../index.html#research">
+        <input type="hidden" name="_subject" value="醫學生/醫師家教供給調查">
+
+        <!-- Q1 & Q2 & Q3 -->
+        <div class="form-section">
+          <!-- Q1 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>1. 您目前就讀臺大醫學系幾年級？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="year" value="1年級" required>
+                  1 年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="year" value="2年級">
+                  2 年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="year" value="3年級">
+                  3 年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="year" value="4年級">
+                  4 年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="year" value="5年級">
+                  5 年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="year" value="6年級">
+                  6 年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="year" value="已畢業">
+                  已畢業
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q2 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>2. 您目前有在授課嗎？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="tutoring_status" value="是，目前有學生" required>
+                  是，目前有學生
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="tutoring_status" value="曾有過，現在沒有">
+                  曾有過，現在沒有
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="tutoring_status" value="從未授課過">
+                  從未授課過
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q3 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>3. 您偏好的授課方式？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="teaching_mode" value="實體面授" required>
+                  實體面授
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="teaching_mode" value="線上教學">
+                  線上教學
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="teaching_mode" value="皆可">
+                  皆可
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q4 & Q5 -->
+        <div class="form-section">
+          <!-- Q4 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>4. 您目前的學生是如何找到的？（可複選）</legend>
+              <div class="options-list" role="group">
+                <label class="option-item">
+                  <input type="checkbox" name="student_source" value="親友介紹">
+                  親友介紹
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="student_source" value="家教平台">
+                  家教平台（如 1111、104 家教）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="student_source" value="社群媒體">
+                  社群媒體（如 Facebook、Instagram）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="student_source" value="學校佈告欄">
+                  學校佈告欄
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="student_source" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q5 -->
+          <div class="form-group">
+            <label class="field-label" for="payment-scheduling">
+              5. 您目前如何管理收款與排課？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="payment-scheduling" name="payment_scheduling" rows="4" placeholder="例如：LINE 約定時間、現金收款、轉帳……"
+              required></textarea>
+          </div>
+        </div>
+
+        <!-- Q6 & Q7 -->
+        <div class="form-section">
+          <!-- Q6 -->
+          <div class="form-group">
+            <label class="field-label" for="admin-pain">
+              6. 目前授課安排中最麻煩的部分是什麼？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="admin-pain" name="admin_pain" rows="4" placeholder="請描述最讓您頭痛的環節……" required></textarea>
+          </div>
+
+          <!-- Q7 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>7. 如果學生透過平台訂閱課程，老師可獲得回饋獎勵，您願意使用平台嗎？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="platform_willingness" value="非常願意" required>
+                  非常願意
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="platform_willingness" value="可能願意">
+                  可能願意
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="platform_willingness" value="需要更多資訊">
+                  需要更多資訊
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="platform_willingness" value="不太願意">
+                  不太願意
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="platform_willingness" value="完全不願意">
+                  完全不願意
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q8 & Q9 -->
+        <div class="form-section">
+          <!-- Q8 -->
+          <div class="form-group">
+            <label class="field-label" for="platform-rejection">
+              8. 什麼情況下您不願意使用這樣的平台？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="platform-rejection" name="platform_rejection" rows="4" placeholder="例如：身份曝光、費用過高、合約條款……"
+              required></textarea>
+          </div>
+
+          <!-- Q9 -->
+          <div class="form-group">
+            <label class="field-label" for="material-concerns">
+              9. 您對在平台上分享教材有什麼顧慮？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="material-concerns" name="material_concerns" rows="4" placeholder="例如：版權、獨家性、學校規定……"
+              required></textarea>
+          </div>
+        </div>
+
+        <!-- Q10 & Q11 -->
+        <div class="form-section">
+          <!-- Q10 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>10. 您曾協助學生準備醫學系或臺大的入學面試嗎？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="interview_coaching" value="是" required>
+                  是
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="interview_coaching" value="否">
+                  否
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q11 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>11. 若平台提供公司合約及匿名教師 ID 保護，是否能解除您的顧慮？<span class="required-star" aria-hidden="true">*</span>
+              </legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="legal_protection_helps" value="是" required>
+                  是，能完全解除顧慮
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="legal_protection_helps" value="部分解除">
+                  部分解除
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="legal_protection_helps" value="否">
+                  否，仍有顧慮
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="legal_protection_helps" value="我本來就沒有顧慮">
+                  我本來就沒有顧慮
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q12 & Q13 & Q14 -->
+        <div class="form-section">
+          <!-- Q12 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>12. 您每週花多少時間在行政工作上？<span class="required-star" aria-hidden="true">*</span></legend>
+              <p style="font-size:.875rem; color:var(--color-muted); margin-bottom:.75rem;">（如：排課、追蹤款項、傳送筆記等）</p>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="admin_hours" value="少於1小時" required>
+                  少於 1 小時
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="admin_hours" value="1–3小時">
+                  1–3 小時
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="admin_hours" value="3–5小時">
+                  3–5 小時
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="admin_hours" value="5小時以上">
+                  5 小時以上
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q13 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>13. 您目前每小時收費約為多少？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="hourly_rate" value="NT$800以下" required>
+                  NT$800 以下
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="hourly_rate" value="NT$800–1,200">
+                  NT$800–1,200
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="hourly_rate" value="NT$1,200–1,500">
+                  NT$1,200–1,500
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="hourly_rate" value="NT$1,500–2,000">
+                  NT$1,500–2,000
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="hourly_rate" value="NT$2,000以上">
+                  NT$2,000 以上
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="hourly_rate" value="不方便透露">
+                  不方便透露
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q14 -->
+          <div class="form-group">
+            <label class="field-label" for="other-feedback">
+              14. 其他想法 or 建議？
+            </label>
+            <textarea id="other-feedback" name="other_feedback" rows="4" placeholder="歡迎分享任何想法……（選填）"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">提交調查</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/form-handler.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 安圖科技有限公司</p>
+  </footer>
+
+</body>
+
+</html>

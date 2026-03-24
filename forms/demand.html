@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家長需求調查 — 安圖教育</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="主要導覽">
+    <div class="site-nav__inner">
+      <a href="../index.html#research" class="site-nav__back" aria-label="返回首頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+      <a href="../index.html" class="site-nav__logo">
+        <span class="site-nav__logo-dot" aria-hidden="true"></span>
+        安圖教育
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">市場研究</p>
+      <h1 class="page-header__title">家長需求調查</h1>
+      <p class="page-header__desc">協助我們了解家長在尋找家教時的真實痛點與需求。您的回答將直接影響我們的平台設計，感謝您撥冗填寫。</p>
+    </div>
+  </header>
+
+  <!-- Main form -->
+  <main>
+    <div class="form-wrapper">
+      <form action="https://formspree.io/f/mbdznqrk" method="POST" id="demand-form">
+        <input type="hidden" name="_next" value="../index.html#research">
+        <input type="hidden" name="_subject" value="家長需求調查">
+
+        <!-- Q1 & Q2 -->
+        <div class="form-section">
+          <!-- Q1 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>1. 您的孩子目前就讀年級？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="grade" value="國中" required>
+                  國中
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="grade" value="高中一年級">
+                  高中一年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="grade" value="高中二年級">
+                  高中二年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="grade" value="高中三年級">
+                  高中三年級
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="grade" value="大學">
+                  大學
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="grade" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q2 -->
+          <div class="form-group">
+            <label class="field-label" for="search-story">
+              2. 您上次尋找家教的過程是怎麼樣的？請簡短描述。<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="search-story" name="search_story" rows="4" placeholder="請描述您的尋找過程……" required></textarea>
+          </div>
+        </div>
+
+        <!-- Q3 & Q4 -->
+        <div class="form-section">
+          <!-- Q3 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>3. 您目前的家教是如何找到的？（可複選）<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="group">
+                <label class="option-item">
+                  <input type="checkbox" name="find_method" value="親友介紹">
+                  親友介紹
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="find_method" value="家教平台">
+                  家教平台（如 1111、104 家教）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="find_method" value="學校推薦">
+                  學校推薦
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="find_method" value="社群媒體">
+                  社群媒體（如 Facebook、Instagram）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="find_method" value="尚未找到">
+                  尚未找到
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="find_method" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q4 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>4. 決定聘用前，您最在意哪些條件？（可複選）<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="group">
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="學歷背景">
+                  學歷背景
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="教學經驗">
+                  教學經驗
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="科目成績">
+                  科目成績（如提供成績單）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="費用">
+                  費用
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="身分驗證">
+                  身分驗證（確認真實身份）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="口碑評價">
+                  口碑評價（其他家長的推薦）
+                </label>
+                <label class="option-item">
+                  <input type="checkbox" name="hire_criteria" value="其他">
+                  其他
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q5 & Q6 & Q7 -->
+        <div class="form-section">
+          <!-- Q5 -->
+          <div class="form-group">
+            <label class="field-label" for="frustration">
+              5. 整個尋找過程中最令您困擾的是什麼？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="frustration" name="frustration" rows="4" placeholder="請描述最主要的困擾……" required></textarea>
+          </div>
+
+          <!-- Q6 -->
+          <div class="form-group">
+            <label class="field-label" for="bad-experience">
+              6. 您有過不愉快的家教經驗嗎？如果有，當時發生了什麼？
+            </label>
+            <textarea id="bad-experience" name="bad_experience" rows="4" placeholder="如沒有不愉快的經驗，可留空……"></textarea>
+          </div>
+
+          <!-- Q7 -->
+          <div class="form-group">
+            <label class="field-label" for="progress-tracking">
+              7. 您如何確認孩子的學習是否有進步？<span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <textarea id="progress-tracking" name="progress_tracking" rows="4" placeholder="例如：定期考試、家教回報、作業表現……"
+              required></textarea>
+          </div>
+        </div>
+
+        <!-- Q8 & Q9 -->
+        <div class="form-section">
+          <!-- Q8 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>8. 「臺大醫學系」學歷對您的選擇影響多大？<span class="required-star" aria-hidden="true">*</span></legend>
+              <p style="font-size:.875rem; color:var(--color-muted); margin-bottom:.75rem;">如果收費相同，臺大醫學系資歷相對於其他頂尖科系的吸引力
+                (1–5)</p>
+              <div class="options-list options-list--scale" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="ntu_med_value" value="1" required>
+                  1
+                  <span class="scale-label">無影響</span>
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="ntu_med_value" value="2">
+                  2
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="ntu_med_value" value="3">
+                  3
+                  <span class="scale-label">普通</span>
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="ntu_med_value" value="4">
+                  4
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="ntu_med_value" value="5">
+                  5
+                  <span class="scale-label">非常重要</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q9 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>9. 您願意為「數位化學習」家教系統，每月多付多少費用？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="premium_willingness" value="0元" required>
+                  0 元（不願意多付）
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="premium_willingness" value="50–100元">
+                  NT$1000–2000 元
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="premium_willingness" value="100–200元">
+                  NT$2000–3000 元
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="premium_willingness" value="200元以上">
+                  NT$3000 元以上
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="premium_willingness" value="不確定">
+                  不確定
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q10 & Q11 -->
+        <div class="form-section">
+          <!-- Q10 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>10. 您的孩子有需要準備入學面試嗎？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="interview_prep_need" value="是" required>
+                  是，目前有需要
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="interview_prep_need" value="否">
+                  否，目前沒有需要
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="interview_prep_need" value="未來可能需要">
+                  未來可能需要
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q11 -->
+          <div class="form-group">
+            <fieldset>
+              <legend>11. 您每月在家教上的總花費約為多少？<span class="required-star" aria-hidden="true">*</span></legend>
+              <div class="options-list" role="radiogroup">
+                <label class="option-item">
+                  <input type="radio" name="monthly_spend" value="NT$5,000以下" required>
+                  NT$5,000 以下
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="monthly_spend" value="NT$5,000–10,000">
+                  NT$5,000–10,000
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="monthly_spend" value="NT$10,000–20,000">
+                  NT$10,000–20,000
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="monthly_spend" value="NT$20,000以上">
+                  NT$20,000 以上
+                </label>
+                <label class="option-item">
+                  <input type="radio" name="monthly_spend" value="不方便透露">
+                  不方便透露
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="form-section">
+          <div class="form-group">
+            <label class="field-label" for="other-feedback">
+              12. 其他想法或建議？
+            </label>
+            <textarea id="other-feedback" name="other_feedback" rows="4" placeholder="歡迎分享任何想法……（選填）"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">提交調查</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/form-handler.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 安圖科技有限公司</p>
+  </footer>
+
+</body>
+
+</html>
