@@ -25,7 +25,7 @@
   /* body text */
   --color-text-head: #F0EAD8;
   /* warm white for headings */
-  --color-text-muted: #546E85;
+  --color-text-muted: #7190AB;
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-subtle: rgba(255, 255, 255, 0.05);
   --color-divider: rgba(201, 165, 90, 0.25);
@@ -47,6 +47,17 @@
   --font-serif: 'Playfair Display', 'Noto Serif TC', serif;
   --font-base: 'Inter', 'Noto Sans TC', sans-serif;
   --transition: .2s ease;
+
+  --fs-xs: 0.75rem;     /* 13.5px */
+  --fs-sm: 0.875rem;    /* 15.75px */
+  --fs-base: 1rem;      /* 18px */
+  --fs-lg: 1.125rem;    /* 20.25px */
+  --fs-xl: 1.25rem;     /* 22.5px */
+  --fs-2xl: 1.5rem;     /* 27px */
+  --fs-3xl: 1.875rem;   /* 33.75px */
+  --fs-4xl: 2.25rem;    /* 40.5px */
+  --fs-5xl: 3rem;       /* 54px */
+  --fs-6xl: 3.75rem;    /* 67.5px */
 
   --lp-container-max: 1200px;
   --lp-section-py: 5rem;
@@ -129,7 +140,7 @@ main:not(.lp-main) {
 
 .nav__logo {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--color-text-head);
   text-decoration: none;
@@ -141,7 +152,7 @@ main:not(.lp-main) {
 }
 
 .nav__link {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -176,7 +187,7 @@ main:not(.lp-main) {
 
 .hero__eyebrow {
   display: inline-block;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 400;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -186,7 +197,7 @@ main:not(.lp-main) {
 
 .hero__headline {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: var(--fs-4xl);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -195,7 +206,7 @@ main:not(.lp-main) {
 }
 
 .hero__subheadline {
-  font-size: 1.375rem;
+  font-size: var(--fs-2xl);
   color: rgba(168, 192, 214, .8);
   max-width: 360px;
   margin: 0 auto 2.5rem;
@@ -356,7 +367,7 @@ main:not(.lp-main) {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 1.875rem;
+  font-size: var(--fs-3xl);
   font-weight: 700;
   color: var(--color-text-head);
   line-height: 1.25;
@@ -469,16 +480,16 @@ main:not(.lp-main) {
 
 .pain-item__num {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: var(--fs-5xl);
   font-weight: 700;
-  color: rgba(201, 165, 90, .2);
+  color: rgba(201, 165, 90, .45);
   line-height: 1;
   padding-top: .25rem;
 }
 
 .pain-item__title {
   font-family: var(--font-heading);
-  font-size: 1.125rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--color-text-head);
   margin-bottom: .625rem;
@@ -579,7 +590,7 @@ main:not(.lp-main) {
 
 .feature-item__title {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--color-text-head);
   margin-bottom: .375rem;
@@ -624,7 +635,7 @@ main:not(.lp-main) {
 
 .form-card__title {
   font-family: var(--font-heading);
-  font-size: 1.0625rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--color-text-head);
   margin-bottom: .375rem;
@@ -735,7 +746,7 @@ main:not(.lp-main) {
   display: flex;
   align-items: center;
   gap: .875rem;
-  font-size: .9375rem;
+  font-size: var(--fs-base);
   color: rgba(240, 234, 216, .85);
   font-family: var(--font-serif);
 }
@@ -760,7 +771,7 @@ main:not(.lp-main) {
 
 .cta-form__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--color-text-head);
   text-align: center;
@@ -871,7 +882,7 @@ select.form-input {
 }
 
 .footer__copy {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   color: var(--color-text-muted);
   letter-spacing: .04em;
 }
@@ -991,7 +1002,7 @@ fieldset {
 }
 
 legend {
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--color-text-head);
   margin-bottom: 1.25rem;
@@ -1015,7 +1026,7 @@ legend .required-star {
 
 label.field-label {
   display: block;
-  font-size: 1rem;
+  font-size: var(--fs-lg);
   font-weight: 500;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1196,7 +1207,7 @@ input[type="number"] {
   color: var(--color-text-muted);
   text-align: center;
   padding: 1.25rem 1.5rem;
-  font-size: .75rem;
+  font-size: var(--fs-sm);
   letter-spacing: .04em;
 }
 
@@ -1208,11 +1219,11 @@ input[type="number"] {
   }
 
   .hero__headline {
-    font-size: 3rem;
+    font-size: var(--fs-5xl);
   }
 
   .hero__subheadline {
-    font-size: 1rem;
+    font-size: var(--fs-base);
   }
 
   .hero__actions {
@@ -1221,7 +1232,7 @@ input[type="number"] {
   }
 
   .section-title {
-    font-size: 2.25rem;
+    font-size: var(--fs-4xl);
   }
 
   .features-grid {
@@ -1261,7 +1272,7 @@ input[type="number"] {
   }
 
   .hero__headline {
-    font-size: 3.75rem;
+    font-size: var(--fs-6xl);
   }
 
   .features-grid {
@@ -1286,7 +1297,7 @@ input[type="number"] {
   }
 
   .hero__headline {
-    font-size: 1.875rem;
+    font-size: var(--fs-3xl);
     word-break: keep-all;
     line-height: 1.3;
   }
@@ -1306,7 +1317,7 @@ input[type="number"] {
   }
 
   .section-title {
-    font-size: 1.625rem;
+    font-size: var(--fs-2xl);
   }
 
   .cta-form {
@@ -1351,16 +1362,8 @@ input[type="number"] {
     /* dark blue-slate */
     --color-text-head: #1C2535;
     /* deep navy */
-    --color-text-muted: #8A7F6D;
-    /* warm muted brown */
-    --color-border: rgba(28, 37, 53, 0.12);
-    --color-border-subtle: rgba(28, 37, 53, 0.07);
-    --color-divider: rgba(201, 165, 90, 0.4);
-    --color-primary: #1A5276;
-    --color-primary-dark: #154360;
-    --color-tertiary: #0E7EA8;
-    --color-tertiary-dark: #0A6589;
-    --color-muted: #8A7F6D;
+    --color-text-muted: #6B604D;
+    --color-muted: #6B604D;
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, .08);
     --shadow-md: 0 8px 32px rgba(0, 0, 0, .12);
     --shadow-glow: 0 0 32px rgba(201, 165, 90, .3);
@@ -1407,7 +1410,7 @@ input[type="number"] {
 
   /* Pain item numbers — slightly more visible on light */
   .pain-item__num {
-    color: rgba(201, 165, 90, 0.3);
+    color: rgba(201, 165, 90, 0.8);
   }
 
   /* Form cards — cream glass */
@@ -1604,7 +1607,7 @@ input[type="number"] {
 
 .demo-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--color-accent);
   text-transform: uppercase;
@@ -1652,7 +1655,7 @@ input[type="number"] {
 
 @media (min-width: 768px) {
   .demo-title {
-    font-size: 2.25rem;
+    font-size: var(--fs-4xl);
   }
 
   .demo-desc {
