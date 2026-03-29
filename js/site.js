@@ -110,11 +110,70 @@
       backdrop.addEventListener('click', closeModal);
     }
 
+    modal.addEventListener('click', function(event) {
+      if (event.target.classList.contains('js-close-modal')) {
+        closeModal();
+      }
+    });
+
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape' && modal.classList.contains('is-open')) {
         closeModal();
       }
     });
+  }
+
+  function initModalForm() {
+    var form = document.getElementById('reg-form');
+    if (!form) return;
+
+    var successEl = document.getElementById('reg-success');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalText = submitBtn ? submitBtn.textContent : '送出登記';
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '傳送中...';
+      }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          alert('抱歉，傳送時發生錯誤。請稍後再試。');
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+        }
+      }).catch(function() {
+        alert('網路連線似乎有問題，請檢查您的網路狀態。');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+      });
+    });
+
+    // Reset form + success state when modal closes
+    var modal = document.getElementById('reg-modal');
+    if (modal) {
+      var observer = new MutationObserver(function() {
+        if (!modal.classList.contains('is-open')) {
+          form.hidden = false;
+          form.reset();
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+          if (successEl) successEl.hidden = true;
+        }
+      });
+      observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+    }
   }
 
   function initScrollAnimations() {
@@ -168,6 +227,7 @@
     initHamburger();
     initFabDial();
     initModal();
+    initModalForm();
     initSmoothScroll();
     initScrollAnimations();
   }

@@ -120,8 +120,10 @@ main:not(.lp-main) {
 
 /* ─── Nav (landing) ─────────────────────────────────────── */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: rgba(6, 14, 24, 0.92);
   backdrop-filter: blur(12px);
@@ -340,8 +342,8 @@ main:not(.lp-main) {
 @media (max-width: 480px) {
   .fab-dial { bottom: 20px; right: 16px; }
   .fab-dial__item { width: 100%; }
-  .fab-dial__trigger { padding: 0.6rem 0.9rem; font-size: 0.72rem; width: 100%; }
-  .fab-dial__label { font-size: 0.72rem; padding: 0.35rem 0.7rem; }
+  .fab-dial__trigger { padding: 0.6rem 0.9rem; font-size: 0.85rem; width: 100%; }
+  .fab-dial__label { font-size: 0.85rem; padding: 0.4rem 0.75rem; }
 }
 @media (prefers-color-scheme: light) {
   .fab-dial__label { background: #FDFAF5; }
@@ -446,6 +448,21 @@ main:not(.lp-main) {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+/* ─── Hero CTA ──────────────────────────────────────────── */
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__cta-note {
+  font-size: var(--fs-xs);
+  color: rgba(168, 192, 214, .6);
+  margin: 0;
 }
 
 /* ─── Scroll arrow ──────────────────────────────────────── */
@@ -675,6 +692,22 @@ main:not(.lp-main) {
 .btn-filled:focus-visible {
   outline: none;
   box-shadow: none;
+}
+
+.btn-outline-gold {
+  display: inline-block;
+  padding: .75rem 2rem;
+  background: transparent;
+  color: var(--color-accent);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--color-accent);
+  transition: background .2s, color .2s;
+  cursor: pointer;
+}
+.btn-outline-gold:hover {
+  background: rgba(201, 165, 90, .1);
 }
 
 .btn-outline {
@@ -1043,7 +1076,7 @@ main:not(.lp-main) {
   width: 100%;
   padding: .75rem 1rem;
   font-family: var(--font-base);
-  font-size: .9375rem;
+  font-size: 1rem;
   color: var(--color-text-head);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--color-border);
@@ -1064,6 +1097,13 @@ select.form-input {
   background-position: right 12px center;
   padding-right: 2rem;
   cursor: pointer;
+}
+
+select.form-input option {
+  font-size: 1rem;
+  font-family: var(--font-base);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-head);
 }
 
 /* ─── Payment badges ────────────────────────────────────── */
@@ -1909,4 +1949,103 @@ input[type="number"] {
   .demo-desc {
     font-size: 1.125rem;
   }
+}
+
+/* ===== Modal Success State ===== */
+.modal-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-4);
+}
+
+.modal-success[hidden] { display: none; }
+
+.modal-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: var(--fs-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* ===== CTA Row (shared across all pages) ===== */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+@media (max-width: 600px) {
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .cta-row .btn,
+  .cta-row .btn-filled,
+  .cta-row .btn-outline-gold {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ===== Inner Hero (shared across subpages) ===== */
+.inner-hero {
+  padding: 6rem 1.5rem 3.5rem;
+  text-align: center;
+  background:
+    linear-gradient(to bottom, rgba(6,14,24,0.72) 0%, rgba(6,14,24,0.98) 100%),
+    var(--hero-bg-img, none) center/cover no-repeat;
+}
+
+@media (prefers-color-scheme: light) {
+  .inner-hero {
+    background:
+      linear-gradient(to bottom, rgba(253,250,245,0.70) 0%, rgba(253,250,245,0.97) 100%),
+      var(--hero-bg-img, none) center/cover no-repeat;
+  }
+}
+
+.inner-hero__eyebrow {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.inner-hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  color: var(--color-text-head);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.inner-hero__sub {
+  font-size: var(--fs-lg);
+  color: var(--color-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .inner-hero__title { font-size: var(--fs-3xl); }
 }

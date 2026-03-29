@@ -8,35 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
   <style>
-    /* ── Page hero (inner pages, shorter than landing) ─────── */
-    .inner-hero {
-      padding: 6rem 1.5rem 3.5rem;
-      text-align: center;
-      background: linear-gradient(to bottom, rgba(6,14,24,0.55) 0%, rgba(6,14,24,0.98) 100%),
-        url('https://images.unsplash.com/photo-1434030216411-0b793f4b6d4c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    }
-    .inner-hero__eyebrow {
-      display: inline-block;
-      font-size: var(--fs-sm);
-      font-weight: 400;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: 1rem;
-    }
-    .inner-hero__title {
-      font-family: var(--font-heading);
-      font-size: var(--fs-4xl);
-      color: var(--color-text-head);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .inner-hero__sub {
-      font-size: var(--fs-lg);
-      color: var(--color-text);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    .inner-hero { --hero-bg-img: url('https://images.unsplash.com/photo-1434030216411-0b793f4b6d4c?auto=format&fit=crop&w=1920&q=80'); }
 
     /* ── Tab switcher ──────────────────────────────────────── */
     .tabs-section {
@@ -145,28 +117,16 @@
       color: var(--color-text-head);
     }
 
-    /* ── CTA row ───────────────────────────────────────────── */
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      padding: 3rem 1.5rem 4rem;
-    }
-
     /* ── Responsive ────────────────────────────────────────── */
     @media (max-width: 600px) {
-      .inner-hero__title { font-size: var(--fs-3xl); }
+      .tabs-section { padding-left: 1rem; padding-right: 1rem; }
       .tabs-bar { flex-direction: column; border-bottom: none; gap: .25rem; }
       .tab-btn { border: 1px solid var(--color-border); border-bottom: none; text-align: left; padding: .75rem 1rem; }
       .tab-btn.active { border-color: var(--color-accent); background: rgba(201,165,90,.08); }
+      .timeline-step { grid-template-columns: 1.75rem 1fr; gap: 0 1rem; }
+      .timeline-step__num { width: 1.75rem; height: 1.75rem; font-size: var(--fs-sm); }
     }
     @media (prefers-color-scheme: light) {
-      .inner-hero {
-        background:
-          linear-gradient(to bottom, rgba(253,250,245,0.45) 0%, rgba(253,250,245,0.97) 100%),
-          url('https://images.unsplash.com/photo-1434030216411-0b793f4b6d4c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      }
       .timeline-step__note {
         background: rgba(201,165,90,0.12);
         border-color: rgba(201,165,90,0.4);
@@ -414,9 +374,9 @@
 
     <!-- CTA row -->
     <div class="cta-row">
-      <a href="pricing.html" class="btn-filled">了解訂閱方案 →</a>
-      <a href="faq.html" class="btn-filled">常見問題 →</a>
-      <button type="button" class="btn-filled js-open-reg-modal">立即登記</button>
+      <a href="index.html" class="btn-outline-gold">← 首頁</a>
+      <a href="compare.html" class="btn-filled">平台比較 →</a>
+
     </div>
 
   </main>

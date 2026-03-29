@@ -8,33 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
   <style>
-    .inner-hero {
-      padding: 6rem 1.5rem 3.5rem;
-      text-align: center;
-      background: linear-gradient(to bottom, rgba(6,14,24,0.55) 0%, rgba(6,14,24,0.98) 100%),
-        url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    }
-    .inner-hero__eyebrow {
-      display: inline-block;
-      font-size: var(--fs-sm);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: 1rem;
-    }
-    .inner-hero__title {
-      font-family: var(--font-heading);
-      font-size: var(--fs-4xl);
-      color: var(--color-text-head);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .inner-hero__sub {
-      font-size: var(--fs-lg);
-      color: var(--color-text);
-      max-width: 640px;
-      margin: 0 auto;
-    }
+    .inner-hero { --hero-bg-img: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80'); }
+    .inner-hero__sub { max-width: 640px; }
 
     /* ── Role callout ──────────────────────────────────────── */
     .role-callout {
@@ -176,25 +151,15 @@
       display: block;
     }
 
-    /* ── CTA ───────────────────────────────────────────────── */
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      padding: 3.5rem 1.5rem 4rem;
-    }
     @media (max-width: 600px) {
-      .inner-hero__title { font-size: var(--fs-3xl); }
       .fee-split { grid-template-columns: 1fr; }
       .includes-list { grid-template-columns: 1fr; }
+      .role-callout { padding-left: 1rem; padding-right: 1rem; }
+      .fee-section { padding-left: 1rem; padding-right: 1rem; }
+      .includes-section { padding-left: 1rem; padding-right: 1rem; }
+      .callout-box { padding: 1.25rem; }
     }
     @media (prefers-color-scheme: light) {
-      .inner-hero {
-        background:
-          linear-gradient(to bottom, rgba(253,250,245,0.45) 0%, rgba(253,250,245,0.97) 100%),
-          url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      }
       .callout-box {
         background: rgba(201,165,90,0.08);
         border-color: rgba(201,165,90,0.5);
@@ -243,8 +208,7 @@
       <div class="callout-box">
         <p class="callout-box__label">重要說明</p>
         <p class="callout-box__text">
-          安圖是一個技術服務平台。<strong>家教時薪由家長與老師自行協議</strong>，家長直接付款給老師，安圖完全不經手、不收取任何仲介佣金。<br><br>
-          安圖只收取平台訂閱費，用於提供師資驗證、學習管理工具、學習報告等服務。
+          安圖提供數位學習管理工具，只收取平台訂閱費。<strong>家教時薪由家長與老師自行協議</strong>，家長直接付款給老師，安圖完全不經手、不收取任何仲介佣金。
         </p>
       </div>
     </div>
@@ -259,7 +223,7 @@
           <p class="fee-card__title">家教時薪</p>
           <p class="fee-card__amount">1,200–1,800 <span>元/小時</span></p>
           <p class="fee-card__desc">
-            每堂課通常 2 小時，約 2,400–3,600 元。家長直接付款給老師，方式由雙方自行決定（現金、轉帳皆可）。<br><br>
+            每堂課通常 2 小時，約 2,400–3,600 元。家長直接付款給老師，方式由雙方自行決定（現金、轉帳皆可）。
             <strong style="color:var(--color-text-head)">安圖抽成 0%。</strong>
           </p>
         </div>
@@ -295,7 +259,7 @@
         <li>
           <div>
             <strong>學習管理平台</strong>
-            作業出題與繳交、成績簿、課程資料、出席記錄
+            作業出題與繳交、成績簿、課程資料、錯題本
           </div>
         </li>
         <li>
@@ -319,15 +283,16 @@
         <li>
           <div>
             <strong>家長專屬觀察帳號</strong>
-            隨時登入查看孩子的成績、作業、出席記錄
+            隨時登入查看孩子的成績、作業、錯題本
           </div>
         </li>
       </ul>
     </div>
 
     <div class="cta-row">
+      <a href="compare.html" class="btn-outline-gold">← 平台比較</a>
       <a href="faq.html" class="btn-filled">常見問題 →</a>
-      <button type="button" class="btn-filled js-open-reg-modal">立即登記</button>
+
     </div>
 
   </main>
