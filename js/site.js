@@ -216,6 +216,21 @@
     });
   }
 
+  function initFabHeroVisibility() {
+    var hero = document.querySelector('.hero');
+    var dial = document.getElementById('fab-dial');
+    if (!hero || !dial) return;
+
+    dial.classList.add('fab-dial--hidden');
+
+    var observer = new IntersectionObserver(function(entries) {
+      var heroVisible = entries[0].isIntersecting;
+      dial.classList.toggle('fab-dial--hidden', heroVisible);
+    }, { threshold: 0 });
+
+    observer.observe(hero);
+  }
+
   function init() {
     initHamburger();
     initFabDial();
@@ -223,6 +238,7 @@
     initModalForm();
     initSmoothScroll();
     initScrollAnimations();
+    initFabHeroVisibility();
   }
 
   if (document.readyState === 'loading') {
