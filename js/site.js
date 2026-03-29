@@ -1,0 +1,180 @@
+(function() {
+  'use strict';
+
+  function initHamburger() {
+    var navEl = document.querySelector('.nav');
+    var hamburger = document.querySelector('.nav__hamburger');
+    var navLinks = document.getElementById('nav-links');
+
+    if (!hamburger || !navEl) {
+      return;
+    }
+
+    hamburger.addEventListener('click', function() {
+      var open = navEl.classList.toggle('nav--open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    if (navLinks) {
+      navLinks.querySelectorAll('.nav__link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navEl.classList.remove('nav--open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }
+
+  function initFabDial() {
+    var dial = document.getElementById('fab-dial');
+    var trigger = document.getElementById('fab-trigger');
+
+    if (!dial || !trigger) {
+      return;
+    }
+
+    trigger.addEventListener('click', function(event) {
+      event.stopPropagation();
+      var open = dial.classList.toggle('fab-dial--open');
+      trigger.setAttribute('aria-expanded', open);
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!dial.contains(event.target)) {
+        dial.classList.remove('fab-dial--open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  function initModal() {
+    var modal = document.getElementById('reg-modal');
+    if (!modal) {
+      return;
+    }
+
+    var modalClose = document.getElementById('modal-close');
+    var backdrop = document.getElementById('modal-backdrop');
+    var fabCta = document.getElementById('fab-cta');
+    var heroBtn = document.getElementById('hero-register-btn');
+    var openModalButtons = document.querySelectorAll('.js-open-reg-modal');
+    var dial = document.getElementById('fab-dial');
+    var trigger = document.getElementById('fab-trigger');
+
+    function openModal() {
+      if (dial) {
+        dial.classList.remove('fab-dial--open');
+      }
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (modalClose) {
+        modalClose.focus();
+      }
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (trigger) {
+        trigger.focus();
+      }
+    }
+
+    if (fabCta) {
+      fabCta.addEventListener('click', function() {
+        openModal();
+      });
+    }
+
+    if (heroBtn) {
+      heroBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal();
+      });
+    }
+
+    if (openModalButtons.length) {
+      openModalButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          openModal();
+        });
+      });
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closeModal);
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', closeModal);
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  }
+
+  function initScrollAnimations() {
+    var animatedElements = document.querySelectorAll('[data-animate]');
+    if (!animatedElements.length) {
+      return;
+    }
+
+    function revealElement(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(revealElement);
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -120px 0px'
+      });
+
+      animatedElements.forEach(function(element) {
+        observer.observe(element);
+      });
+    } else {
+      animatedElements.forEach(function(element) {
+        element.classList.add('is-visible');
+      });
+    }
+  }
+
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        var targetSelector = link.getAttribute('href');
+        if (!targetSelector || targetSelector === '#') {
+          return;
+        }
+        var target = document.querySelector(targetSelector);
+        if (target) {
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  function init() {
+    initHamburger();
+    initFabDial();
+    initModal();
+    initSmoothScroll();
+    initScrollAnimations();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

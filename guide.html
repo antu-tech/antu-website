@@ -80,24 +80,27 @@
     }
     .timeline-step {
       display: grid;
-      grid-template-columns: 2.5rem 1fr;
+      grid-template-columns: 2.75rem 1fr;
       gap: 0 1.5rem;
       margin-bottom: 2.5rem;
     }
     .timeline-step__num {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
       border-radius: 50%;
       background: var(--color-accent);
       color: var(--color-bg);
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: var(--fs-sm);
+      font-size: var(--fs-lg);
+      line-height: 1;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-sizing: border-box;
       flex-shrink: 0;
-      margin-top: .2rem;
+      margin-top: 0;
+      padding-bottom: .1rem;
     }
     .timeline-step__body {}
     .timeline-step__title {
@@ -150,31 +153,6 @@
       justify-content: center;
       padding: 3rem 1.5rem 4rem;
     }
-    .btn-outline {
-      display: inline-block;
-      padding: .75rem 2rem;
-      border: 1px solid var(--color-accent);
-      color: var(--color-accent);
-      font-size: var(--fs-base);
-      font-weight: 500;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .btn-outline:hover {
-      background: var(--color-accent);
-      color: var(--color-bg);
-    }
-    .btn-filled {
-      display: inline-block;
-      padding: .75rem 2rem;
-      background: var(--color-accent);
-      color: var(--color-bg);
-      font-size: var(--fs-base);
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .btn-filled:hover { background: var(--color-accent-light); }
 
     /* ── Responsive ────────────────────────────────────────── */
     @media (max-width: 600px) {
@@ -244,7 +222,7 @@
           我已有家教
         </button>
         <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-c" id="btn-c">
-          我想上線上課
+          我想要線上課
         </button>
       </div>
 
@@ -257,9 +235,14 @@
             <div class="timeline-step__body">
               <h3 class="timeline-step__title">瀏覽師資介紹</h3>
               <p class="timeline-step__desc">
-                在平台上直接瀏覽已認證的師資頁面——每位老師都有照片、就讀科系、可教科目、可配合時段，以及自我介紹。你挑老師，不是系統替你配對。
+                在平台上直接瀏覽已認證的師資頁面，選擇你信任的老師。
               </p>
-              <span class="timeline-step__note">所有老師均完成臺大醫學系雙重驗證：臺大信箱 + 學生證 OCR</span>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>自我介紹、擅長科目、可配合時段與地點一目了然</li>
+                <li>老師根據孩子程度與目標，客製化補強方案</li>
+                <li>家教提供預錄課程所缺乏的即時互動與教學調整</li>
+              </ul>
+              <span class="timeline-step__note">所有家教老師均完成臺大醫學系雙重驗證：臺大信箱 + 學生證 OCR</span>
             </div>
           </div>
 
@@ -268,7 +251,7 @@
             <div class="timeline-step__body">
               <h3 class="timeline-step__title">聯繫試教，確認適合</h3>
               <p class="timeline-step__desc">
-                透過平台聯繫心儀的老師，安排試教課。確認教學風格與孩子適合後，正式排定課表。
+                透過平台聯繫心儀的老師，安排試教課。老師會先進行前測與學習診斷，確認教學風格與孩子適合後，正式排定課表。
               </p>
             </div>
           </div>
@@ -276,22 +259,22 @@
           <div class="timeline-step" data-animate>
             <span class="timeline-step__num">3</span>
             <div class="timeline-step__body">
-              <h3 class="timeline-step__title">上課中：老師到府，平台記錄</h3>
-              <p class="timeline-step__desc">
-                老師依排定時間到府授課（或視訊，由你選擇）。每次上課結束後，老師在平台上記錄：今天教了什麼、出了什麼作業、學生的表現。
-              </p>
-              <p class="timeline-step__desc" style="margin-top:.5rem;">
-                家長隨時登入查看——就像一本只有你們看得到的聯絡簿，但不需要等老師主動回報。
-              </p>
+              <h3 class="timeline-step__title">老師授課，平台協助</h3>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>老師依排定時間，到府授課或視訊教學</li>
+                <li>平台記錄教學內容、管理作業、安排測驗</li>
+                <li>錯題本自動彙整，補強更有依據</li>
+                <li>家長可即時登入查看，增進親師溝通效率</li>
+              </ul>
             </div>
           </div>
 
           <div class="timeline-step" data-animate>
             <span class="timeline-step__num">4</span>
             <div class="timeline-step__body">
-              <h3 class="timeline-step__title">月底：自動學習報告寄到你的信箱</h3>
+              <h3 class="timeline-step__title">自動學習報告寄到信箱</h3>
               <p class="timeline-step__desc">
-                每個月底，平台自動整合這個月的上課記錄，產出結構化學習報告：出席率、作業完成率、進度圖表。不需要問老師「這個月學了什麼」，報告自動寄到信箱。
+                每月平台自動彙整作業完成狀況、考試成績、錯題分析、進度圖表，寄送完整學習報告到家長信箱。
               </p>
             </div>
           </div>
@@ -310,6 +293,10 @@
               <p class="timeline-step__desc">
                 安圖平台目前僅開放臺大醫學系在學學生師資。如果你現有的家教符合資格，可以直接邀請他們加入平台。
               </p>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>保留現有教學節奏、維持家庭與老師之間的信任</li>
+                <li>老師加入平台後，即可搭配系統管理進度</li>
+              </ul>
               <span class="timeline-step__note">不確定老師是否符合？填寫登記表，我們會協助確認</span>
             </div>
           </div>
@@ -318,28 +305,32 @@
             <span class="timeline-step__num">2</span>
             <div class="timeline-step__body">
               <h3 class="timeline-step__title">邀請老師，由安圖協助建課</h3>
-              <p class="timeline-step__desc">
-                提交申請後，安圖團隊會聯繫你的老師，協助他們在平台上建立課程空間——設定作業、成績簿、公告欄。老師不需要自己摸索，我們全程協助。
-              </p>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>安圖團隊協助老師建立課程空間</li>
+                <li>老師不需摸索系統，可以專注在教學上</li>
+              </ul>
             </div>
           </div>
 
           <div class="timeline-step" data-animate>
             <span class="timeline-step__num">3</span>
             <div class="timeline-step__body">
-              <h3 class="timeline-step__title">上課中：老師如常教課，平台在後台記錄</h3>
-              <p class="timeline-step__desc">
-                老師的上課方式不需要改變。每次課後，他在平台記錄作業與進度。家長隨時登入查看，就像一本升級版的聯絡簿。
-              </p>
+              <h3 class="timeline-step__title">老師如常教課，平台提供輔助</h3>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>老師的上課方式不需要改變</li>
+                <li>每次課後記錄作業、考試成績與進度</li>
+                <li>家長隨時登入查看，等同升級版聯絡簿</li>
+                <li>平台把記錄轉成具體進度與趨勢，補強更有依據</li>
+              </ul>
             </div>
           </div>
 
           <div class="timeline-step" data-animate>
             <span class="timeline-step__num">4</span>
             <div class="timeline-step__body">
-              <h3 class="timeline-step__title">月底：自動學習報告</h3>
+              <h3 class="timeline-step__title">每月自動學習報告</h3>
               <p class="timeline-step__desc">
-                每個月底，平台自動整合出席率、作業完成率與進度圖表，寄送完整學習報告到家長信箱。
+                每月平台自動彙整作業完成狀況、考試成績、錯題分析、進度圖表，寄送完整學習報告到家長信箱。
               </p>
             </div>
           </div>
@@ -347,7 +338,7 @@
         </div>
       </div>
 
-      <!-- ─── Tab C: 我想上線上課 ───────────────────────────── -->
+      <!-- ─── Tab C: 我想要線上課 ───────────────────────────── -->
       <div class="tab-pane" id="tab-c" role="tabpanel" aria-labelledby="btn-c">
         <div class="timeline">
 
@@ -355,9 +346,11 @@
             <span class="timeline-step__num">1</span>
             <div class="timeline-step__body">
               <h3 class="timeline-step__title">選擇上課模式</h3>
-              <p class="timeline-step__desc">
-                安圖平台同時支援到府授課與線上視訊，也可以兩者混搭——例如平常到府，若遇到老師或學生無法出門的情況，改為線上。每堂課的模式可以彈性調整。
-              </p>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>支援到府授課與線上視訊</li>
+                <li>也可以彈性混搭，遇到無法出門時改為線上</li>
+                <li>每堂課模式皆可依實際情況調整</li>
+              </ul>
             </div>
           </div>
 
@@ -366,13 +359,15 @@
             <div class="timeline-step__body">
               <h3 class="timeline-step__title">線上課的平台工具</h3>
               <p class="timeline-step__desc">
-                線上課不只是視訊通話——平台提供一套完整的數位教學空間，讓每堂課都有記錄、有結構：
+                線上課不只是視訊通話——平台提供完整的數位教學空間，讓每堂課都有記錄、有結構：
               </p>
               <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
                 <li>老師上傳講義、筆記、參考資料，全部集中一處</li>
                 <li>作業在平台上出題與繳交，老師批改後自動通知</li>
-                <li>成績一目了然，家長不需要問老師</li>
+                <li>自動建立錯題本，清楚掌握弱點</li>
+                <li>測驗成績一目了然，追蹤學習進度</li>
                 <li>公告與訊息都在平台內，不需要另開 LINE 群組</li>
+                <li>這不是單純預錄課程，家教老師能即時回饋，客製化教學內容</li>
               </ul>
             </div>
           </div>
@@ -381,18 +376,19 @@
             <span class="timeline-step__num">3</span>
             <div class="timeline-step__body">
               <h3 class="timeline-step__title">家長看得到什麼</h3>
-              <p class="timeline-step__desc">
-                家長有專屬的觀察者帳號：可以看到孩子的成績、即將到期的作業、上課出席記錄——用瀏覽器或手機都能開啟，不需要安裝特別的軟體。
-              </p>
+              <ul style="margin-top:.75rem; padding-left:1.25rem; color:var(--color-text); line-height:2;">
+                <li>家長有專屬觀察者帳號，看見成績與作業狀態</li>
+                <li>手機或瀏覽器皆可開啟，增進親師溝通效率</li>
+              </ul>
             </div>
           </div>
 
           <div class="timeline-step" data-animate>
             <span class="timeline-step__num">4</span>
             <div class="timeline-step__body">
-              <h3 class="timeline-step__title">月底：自動學習報告</h3>
+              <h3 class="timeline-step__title">每月自動學習報告</h3>
               <p class="timeline-step__desc">
-                與到府課程相同，線上課的出席與作業數據也會在月底自動彙整，產出完整學習報告寄到信箱。
+                與到府課程相同，線上課的作業與測驗數據也會每月自動彙整，產出完整學習報告寄到信箱。
               </p>
             </div>
           </div>
@@ -405,56 +401,56 @@
         <p style="font-size:var(--fs-sm); letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); margin-bottom:1rem;">平台提供的工具（三種情境皆適用）</p>
         <div class="feature-chips">
           <span class="feature-chip"><strong>作業繳交</strong> 老師出題，學生繳交，平台保存記錄</span>
-          <span class="feature-chip"><strong>成績簿</strong> 成績一目了然，不用問老師</span>
+          <span class="feature-chip"><strong>成績簿</strong> 考試狀況一目了然，增進親師溝通效率</span>
+          <span class="feature-chip"><strong>錯題本</strong> 系統自動彙整，補強更有依據</span>
           <span class="feature-chip"><strong>公告</strong> 老師發通知，家長即時收到</span>
-          <span class="feature-chip"><strong>平台訊息</strong> 不需另開 LINE 群組</span>
+          <span class="feature-chip"><strong>平台訊息</strong> 不需另開 LINE 群組，減少干擾</span>
           <span class="feature-chip"><strong>家長觀察帳號</strong> 看孩子進度，不干擾課程</span>
-          <span class="feature-chip"><strong>手機通知</strong> 作業提醒、成績更新推播</span>
+          <span class="feature-chip"><strong>手機 APP 推播</strong> 作業提醒、成績更新推播</span>
           <span class="feature-chip"><strong>課程資料</strong> 講義、影片、筆記集中存放</span>
-          <span class="feature-chip"><strong>出席記錄</strong> 每堂課自動記錄，月底匯整</span>
         </div>
       </div>
     </div>
 
     <!-- CTA row -->
     <div class="cta-row">
-      <a href="pricing.html" class="btn-outline">了解訂閱方案 →</a>
-      <a href="faq.html" class="btn-outline">常見問題 →</a>
-      <a href="index.html#cta-form" class="btn-filled">立即登記</a>
+      <a href="pricing.html" class="btn-filled">了解訂閱方案 →</a>
+      <a href="faq.html" class="btn-filled">常見問題 →</a>
+      <button type="button" class="btn-filled js-open-reg-modal">立即登記</button>
     </div>
 
   </main>
 
   <footer class="footer" role="contentinfo">
     <p class="footer__brand">安圖教育</p>
-    <p class="footer__copy">安圖科技有限公司 © 2024　|　Antu Technology Co., Ltd.</p>
+    <p class="footer__copy">安圖科技有限公司 © 2026　|　Antu Technology Co., Ltd.</p>
   </footer>
 
   <!-- Speed Dial FAB -->
   <div class="fab-dial" id="fab-dial">
     <div class="fab-dial__items" id="fab-items">
       <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
-        <span class="fab-dial__label">登記搶先體驗</span>
+        <span class="fab-dial__label">立即登記</span>
         <span class="fab-dial__dot"></span>
       </button>
       <a class="fab-dial__item" href="forms/demand.html">
-        <span class="fab-dial__label">家長需求調查</span>
+        <span class="fab-dial__label">家長需求</span>
         <span class="fab-dial__dot"></span>
       </a>
       <a class="fab-dial__item" href="forms/supply.html">
-        <span class="fab-dial__label">師資供給調查</span>
+        <span class="fab-dial__label">師資供給</span>
         <span class="fab-dial__dot"></span>
       </a>
       <a class="fab-dial__item" href="forms/market-size.html">
-        <span class="fab-dial__label">市場規模調查</span>
+        <span class="fab-dial__label">市場規模</span>
         <span class="fab-dial__dot"></span>
       </a>
       <a class="fab-dial__item" href="forms/competition.html">
-        <span class="fab-dial__label">競爭分析紀錄</span>
+        <span class="fab-dial__label">競爭分析</span>
         <span class="fab-dial__dot"></span>
       </a>
       <a class="fab-dial__item" href="forms/pricing.html">
-        <span class="fab-dial__label">定價偏好調查</span>
+        <span class="fab-dial__label">定價偏好</span>
         <span class="fab-dial__dot"></span>
       </a>
     </div>
@@ -462,17 +458,16 @@
       <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M12 5v14M5 12h14"/>
       </svg>
-      立即登記
+      問卷選單
     </button>
   </div>
-
-  <!-- Registration Modal -->
+<!-- Registration Modal -->
   <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="reg-modal__backdrop" id="modal-backdrop"></div>
     <div class="reg-modal__card">
       <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
       <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
-      <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
+      <form action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
         <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
         <div class="form-group">
           <label for="modal-name">姓名</label>
@@ -496,76 +491,7 @@
     </div>
   </div>
 
-  <script>
-  // ── Hamburger ──────────────────────────────────
-  (function() {
-    var navEl = document.querySelector('.nav');
-    var hamburger = document.querySelector('.nav__hamburger');
-    var navLinks = document.getElementById('nav-links');
-    if (hamburger && navEl) {
-      hamburger.addEventListener('click', function() {
-        var open = navEl.classList.toggle('nav--open');
-        hamburger.setAttribute('aria-expanded', open);
-      });
-      if (navLinks) {
-        navLinks.querySelectorAll('.nav__link').forEach(function(l) {
-          l.addEventListener('click', function() {
-            navEl.classList.remove('nav--open');
-            hamburger.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    }
-  })();
-
-  // ── Speed Dial ─────────────────────────────────
-  (function() {
-    var dial = document.getElementById('fab-dial');
-    var trigger = document.getElementById('fab-trigger');
-    if (!dial || !trigger) return;
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var open = dial.classList.toggle('fab-dial--open');
-      trigger.setAttribute('aria-expanded', open);
-    });
-    document.addEventListener('click', function(e) {
-      if (!dial.contains(e.target)) {
-        dial.classList.remove('fab-dial--open');
-        trigger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  })();
-
-  // ── Modal ──────────────────────────────────────
-  (function() {
-    var modal = document.getElementById('reg-modal');
-    var modalClose = document.getElementById('modal-close');
-    var backdrop = document.getElementById('modal-backdrop');
-    var fabCta = document.getElementById('fab-cta');
-    var dial = document.getElementById('fab-dial');
-    var trigger = document.getElementById('fab-trigger');
-    if (!modal) return;
-
-    function openModal() {
-      if (dial) dial.classList.remove('fab-dial--open');
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-      if (modalClose) modalClose.focus();
-    }
-    function closeModal() {
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-      if (trigger) trigger.focus();
-    }
-
-    if (fabCta) fabCta.addEventListener('click', openModal);
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    if (backdrop) backdrop.addEventListener('click', closeModal);
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-    });
-  })();
-  </script>
+  <script src="js/site.js"></script>
 
   <script>
   // Tab switching
@@ -597,132 +523,6 @@
         var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
         bar.style.width = (t > 0 ? Math.min(s/t*100,100) : 0) + '%';
       }, { passive: true });
-    }
-  })();
-  </script>
-
-  <!-- Speed Dial FAB -->
-  <div class="fab-dial" id="fab-dial">
-    <div class="fab-dial__items" id="fab-items">
-      <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
-        <span class="fab-dial__label">登記搶先體驗</span>
-        <span class="fab-dial__dot"></span>
-      </button>
-      <a class="fab-dial__item" href="forms/demand.html">
-        <span class="fab-dial__label">家長需求調查</span>
-        <span class="fab-dial__dot"></span>
-      </a>
-      <a class="fab-dial__item" href="forms/supply.html">
-        <span class="fab-dial__label">師資供給調查</span>
-        <span class="fab-dial__dot"></span>
-      </a>
-      <a class="fab-dial__item" href="forms/market-size.html">
-        <span class="fab-dial__label">市場規模調查</span>
-        <span class="fab-dial__dot"></span>
-      </a>
-      <a class="fab-dial__item" href="forms/competition.html">
-        <span class="fab-dial__label">競爭分析紀錄</span>
-        <span class="fab-dial__dot"></span>
-      </a>
-      <a class="fab-dial__item" href="forms/pricing.html">
-        <span class="fab-dial__label">定價偏好調查</span>
-        <span class="fab-dial__dot"></span>
-      </a>
-    </div>
-    <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
-      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M12 5v14M5 12h14"/>
-      </svg>
-      立即登記
-    </button>
-  </div>
-
-  <!-- Registration Modal -->
-  <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="reg-modal__backdrop" id="modal-backdrop"></div>
-    <div class="reg-modal__card">
-      <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
-      <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
-      <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
-        <div class="form-group">
-          <label for="modal-name">姓名</label>
-          <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="modal-phone">聯絡電話</label>
-          <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel">
-        </div>
-        <div class="form-group">
-          <label for="modal-role">我是</label>
-          <select id="modal-role" name="role" class="form-input" required>
-            <option value="" disabled selected>請選擇身分</option>
-            <option value="parent">家長</option>
-            <option value="tutor">臺大醫學系學生</option>
-            <option value="other">其他</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-submit">送出登記</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-  (function() {
-    var navEl = document.querySelector('.nav');
-    var hamburger = document.querySelector('.nav__hamburger');
-    var navLinks = document.getElementById('nav-links');
-    if (hamburger && navEl) {
-      hamburger.addEventListener('click', function() {
-        var open = navEl.classList.toggle('nav--open');
-        hamburger.setAttribute('aria-expanded', open);
-      });
-      if (navLinks) {
-        navLinks.querySelectorAll('.nav__link').forEach(function(l) {
-          l.addEventListener('click', function() {
-            navEl.classList.remove('nav--open');
-            hamburger.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    }
-    var dial = document.getElementById('fab-dial');
-    var trigger = document.getElementById('fab-trigger');
-    if (dial && trigger) {
-      trigger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var open = dial.classList.toggle('fab-dial--open');
-        trigger.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', function(e) {
-        if (!dial.contains(e.target)) {
-          dial.classList.remove('fab-dial--open');
-          trigger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-    var modal = document.getElementById('reg-modal');
-    var modalClose = document.getElementById('modal-close');
-    var backdrop = document.getElementById('modal-backdrop');
-    var fabCta = document.getElementById('fab-cta');
-    if (modal) {
-      function openModal() {
-        if (dial) dial.classList.remove('fab-dial--open');
-        modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-        if (modalClose) modalClose.focus();
-      }
-      function closeModal() {
-        modal.classList.remove('is-open');
-        document.body.style.overflow = '';
-        if (trigger) trigger.focus();
-      }
-      if (fabCta) fabCta.addEventListener('click', openModal);
-      if (modalClose) modalClose.addEventListener('click', closeModal);
-      if (backdrop) backdrop.addEventListener('click', closeModal);
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-      });
     }
   })();
   </script>

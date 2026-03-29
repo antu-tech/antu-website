@@ -184,29 +184,6 @@
       justify-content: center;
       padding: 3.5rem 1.5rem 4rem;
     }
-    .btn-outline {
-      display: inline-block;
-      padding: .75rem 2rem;
-      border: 1px solid var(--color-accent);
-      color: var(--color-accent);
-      font-size: var(--fs-base);
-      font-weight: 500;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .btn-outline:hover { background: var(--color-accent); color: var(--color-bg); }
-    .btn-filled {
-      display: inline-block;
-      padding: .75rem 2rem;
-      background: var(--color-accent);
-      color: var(--color-bg);
-      font-size: var(--fs-base);
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .btn-filled:hover { background: var(--color-accent-light); }
-
     @media (max-width: 600px) {
       .inner-hero__title { font-size: var(--fs-3xl); }
       .fee-split { grid-template-columns: 1fr; }
@@ -280,9 +257,9 @@
         <div class="fee-card">
           <p class="fee-card__label">你付給老師</p>
           <p class="fee-card__title">家教時薪</p>
-          <p class="fee-card__amount">1,200–1,500 <span>元 / hr</span></p>
+          <p class="fee-card__amount">1,200–1,800 <span>元/小時</span></p>
           <p class="fee-card__desc">
-            每堂課通常 2 小時，約 2,400–3,000 元。家長直接付款給老師，方式由雙方自行決定（現金、轉帳皆可）。<br><br>
+            每堂課通常 2 小時，約 2,400–3,600 元。家長直接付款給老師，方式由雙方自行決定（現金、轉帳皆可）。<br><br>
             <strong style="color:var(--color-text-head)">安圖抽成 0%。</strong>
           </p>
         </div>
@@ -300,8 +277,7 @@
 
       <div class="fee-note">
         <strong>費用試算說明：</strong>
-        家教費由家長直接付給老師（例：1,200–1,500 元/hr × 2 小時 = 約 2,400–3,000 元/堂）。
-        平台訂閱費另計，金額調查中，兩筆費用完全獨立。
+        家教費由家長直接付給老師（例：1,200–1,800 元/小時 × 2 小時 = 約 2,400–3,600 元/堂）。此為常見區間，實際金額仍以家長與老師協議為準。平台訂閱費另計，金額調查中，兩筆費用完全獨立。
       </div>
     </div>
 
@@ -350,15 +326,15 @@
     </div>
 
     <div class="cta-row">
-      <a href="faq.html" class="btn-outline">常見問題 →</a>
-      <a href="index.html#cta-form" class="btn-filled">立即登記</a>
+      <a href="faq.html" class="btn-filled">常見問題 →</a>
+      <button type="button" class="btn-filled js-open-reg-modal">立即登記</button>
     </div>
 
   </main>
 
   <footer class="footer" role="contentinfo">
     <p class="footer__brand">安圖教育</p>
-    <p class="footer__copy">安圖科技有限公司 © 2024　|　Antu Technology Co., Ltd.</p>
+    <p class="footer__copy">安圖科技有限公司 © 2026　|　Antu Technology Co., Ltd.</p>
   </footer>
 
   <script>
@@ -384,18 +360,35 @@
   <div class="fab-dial" id="fab-dial">
     <div class="fab-dial__items" id="fab-items">
       <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
-        <span class="fab-dial__label">登記搶先體驗</span>
+        <span class="fab-dial__label">立即登記</span>
         <span class="fab-dial__dot"></span>
       </button>
-      <a class="fab-dial__item" href="forms/demand.html"><span class="fab-dial__label">家長需求調查</span><span class="fab-dial__dot"></span></a>
-      <a class="fab-dial__item" href="forms/supply.html"><span class="fab-dial__label">師資供給調查</span><span class="fab-dial__dot"></span></a>
-      <a class="fab-dial__item" href="forms/market-size.html"><span class="fab-dial__label">市場規模調查</span><span class="fab-dial__dot"></span></a>
-      <a class="fab-dial__item" href="forms/competition.html"><span class="fab-dial__label">競爭分析紀錄</span><span class="fab-dial__dot"></span></a>
-      <a class="fab-dial__item" href="forms/pricing.html"><span class="fab-dial__label">定價偏好調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/demand.html">
+        <span class="fab-dial__label">家長需求</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/supply.html">
+        <span class="fab-dial__label">師資供給</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/market-size.html">
+        <span class="fab-dial__label">市場規模</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/competition.html">
+        <span class="fab-dial__label">競爭分析</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/pricing.html">
+        <span class="fab-dial__label">定價偏好</span>
+        <span class="fab-dial__dot"></span>
+      </a>
     </div>
     <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
-      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-      立即登記
+      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      問卷選單
     </button>
   </div>
   <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -403,7 +396,7 @@
     <div class="reg-modal__card">
       <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
       <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
-      <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
+      <form action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
         <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
         <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
         <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
@@ -412,16 +405,6 @@
       </form>
     </div>
   </div>
-  <script>
-  (function() {
-    var navEl=document.querySelector('.nav'),hamburger=document.querySelector('.nav__hamburger'),navLinks=document.getElementById('nav-links');
-    if(hamburger&&navEl){hamburger.addEventListener('click',function(){var o=navEl.classList.toggle('nav--open');hamburger.setAttribute('aria-expanded',o);});if(navLinks){navLinks.querySelectorAll('.nav__link').forEach(function(l){l.addEventListener('click',function(){navEl.classList.remove('nav--open');hamburger.setAttribute('aria-expanded','false');});});}}
-    var dial=document.getElementById('fab-dial'),trigger=document.getElementById('fab-trigger');
-    if(dial&&trigger){trigger.addEventListener('click',function(e){e.stopPropagation();var o=dial.classList.toggle('fab-dial--open');trigger.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!dial.contains(e.target)){dial.classList.remove('fab-dial--open');trigger.setAttribute('aria-expanded','false');}});}
-    var modal=document.getElementById('reg-modal'),modalClose=document.getElementById('modal-close'),backdrop=document.getElementById('modal-backdrop'),fabCta=document.getElementById('fab-cta');
-    if(modal){function openModal(){if(dial)dial.classList.remove('fab-dial--open');modal.classList.add('is-open');document.body.style.overflow='hidden';if(modalClose)modalClose.focus();}function closeModal(){modal.classList.remove('is-open');document.body.style.overflow='';if(trigger)trigger.focus();}if(fabCta)fabCta.addEventListener('click',openModal);if(modalClose)modalClose.addEventListener('click',closeModal);if(backdrop)backdrop.addEventListener('click',closeModal);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});}
-  })();
-  </script>
-
+  <script src="js/site.js"></script>
 </body>
 </html>
