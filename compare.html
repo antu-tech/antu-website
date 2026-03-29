@@ -309,13 +309,20 @@
     <div class="reg-modal__card">
       <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
       <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
-      <form action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
+      <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
         <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
         <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
         <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
+        <div class="form-group"><label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label><input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required autocomplete="email"></div>
         <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input" required><option value="" disabled selected>請選擇身分</option><option value="parent">家長</option><option value="tutor">臺大醫學系學生</option><option value="other">其他</option></select></div>
         <button type="submit" class="btn-submit">送出登記</button>
       </form>
+      <div class="modal-success" id="reg-success" hidden aria-live="polite">
+        <div class="modal-success-icon" aria-hidden="true">✓</div>
+        <h3>登記成功！</h3>
+        <p>我們已收到您的資料，將在 2 個工作日內透過電話或 Email 聯絡您。</p>
+        <button class="btn-submit js-close-modal" type="button">關閉</button>
+      </div>
     </div>
   </div>
   <script src="js/site.js"></script>

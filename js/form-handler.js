@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Successful submission
         alert('感謝您的回饋！我們將根據您的建議持續完善平台。');
         // Redirect back to landing page questionnaire section
-        window.location.href = '../index.html#research';
+        window.location.href = '../index.html';
       } else {
         const data = await response.json();
-        if (Object.hasOwn(data, 'errors')) {
+        if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
           alert('傳送發生錯誤: ' + data["errors"].map(error => error["message"]).join(", "));
         } else {
           alert('抱歉，傳送時發生錯誤。請稍後再試。');

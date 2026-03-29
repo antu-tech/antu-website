@@ -56,7 +56,6 @@
     var modalClose = document.getElementById('modal-close');
     var backdrop = document.getElementById('modal-backdrop');
     var fabCta = document.getElementById('fab-cta');
-    var heroBtn = document.getElementById('hero-register-btn');
     var openModalButtons = document.querySelectorAll('.js-open-reg-modal');
     var dial = document.getElementById('fab-dial');
     var trigger = document.getElementById('fab-trigger');
@@ -86,12 +85,6 @@
       });
     }
 
-    if (heroBtn) {
-      heroBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        openModal();
-      });
-    }
 
     if (openModalButtons.length) {
       openModalButtons.forEach(function(button) {
