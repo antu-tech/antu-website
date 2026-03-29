@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>訂閱方案 — 安圖教育</title>
+  <meta name="description" content="安圖教育訂閱方案與服務內容。平台費與家教費完全分開——家長直接付費給老師，安圖只收取平台訂閱費。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <style>
+    .inner-hero {
+      padding: 6rem 1.5rem 3.5rem;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(6,14,24,0.55) 0%, rgba(6,14,24,0.98) 100%),
+        url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    .inner-hero__eyebrow {
+      display: inline-block;
+      font-size: var(--fs-sm);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    .inner-hero__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-4xl);
+      color: var(--color-text-head);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .inner-hero__sub {
+      font-size: var(--fs-lg);
+      color: var(--color-text);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── Role callout ──────────────────────────────────────── */
+    .role-callout {
+      max-width: 780px;
+      margin: 3.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .callout-box {
+      border: 1px solid var(--color-accent);
+      background: rgba(201,165,90,.07);
+      padding: 1.75rem 2rem;
+      position: relative;
+    }
+    .callout-box__label {
+      font-size: var(--fs-xs);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: .75rem;
+    }
+    .callout-box__text {
+      font-size: var(--fs-lg);
+      color: var(--color-text-head);
+      line-height: 1.75;
+    }
+    .callout-box__text strong {
+      color: var(--color-accent);
+    }
+
+    /* ── Fee split visual ──────────────────────────────────── */
+    .fee-section {
+      max-width: 780px;
+      margin: 3rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .fee-section__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-2xl);
+      color: var(--color-text-head);
+      margin-bottom: 1.5rem;
+    }
+    .fee-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .fee-card {
+      padding: 1.5rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+    .fee-card__label {
+      font-size: var(--fs-xs);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: .5rem;
+    }
+    .fee-card__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl);
+      color: var(--color-text-head);
+      margin-bottom: .5rem;
+    }
+    .fee-card__amount {
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      color: var(--color-text-head);
+      margin-bottom: .75rem;
+    }
+    .fee-card__amount span {
+      font-size: var(--fs-base);
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+    .fee-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+    .fee-card--accent {
+      border-color: rgba(201,165,90,.4);
+      background: rgba(201,165,90,.06);
+    }
+    .fee-card--accent .fee-card__title,
+    .fee-card--accent .fee-card__amount { color: var(--color-accent); }
+
+    .fee-note {
+      margin-top: 1rem;
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      padding: .75rem 1rem;
+      border-left: 2px solid var(--color-accent);
+      background: var(--color-surface);
+    }
+    .fee-note strong { color: var(--color-text-head); }
+
+    /* ── Includes list ─────────────────────────────────────── */
+    .includes-section {
+      max-width: 780px;
+      margin: 3.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .includes-section__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-2xl);
+      color: var(--color-text-head);
+      margin-bottom: .5rem;
+    }
+    .includes-section__sub {
+      font-size: var(--fs-base);
+      color: var(--color-text-muted);
+      margin-bottom: 1.75rem;
+    }
+    .includes-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem 1.5rem;
+    }
+    .includes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: var(--fs-base);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    .includes-list li::before {
+      content: "✓";
+      color: var(--status-success);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+    .includes-list li strong {
+      color: var(--color-text-head);
+      display: block;
+    }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .btn-outline {
+      display: inline-block;
+      padding: .75rem 2rem;
+      border: 1px solid var(--color-accent);
+      color: var(--color-accent);
+      font-size: var(--fs-base);
+      font-weight: 500;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline:hover { background: var(--color-accent); color: var(--color-bg); }
+    .btn-filled {
+      display: inline-block;
+      padding: .75rem 2rem;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      font-size: var(--fs-base);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-filled:hover { background: var(--color-accent-light); }
+
+    @media (max-width: 600px) {
+      .inner-hero__title { font-size: var(--fs-3xl); }
+      .fee-split { grid-template-columns: 1fr; }
+      .includes-list { grid-template-columns: 1fr; }
+    }
+    @media (prefers-color-scheme: light) {
+      .inner-hero {
+        background:
+          linear-gradient(to bottom, rgba(253,250,245,0.45) 0%, rgba(253,250,245,0.97) 100%),
+          url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      }
+      .callout-box {
+        background: rgba(201,165,90,0.08);
+        border-color: rgba(201,165,90,0.5);
+      }
+      .fee-note {
+        background: rgba(28,37,53,0.04);
+      }
+      .includes-list li::before { color: #27AE60; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="主導覽">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="安圖教育首頁">
+          安圖<span>教育</span>
+        </a>
+        <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="nav-links">
+          <a href="index.html" class="nav__link">首頁</a>
+          <a href="guide.html" class="nav__link">使用指南</a>
+          <a href="compare.html" class="nav__link">平台比較</a>
+          <a href="pricing.html" class="nav__link" aria-current="page">訂閱方案</a>
+          <a href="faq.html" class="nav__link">常見問題</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="inner-hero">
+      <p class="inner-hero__eyebrow">訂閱方案</p>
+      <h1 class="inner-hero__title">訂閱方案與服務內容</h1>
+      <p class="inner-hero__sub">安圖只收取平台服務費——家教費由家長直接支付給老師</p>
+    </div>
+
+    <!-- Role callout -->
+    <div class="role-callout" data-animate>
+      <div class="callout-box">
+        <p class="callout-box__label">重要說明</p>
+        <p class="callout-box__text">
+          安圖是一個技術服務平台。<strong>家教時薪由家長與老師自行協議</strong>，家長直接付款給老師，安圖完全不經手、不收取任何仲介佣金。<br><br>
+          安圖只收取平台訂閱費，用於提供師資驗證、學習管理工具、學習報告等服務。
+        </p>
+      </div>
+    </div>
+
+    <!-- Fee split -->
+    <div class="fee-section" data-animate>
+      <h2 class="fee-section__title">兩種費用，完全分開</h2>
+      <div class="fee-split">
+
+        <div class="fee-card">
+          <p class="fee-card__label">你付給老師</p>
+          <p class="fee-card__title">家教時薪</p>
+          <p class="fee-card__amount">1,200–1,500 <span>元 / hr</span></p>
+          <p class="fee-card__desc">
+            每堂課通常 2 小時，約 2,400–3,000 元。家長直接付款給老師，方式由雙方自行決定（現金、轉帳皆可）。<br><br>
+            <strong style="color:var(--color-text-head)">安圖抽成 0%。</strong>
+          </p>
+        </div>
+
+        <div class="fee-card fee-card--accent">
+          <p class="fee-card__label">你付給安圖</p>
+          <p class="fee-card__title">平台訂閱費</p>
+          <p class="fee-card__amount" style="font-size:var(--fs-xl);">調查中</p>
+          <p class="fee-card__desc">
+            訂閱費用正在市場調查階段，確切金額將於正式上線前公布。歡迎先行登記，搶先掌握最新資訊。
+          </p>
+        </div>
+
+      </div>
+
+      <div class="fee-note">
+        <strong>費用試算說明：</strong>
+        家教費由家長直接付給老師（例：1,200–1,500 元/hr × 2 小時 = 約 2,400–3,000 元/堂）。
+        平台訂閱費另計，金額調查中，兩筆費用完全獨立。
+      </div>
+    </div>
+
+    <!-- What's included -->
+    <div class="includes-section" data-animate>
+      <h2 class="includes-section__title">平台訂閱費包含什麼</h2>
+      <p class="includes-section__sub">訂閱一份方案，以下服務全部內建，無額外收費</p>
+      <ul class="includes-list">
+        <li>
+          <div>
+            <strong>臺大醫學系師資雙重驗證</strong>
+            臺大信箱 + 學生證 OCR 核實，確保師資身分真實
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>學習管理平台</strong>
+            作業出題與繳交、成績簿、課程資料、出席記錄
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>自動月度學習報告</strong>
+            每月底自動整合資料，寄送完整學習報告到家長信箱
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>臺大醫學系專屬筆記庫</strong>
+            臺大醫學系在學學生整理的高品質學習資源
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>完課保障</strong>
+            老師臨時取消時，轉為線上視訊或安排替補師資
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>家長專屬觀察帳號</strong>
+            隨時登入查看孩子的成績、作業、出席記錄
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cta-row">
+      <a href="faq.html" class="btn-outline">常見問題 →</a>
+      <a href="index.html#cta-form" class="btn-filled">立即登記</a>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__brand">安圖教育</p>
+    <p class="footer__copy">安圖科技有限公司 © 2024　|　Antu Technology Co., Ltd.</p>
+  </footer>
+
+  <script>
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('[data-animate]').forEach(function(el) { observer.observe(el); });
+
+    var bar = document.getElementById('scroll-progress');
+    if (bar) {
+      window.addEventListener('scroll', function() {
+        var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
+        bar.style.width = (t > 0 ? Math.min(s/t*100,100) : 0) + '%';
+      }, { passive: true });
+    }
+  })();
+  </script>
+
+  <!-- Speed Dial FAB -->
+  <div class="fab-dial" id="fab-dial">
+    <div class="fab-dial__items" id="fab-items">
+      <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
+        <span class="fab-dial__label">登記搶先體驗</span>
+        <span class="fab-dial__dot"></span>
+      </button>
+      <a class="fab-dial__item" href="forms/demand.html"><span class="fab-dial__label">家長需求調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/supply.html"><span class="fab-dial__label">師資供給調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/market-size.html"><span class="fab-dial__label">市場規模調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/competition.html"><span class="fab-dial__label">競爭分析紀錄</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/pricing.html"><span class="fab-dial__label">定價偏好調查</span><span class="fab-dial__dot"></span></a>
+    </div>
+    <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
+      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      立即登記
+    </button>
+  </div>
+  <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+    <div class="reg-modal__card">
+      <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+      <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
+      <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
+        <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
+        <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
+        <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input" required><option value="" disabled selected>請選擇身分</option><option value="parent">家長</option><option value="tutor">臺大醫學系學生</option><option value="other">其他</option></select></div>
+        <button type="submit" class="btn-submit">送出登記</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var navEl=document.querySelector('.nav'),hamburger=document.querySelector('.nav__hamburger'),navLinks=document.getElementById('nav-links');
+    if(hamburger&&navEl){hamburger.addEventListener('click',function(){var o=navEl.classList.toggle('nav--open');hamburger.setAttribute('aria-expanded',o);});if(navLinks){navLinks.querySelectorAll('.nav__link').forEach(function(l){l.addEventListener('click',function(){navEl.classList.remove('nav--open');hamburger.setAttribute('aria-expanded','false');});});}}
+    var dial=document.getElementById('fab-dial'),trigger=document.getElementById('fab-trigger');
+    if(dial&&trigger){trigger.addEventListener('click',function(e){e.stopPropagation();var o=dial.classList.toggle('fab-dial--open');trigger.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!dial.contains(e.target)){dial.classList.remove('fab-dial--open');trigger.setAttribute('aria-expanded','false');}});}
+    var modal=document.getElementById('reg-modal'),modalClose=document.getElementById('modal-close'),backdrop=document.getElementById('modal-backdrop'),fabCta=document.getElementById('fab-cta');
+    if(modal){function openModal(){if(dial)dial.classList.remove('fab-dial--open');modal.classList.add('is-open');document.body.style.overflow='hidden';if(modalClose)modalClose.focus();}function closeModal(){modal.classList.remove('is-open');document.body.style.overflow='';if(trigger)trigger.focus();}if(fabCta)fabCta.addEventListener('click',openModal);if(modalClose)modalClose.addEventListener('click',closeModal);if(backdrop)backdrop.addEventListener('click',closeModal);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});}
+  })();
+  </script>
+
+</body>
+</html>

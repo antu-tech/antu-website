@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>平台比較 — 安圖教育</title>
+  <meta name="description" content="一眼看出安圖教育平台為你改變了什麼——有平台前後的家教體驗完整比較。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <style>
+    .inner-hero {
+      padding: 6rem 1.5rem 3.5rem;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(6,14,24,0.55) 0%, rgba(6,14,24,0.98) 100%),
+        url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    .inner-hero__eyebrow {
+      display: inline-block;
+      font-size: var(--fs-sm);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    .inner-hero__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-4xl);
+      color: var(--color-text-head);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .inner-hero__sub {
+      font-size: var(--fs-lg);
+      color: var(--color-text);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── Compare table ─────────────────────────────────────── */
+    .compare-section {
+      padding: 4rem 1.5rem 3rem;
+    }
+    .compare-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .compare-table thead th {
+      padding: 1rem 1.25rem;
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .compare-table thead th:first-child {
+      color: var(--color-text-muted);
+      font-size: var(--fs-base);
+      font-family: var(--font-base);
+    }
+    .compare-table thead th.col-before {
+      color: var(--color-text-muted);
+    }
+    .compare-table thead th.col-after {
+      color: var(--color-accent);
+    }
+    .compare-table tbody tr {
+      border-bottom: 1px solid var(--color-border-subtle);
+      transition: background .15s;
+    }
+    .compare-table tbody tr:hover {
+      background: var(--color-surface);
+    }
+    .compare-table td {
+      padding: 1.1rem 1.25rem;
+      vertical-align: top;
+      font-size: var(--fs-base);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    .compare-table td:first-child {
+      font-weight: 600;
+      color: var(--color-text-head);
+      white-space: nowrap;
+    }
+    .compare-table td.col-before {
+      color: var(--color-text-muted);
+    }
+    .compare-table td.col-after {
+      color: var(--color-text);
+    }
+    .badge-x {
+      display: inline-block;
+      color: var(--status-danger);
+      font-size: var(--fs-lg);
+      margin-right: .35rem;
+    }
+    .badge-check {
+      display: inline-block;
+      color: var(--status-success);
+      font-size: var(--fs-lg);
+      margin-right: .35rem;
+    }
+
+    /* ── Mobile: stacked cards ─────────────────────────────── */
+    @media (max-width: 680px) {
+      .compare-table, .compare-table thead, .compare-table tbody,
+      .compare-table th, .compare-table td, .compare-table tr {
+        display: block;
+      }
+      .compare-table thead { display: none; }
+      .compare-table tbody tr {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        margin-bottom: 1rem;
+        padding: 1rem 1.25rem;
+      }
+      .compare-table tbody tr:hover { background: var(--color-surface-raised); }
+      .compare-table td {
+        padding: .4rem 0;
+        white-space: normal;
+      }
+      .compare-table td:first-child {
+        font-size: var(--fs-lg);
+        padding-bottom: .6rem;
+        border-bottom: 1px solid var(--color-border-subtle);
+        margin-bottom: .5rem;
+      }
+      .compare-table td.col-before::before {
+        content: "沒有安圖：";
+        color: var(--color-text-muted);
+        font-size: var(--fs-sm);
+        display: block;
+      }
+      .compare-table td.col-after::before {
+        content: "有安圖：";
+        color: var(--color-accent);
+        font-size: var(--fs-sm);
+        display: block;
+      }
+    }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .btn-outline {
+      display: inline-block;
+      padding: .75rem 2rem;
+      border: 1px solid var(--color-accent);
+      color: var(--color-accent);
+      font-size: var(--fs-base);
+      font-weight: 500;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline:hover { background: var(--color-accent); color: var(--color-bg); }
+    .btn-filled {
+      display: inline-block;
+      padding: .75rem 2rem;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      font-size: var(--fs-base);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-filled:hover { background: var(--color-accent-light); }
+
+    @media (max-width: 600px) {
+      .inner-hero__title { font-size: var(--fs-3xl); }
+    }
+    @media (prefers-color-scheme: light) {
+      .inner-hero {
+        background:
+          linear-gradient(to bottom, rgba(253,250,245,0.45) 0%, rgba(253,250,245,0.97) 100%),
+          url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      }
+      .compare-table thead th.col-before { color: var(--color-text-muted); }
+      .badge-x { color: #C0392B; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="主導覽">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="安圖教育首頁">
+          安圖<span>教育</span>
+        </a>
+        <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="nav-links">
+          <a href="index.html" class="nav__link">首頁</a>
+          <a href="guide.html" class="nav__link">使用指南</a>
+          <a href="compare.html" class="nav__link" aria-current="page">平台比較</a>
+          <a href="pricing.html" class="nav__link">訂閱方案</a>
+          <a href="faq.html" class="nav__link">常見問題</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="inner-hero">
+      <p class="inner-hero__eyebrow">平台比較</p>
+      <h1 class="inner-hero__title">有安圖平台之前 vs 之後</h1>
+      <p class="inner-hero__sub">一眼看出平台為你改變了什麼</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="compare-wrap">
+        <table class="compare-table" data-animate>
+          <thead>
+            <tr>
+              <th scope="col">情況</th>
+              <th scope="col" class="col-before">沒有安圖平台</th>
+              <th scope="col" class="col-after">有安圖平台</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>確認老師身分</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>只能靠老師自己說，無法核實
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>臺大信箱 + 學生證 OCR 雙重驗證，身分真實可信
+              </td>
+            </tr>
+            <tr>
+              <td>了解學習進度</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>需要主動追問老師，往往等到大考才知道
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>每月自動學習報告寄到信箱，出席率、作業完成率、進度圖表一次看
+              </td>
+            </tr>
+            <tr>
+              <td>老師臨時取消</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>當天沒課，孩子學習中斷，無解
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>完課保障：轉為線上視訊、或安排替補師資
+              </td>
+            </tr>
+            <tr>
+              <td>作業與筆記記錄</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>靠老師記憶或學生手抄，容易遺失
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>每堂課後老師在平台記錄，家長隨時查看，永久保存
+              </td>
+            </tr>
+            <tr>
+              <td>家教與家長的溝通</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>LINE 群組訊息雜亂，找不到舊紀錄
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>平台內訊息與公告，清楚可查，不混入個人聊天
+              </td>
+            </tr>
+            <tr>
+              <td>課程資料管理</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>Email 附件或紙本，容易遺失、版本混亂
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>老師上傳的講義、筆記、影片全部集中，隨時取用
+              </td>
+            </tr>
+            <tr>
+              <td>師資專屬筆記</td>
+              <td class="col-before">
+                <span class="badge-x">✕</span>無
+              </td>
+              <td class="col-after">
+                <span class="badge-check">✓</span>獨家臺大醫學系學生整理的高品質學習資源庫
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="cta-row">
+      <a href="guide.html" class="btn-outline">了解如何運作 →</a>
+      <a href="pricing.html" class="btn-outline">查看訂閱方案 →</a>
+      <a href="index.html#cta-form" class="btn-filled">立即登記</a>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__brand">安圖教育</p>
+    <p class="footer__copy">安圖科技有限公司 © 2024　|　Antu Technology Co., Ltd.</p>
+  </footer>
+
+  <script>
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('[data-animate]').forEach(function(el) { observer.observe(el); });
+
+    var bar = document.getElementById('scroll-progress');
+    if (bar) {
+      window.addEventListener('scroll', function() {
+        var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
+        bar.style.width = (t > 0 ? Math.min(s/t*100,100) : 0) + '%';
+      }, { passive: true });
+    }
+  })();
+  </script>
+
+  <!-- Speed Dial FAB -->
+  <div class="fab-dial" id="fab-dial">
+    <div class="fab-dial__items" id="fab-items">
+      <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
+        <span class="fab-dial__label">登記搶先體驗</span>
+        <span class="fab-dial__dot"></span>
+      </button>
+      <a class="fab-dial__item" href="forms/demand.html"><span class="fab-dial__label">家長需求調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/supply.html"><span class="fab-dial__label">師資供給調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/market-size.html"><span class="fab-dial__label">市場規模調查</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/competition.html"><span class="fab-dial__label">競爭分析紀錄</span><span class="fab-dial__dot"></span></a>
+      <a class="fab-dial__item" href="forms/pricing.html"><span class="fab-dial__label">定價偏好調查</span><span class="fab-dial__dot"></span></a>
+    </div>
+    <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
+      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      立即登記
+    </button>
+  </div>
+  <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+    <div class="reg-modal__card">
+      <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+      <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
+      <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
+        <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
+        <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
+        <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input" required><option value="" disabled selected>請選擇身分</option><option value="parent">家長</option><option value="tutor">臺大醫學系學生</option><option value="other">其他</option></select></div>
+        <button type="submit" class="btn-submit">送出登記</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var navEl=document.querySelector('.nav'),hamburger=document.querySelector('.nav__hamburger'),navLinks=document.getElementById('nav-links');
+    if(hamburger&&navEl){hamburger.addEventListener('click',function(){var o=navEl.classList.toggle('nav--open');hamburger.setAttribute('aria-expanded',o);});if(navLinks){navLinks.querySelectorAll('.nav__link').forEach(function(l){l.addEventListener('click',function(){navEl.classList.remove('nav--open');hamburger.setAttribute('aria-expanded','false');});});}}
+    var dial=document.getElementById('fab-dial'),trigger=document.getElementById('fab-trigger');
+    if(dial&&trigger){trigger.addEventListener('click',function(e){e.stopPropagation();var o=dial.classList.toggle('fab-dial--open');trigger.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!dial.contains(e.target)){dial.classList.remove('fab-dial--open');trigger.setAttribute('aria-expanded','false');}});}
+    var modal=document.getElementById('reg-modal'),modalClose=document.getElementById('modal-close'),backdrop=document.getElementById('modal-backdrop'),fabCta=document.getElementById('fab-cta');
+    if(modal){function openModal(){if(dial)dial.classList.remove('fab-dial--open');modal.classList.add('is-open');document.body.style.overflow='hidden';if(modalClose)modalClose.focus();}function closeModal(){modal.classList.remove('is-open');document.body.style.overflow='';if(trigger)trigger.focus();}if(fabCta)fabCta.addEventListener('click',openModal);if(modalClose)modalClose.addEventListener('click',closeModal);if(backdrop)backdrop.addEventListener('click',closeModal);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});}
+  })();
+  </script>
+
+</body>
+</html>

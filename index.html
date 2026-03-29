@@ -25,7 +25,15 @@
         <a href="#" class="nav__logo" aria-label="安圖教育首頁">
           安圖<span>教育</span>
         </a>
-        <a href="#research" class="nav__link">了解更多</a>
+        <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="nav-links">
+          <a href="guide.html" class="nav__link">使用指南</a>
+          <a href="compare.html" class="nav__link">平台比較</a>
+          <a href="pricing.html" class="nav__link">訂閱方案</a>
+          <a href="faq.html" class="nav__link">常見問題</a>
+        </div>
       </div>
     </nav>
   </header>
@@ -44,7 +52,7 @@
         <p class="hero__subheadline">
           安圖教育為您媒合臺大醫學系學生，並提供結構化數位學習平台</p>
         <div class="hero__actions">
-          <a href="#cta-form" class="btn btn-gold btn-lg">立即登記</a>
+          <button class="btn btn-gold btn-lg" id="hero-register-btn">立即登記</button>
         </div>
         <button class="hero__scroll-arrow" aria-label="向下捲動" onclick="document.getElementById('pain').scrollIntoView({behavior:'smooth'})">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -220,54 +228,6 @@
 
     
     <!-- =========================================================
-         Research Forms Section
-         ========================================================= -->
-    <section class="section" id="research" aria-labelledby="research-title">
-      <div class="lp-container">
-        <h2 class="section-title text-center" id="research-title" data-animate>
-          搶先參與市場調查，塑造平台樣貌
-        </h2>
-        <p class="section-subtitle text-center" data-animate data-delay="1">
-          安圖教育正在籌備中。您的真實回饋將直接影響平台設計，只需 5 分鐘。
-        </p>
-        <div class="forms-grid">
-
-          <a href="forms/demand.html" class="form-card" aria-label="填寫家長需求調查" data-animate data-delay="1">
-            <p class="form-card__title">家長需求調查</p>
-            <p class="form-card__desc">了解家長在找家教時遇到的痛點與期望</p>
-            <span class="form-card__arrow">前往填寫 →</span>
-          </a>
-
-          <a href="forms/supply.html" class="form-card" aria-label="填寫家教供給調查" data-animate data-delay="2">
-            <p class="form-card__title">家教供給調查</p>
-            <p class="form-card__desc">了解臺大醫學系學生目前的家教現況與意願</p>
-            <span class="form-card__arrow">前往填寫 →</span>
-          </a>
-
-          <a href="forms/market-size.html" class="form-card" aria-label="填寫市場規模調查" data-animate data-delay="3">
-            <p class="form-card__title">市場規模調查</p>
-            <p class="form-card__desc">協助我們建立臺灣補教市場的底層估算數據</p>
-            <span class="form-card__arrow">前往填寫 →</span>
-          </a>
-
-          <a href="forms/competition.html" class="form-card" aria-label="填寫競爭分析紀錄" data-animate data-delay="4">
-            <p class="form-card__title">競爭分析紀錄</p>
-            <p class="form-card__desc">分享您使用其他家教平台的經驗與評價</p>
-            <span class="form-card__arrow">前往填寫 →</span>
-          </a>
-
-          <a href="forms/pricing.html" class="form-card" aria-label="填寫定價偏好調查" data-animate data-delay="5">
-            <p class="form-card__title">定價偏好調查</p>
-            <p class="form-card__desc">協助我們找到合理的服務費用區間</p>
-            <span class="form-card__arrow">前往填寫 →</span>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================================
          Founder's Philosophy
          ========================================================= -->
     <section class="founder-section" aria-labelledby="founder-title">
@@ -290,67 +250,6 @@
         <div class="founder-sig" data-animate data-delay="5">
           <span class="founder-sig__line" aria-hidden="true"></span>
           <span class="founder-sig__text">安圖科技有限公司 創辦人</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         Pricing CTA Section
-         ========================================================= -->
-    <section class="section section--accent" aria-labelledby="pricing-title" id="cta-form">
-      <div class="lp-container text-center">
-        <h2 class="section-title" id="pricing-title" data-animate>透明公開，無隱藏費用</h2>
-        <p class="section-subtitle" data-animate data-delay="1">登記搶先體驗，掌握最新上線資訊</p>
-        <div class="pricing-points" data-animate data-delay="2">
-          <p class="pricing-point">訂閱價格透明</p>
-          <p class="pricing-point">無額外隱藏費用</p>
-          <p class="pricing-point">平台服務完全內建</p>
-        </div>
-
-        <!-- CTA Form -->
-        <div class="cta-form" data-animate data-delay="3">
-          <p class="cta-form__title">登記搶先體驗</p>
-          <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
-
-            <div class="form-group">
-              <label for="cta-name">姓名</label>
-              <input
-                type="text"
-                id="cta-name"
-                name="name"
-                class="form-input"
-                placeholder="請輸入您的姓名"
-                required
-                autocomplete="name"
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="cta-phone">聯絡電話</label>
-              <input
-                type="tel"
-                id="cta-phone"
-                name="phone"
-                class="form-input"
-                placeholder="0912-345-678"
-                required
-                autocomplete="tel"
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="cta-role">我是</label>
-              <select id="cta-role" name="role" class="form-input" required>
-                <option value="" disabled selected>請選擇身分</option>
-                <option value="parent">家長</option>
-                <option value="tutor">臺大醫學系學生</option>
-                <option value="other">其他</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn-submit">送出登記</button>
-          </form>
         </div>
       </div>
     </section>
@@ -380,6 +279,72 @@
     <p class="footer__brand">安圖教育</p>
     <p class="footer__copy">安圖科技有限公司 © 2024　|　Antu Technology Co., Ltd.</p>
   </footer>
+
+  <!-- Speed Dial FAB -->
+  <div class="fab-dial" id="fab-dial">
+    <div class="fab-dial__items" id="fab-items">
+      <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
+        <span class="fab-dial__label">登記搶先體驗</span>
+        <span class="fab-dial__dot"></span>
+      </button>
+      <a class="fab-dial__item" href="forms/demand.html">
+        <span class="fab-dial__label">家長需求調查</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/supply.html">
+        <span class="fab-dial__label">師資供給調查</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/market-size.html">
+        <span class="fab-dial__label">市場規模調查</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/competition.html">
+        <span class="fab-dial__label">競爭分析紀錄</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/pricing.html">
+        <span class="fab-dial__label">定價偏好調查</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+    </div>
+    <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
+      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      立即登記
+    </button>
+  </div>
+
+  <!-- Registration Modal -->
+  <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+    <div class="reg-modal__card">
+      <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+      <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
+      <form action="https://formspree.io/f/REPLACE_LANDING" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
+        <div class="form-group">
+          <label for="modal-name">姓名</label>
+          <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="modal-phone">聯絡電話</label>
+          <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="modal-role">我是</label>
+          <select id="modal-role" name="role" class="form-input" required>
+            <option value="" disabled selected>請選擇身分</option>
+            <option value="parent">家長</option>
+            <option value="tutor">臺大醫學系學生</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">送出登記</button>
+      </form>
+    </div>
+  </div>
 
   <script>
   // Scroll entrance animations
@@ -415,6 +380,77 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+  })();
+
+  // ── Hamburger ──────────────────────────────────
+  (function() {
+    var navEl = document.querySelector('.nav');
+    var hamburger = document.querySelector('.nav__hamburger');
+    var navLinks = document.getElementById('nav-links');
+    if (hamburger && navEl) {
+      hamburger.addEventListener('click', function() {
+        var open = navEl.classList.toggle('nav--open');
+        hamburger.setAttribute('aria-expanded', open);
+      });
+      if (navLinks) {
+        navLinks.querySelectorAll('.nav__link').forEach(function(l) {
+          l.addEventListener('click', function() {
+            navEl.classList.remove('nav--open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    }
+  })();
+
+  // ── Speed Dial ─────────────────────────────────
+  (function() {
+    var dial = document.getElementById('fab-dial');
+    var trigger = document.getElementById('fab-trigger');
+    if (!dial || !trigger) return;
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = dial.classList.toggle('fab-dial--open');
+      trigger.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function(e) {
+      if (!dial.contains(e.target)) {
+        dial.classList.remove('fab-dial--open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // ── Modal ──────────────────────────────────────
+  (function() {
+    var modal = document.getElementById('reg-modal');
+    var modalClose = document.getElementById('modal-close');
+    var backdrop = document.getElementById('modal-backdrop');
+    var fabCta = document.getElementById('fab-cta');
+    var heroBtn = document.getElementById('hero-register-btn');
+    var dial = document.getElementById('fab-dial');
+    var trigger = document.getElementById('fab-trigger');
+    if (!modal) return;
+
+    function openModal() {
+      if (dial) dial.classList.remove('fab-dial--open');
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (modalClose) modalClose.focus();
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (trigger) trigger.focus();
+    }
+
+    if (fabCta) fabCta.addEventListener('click', openModal);
+    if (heroBtn) heroBtn.addEventListener('click', openModal);
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
   })();
   </script>
