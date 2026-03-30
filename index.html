@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="refresh" content="0;url=tutor.html">
   <title>安圖教育</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <style>
+    .redirect-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-bg);
+      color: var(--color-text);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .redirect-logo {
+      font-family: var(--font-heading);
+      font-size: var(--fs-4xl);
+      font-weight: 700;
+      color: var(--color-text-head);
+      margin-bottom: 2rem;
+      letter-spacing: .05em;
+      text-decoration: none;
+    }
+
+    .redirect-logo span {
+      color: var(--color-accent);
+    }
+
+    .redirect-text {
+      font-size: var(--fs-lg);
+      color: var(--color-text-head);
+      margin-bottom: 0.5rem;
+    }
+
+    .redirect-subtext {
+      font-size: var(--fs-base);
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .redirect-link {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+      font-size: var(--fs-sm);
+    }
+
+    .redirect-link:hover {
+      color: var(--color-accent-light);
+    }
+
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      border-top-color: var(--color-accent);
+      animation: spin 1s ease-in-out infinite;
+      margin-bottom: 2.5rem;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <p>正在跳轉… <a href="tutor.html">點此前往</a></p>
+  <div class="redirect-page">
+    <div class="redirect-logo">安圖<span>教育</span></div>
+    <div class="spinner"></div>
+    <p class="redirect-text">正在為您準備專屬體驗</p>
+    <p class="redirect-subtext">即將進入安圖教育平台</p>
+    <a href="tutor.html" class="redirect-link">若未自動跳轉，請點擊此處</a>
+  </div>
 </body>
+
 </html>
