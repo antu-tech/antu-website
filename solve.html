@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高中解題 — 安圖教育</title>
+  <meta name="description" content="卡關了？上傳題目，臺大學生 48 小時內手寫詳解交付。解不出來全額退費。高中數學、物理、化學、生物、英文皆可。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+</head>
+
+<body>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="主導覽">
+      <div class="nav__inner">
+        <a href="home.html" class="nav__logo" aria-label="安圖教育首頁">
+          安圖<span>教育</span>
+        </a>
+        <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="nav-links">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="lp-main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-headline"
+      style="--hero-bg-img: url('https://images.unsplash.com/photo-1769794370969-eee773593604?auto=format&fit=crop&w=1920&q=80');">
+      <div class="lp-container">
+        <p class="hero__eyebrow">高中解題服務 · 預先登記</p>
+        <h1 class="hero__headline" id="hero-headline">
+          卡關了？<br>48小時內取得臺大詳解
+        </h1>
+        <p class="hero__subheadline">
+          上傳題目照片，臺大學生手寫詳解交付。解不出來，全額退費
+        </p>
+        <div class="hero__cta">
+          <button class="btn-filled js-open-reg-modal" aria-label="立即登記">
+            立即登記
+          </button>
+        </div>
+        <button class="hero__scroll-arrow" aria-label="向下捲動"
+          onclick="document.getElementById('pain').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="section" id="pain" aria-labelledby="pain-title">
+      <div class="lp-container">
+        <h2 class="section-title text-center" id="pain-title" data-animate>我們解決的三大痛點</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">高中生最常遇到的卡關情境，安圖教育逐一解決</p>
+        <div class="pain-list">
+
+          <div class="pain-item" data-animate data-delay="1">
+            <span class="pain-item__num">01</span>
+            <div class="pain-item__content">
+              <h3 class="pain-item__title">深夜遇到難題，找不到人解答</h3>
+              <p class="pain-item__desc">考前衝刺、深夜讀書，卡在一道題卻求助無門，只能等到隔天。</p>
+              <span class="pain-item__tag">隨時上傳題目，48 小時內收到詳解，不受時間限制</span>
+            </div>
+          </div>
+
+          <div class="pain-item" data-animate data-delay="2">
+            <span class="pain-item__num">02</span>
+            <div class="pain-item__content">
+              <h3 class="pain-item__title">補習班老師沒空針對單題說明</h3>
+              <p class="pain-item__desc">上課進度快，老師沒有時間針對你卡住的那一道題反覆解釋。</p>
+              <span class="pain-item__tag">每道題都有個人化的手寫詳解，說明每一個解題步驟</span>
+            </div>
+          </div>
+
+          <div class="pain-item" data-animate data-delay="3">
+            <span class="pain-item__num">03</span>
+            <div class="pain-item__content">
+              <h3 class="pain-item__title">請家教一整堂只為解一題，太貴</h3>
+              <p class="pain-item__desc">只是想弄懂一道題，卻要付一整小時家教費，成本不合理。</p>
+              <span class="pain-item__tag">按題計費，只付你需要的那一道題的費用</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--dark" aria-labelledby="features-title">
+      <div class="lp-container">
+        <h2 class="section-title text-center" id="features-title" data-animate>平台完整功能</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">從上傳到拿到詳解，全程有安圖教育守護</p>
+        <div class="features-grid">
+
+          <div class="feature-item" data-animate data-delay="1">
+            <div class="feature-item__content">
+              <p class="feature-item__title">上傳題目照片</p>
+              <p class="feature-item__desc">拍照上傳，指定科目，系統自動分配給最適合的臺大解題老師</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-animate data-delay="2">
+            <div class="feature-item__content">
+              <p class="feature-item__title">48 小時詳解交付</p>
+              <p class="feature-item__desc">臺大學生手寫詳解，完整說明每個解題步驟，48 小時內送達</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-animate data-delay="3">
+            <div class="feature-item__content">
+              <p class="feature-item__title">解不出來全額退費</p>
+              <p class="feature-item__desc">若 48 小時內未能提供詳解，全額退費，零風險保障</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-animate data-delay="4">
+            <div class="feature-item__content">
+              <p class="feature-item__title">Canvas 解題歷史存檔</p>
+              <p class="feature-item__desc">所有解題紀錄永久保存在 Canvas，複習時隨時可以翻閱</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-animate data-delay="5">
+            <div class="feature-item__content">
+              <p class="feature-item__title">按題計費 / 月訂閱</p>
+              <p class="feature-item__desc">偶爾卡題選按題計費；頻繁使用選月訂閱方案更划算</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-animate data-delay="6">
+            <div class="feature-item__content">
+              <p class="feature-item__title">五大科目全覆蓋</p>
+              <p class="feature-item__desc">數學、物理、化學、生物、英文，高中各科皆可解題</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Subjects Strip -->
+    <div class="platform-strip" role="region" aria-label="支援科目">
+      <div class="lp-container">
+        <p class="platform-strip__label">支援科目</p>
+        <div class="platform-strip__items">
+          <span class="platform-badge">數學</span>
+          <span class="platform-badge">物理</span>
+          <span class="platform-badge">化學</span>
+          <span class="platform-badge">生物</span>
+          <span class="platform-badge">英文</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="lp-container" style="text-align:center;">
+        <h2 class="section-title" id="cta-title" data-animate>下次卡題，讓臺大學生幫你解</h2>
+        <p class="section-subtitle" data-animate data-delay="1">立即登記，搶先體驗 48 小時解題服務</p>
+        <div style="margin-top: 2rem;" data-animate data-delay="2">
+          <button class="btn-filled js-open-reg-modal" aria-label="立即登記">
+            立即登記
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <div class="payment-icons" role="region" aria-label="支援付款方式">
+      <div class="lp-container">
+        <p class="payment-icons__label">支援付款方式</p>
+        <div class="payment-icons__list">
+          <span class="payment-badge">銀行轉帳</span>
+          <span class="payment-badge">信用卡</span>
+          <span class="payment-badge">Line Pay</span>
+          <span class="payment-badge">街口支付</span>
+          <span class="payment-badge">Apple Pay</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__brand">安圖教育</p>
+    <p class="footer__copy">安圖科技有限公司 © 2026　|　Antu Technology Co., Ltd.</p>
+  </footer>
+
+  <!-- Speed Dial FAB -->
+  <div class="fab-dial" id="fab-dial">
+    <div class="fab-dial__items" id="fab-items">
+      <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
+        <span class="fab-dial__label">立即登記</span>
+        <span class="fab-dial__dot"></span>
+      </button>
+      <a class="fab-dial__item" href="forms/demand.html">
+        <span class="fab-dial__label">家長需求</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/supply.html">
+        <span class="fab-dial__label">師資供給</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/market-size.html">
+        <span class="fab-dial__label">市場規模</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/competition.html">
+        <span class="fab-dial__label">競爭分析</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+      <a class="fab-dial__item" href="forms/pricing.html">
+        <span class="fab-dial__label">定價偏好</span>
+        <span class="fab-dial__dot"></span>
+      </a>
+    </div>
+    <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
+      <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 5v14M5 12h14" />
+      </svg>
+      問卷選單
+    </button>
+  </div>
+
+  <!-- Registration Modal -->
+  <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+    <div class="reg-modal__card">
+      <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+      <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
+      <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="安圖教育 — 高中解題服務登記">
+        <div class="form-group">
+          <label for="modal-name">姓名</label>
+          <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required
+            autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="modal-phone">聯絡電話</label>
+          <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required
+            autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label>
+          <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required
+            autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="modal-role">我是</label>
+          <select id="modal-role" name="role" class="form-input" required>
+            <option value="" disabled selected>請選擇身分</option>
+            <option value="student">高中生（需要解題）</option>
+            <option value="parent">家長</option>
+            <option value="tutor">臺大學生（有意擔任解題老師）</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">送出登記</button>
+      </form>
+      <div class="modal-success" id="reg-success" hidden aria-live="polite">
+        <div class="modal-success-icon" aria-hidden="true">✓</div>
+        <h3>登記成功！</h3>
+        <p>我們已收到您的資料，將在 2 個工作日內透過電話或 Email 聯絡您。</p>
+        <button class="btn-submit js-close-modal" type="button">關閉</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/site.js"></script>
+</body>
+
+</html>
