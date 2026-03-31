@@ -42,12 +42,12 @@
           卡關了？<br>48小時內取得臺大詳解
         </h1>
         <p class="hero__subheadline">
-          上傳題目照片，臺大學生手寫詳解交付。解不出來，全額退費
+          上傳題目或手打文字，臺大學生手寫詳解交付。解不出來，全額退費
         </p>
         <div class="hero__cta">
-          <button class="btn-filled js-open-reg-modal" aria-label="立即登記">
-            立即登記
-          </button>
+          <a href="forms/student-dashboard.html" class="btn-filled" aria-label="立即發問">
+            立即體驗解題
+          </a>
         </div>
         <button class="hero__scroll-arrow" aria-label="向下捲動"
           onclick="document.getElementById('pain').scrollIntoView({behavior:'smooth'})">
@@ -106,43 +106,43 @@
 
           <div class="feature-item" data-animate data-delay="1">
             <div class="feature-item__content">
-              <p class="feature-item__title">上傳題目照片</p>
-              <p class="feature-item__desc">拍照上傳，指定科目，系統自動分配給最適合的臺大解題老師</p>
+              <p class="feature-item__title">上傳圖片 / 文字</p>
+              <p class="feature-item__desc">可選擇純照片上傳，或自行輸入文字以獲得動態折扣。系統自動分配給專屬老師。</p>
             </div>
           </div>
 
           <div class="feature-item" data-animate data-delay="2">
             <div class="feature-item__content">
-              <p class="feature-item__title">48 小時詳解交付</p>
-              <p class="feature-item__desc">臺大學生手寫詳解，完整說明每個解題步驟，48 小時內送達</p>
+              <p class="feature-item__title">精準分類與標籤</p>
+              <p class="feature-item__desc">設定科目、章節、出版商與難易度，幫助我們建立完美題庫，並推薦適合你的題型。</p>
             </div>
           </div>
 
           <div class="feature-item" data-animate data-delay="3">
             <div class="feature-item__content">
-              <p class="feature-item__title">解不出來全額退費</p>
-              <p class="feature-item__desc">若 48 小時內未能提供詳解，全額退費，零風險保障</p>
+              <p class="feature-item__title">48 小時詳解交付</p>
+              <p class="feature-item__desc">臺大學生親撰詳解，步驟清晰，48 小時內送達。若超時或解不出，保證全額退費。</p>
             </div>
           </div>
 
           <div class="feature-item" data-animate data-delay="4">
             <div class="feature-item__content">
-              <p class="feature-item__title">Canvas 解題歷史存檔</p>
-              <p class="feature-item__desc">所有解題紀錄永久保存在 Canvas，複習時隨時可以翻閱</p>
+              <p class="feature-item__title">動態點數計費</p>
+              <p class="feature-item__desc">純圖片上傳扣較多點數，自行輸入題目文字享優惠折扣，用更少的點數解更多題。</p>
             </div>
           </div>
 
           <div class="feature-item" data-animate data-delay="5">
             <div class="feature-item__content">
-              <p class="feature-item__title">按題計費 / 月訂閱</p>
-              <p class="feature-item__desc">偶爾卡題選按題計費；頻繁使用選月訂閱方案更划算</p>
+              <p class="feature-item__title">Canvas 題庫存檔</p>
+              <p class="feature-item__desc">所有解題紀錄轉化為專屬題庫，永久保存在 Canvas 系統，考前衝刺隨時複習。</p>
             </div>
           </div>
 
           <div class="feature-item" data-animate data-delay="6">
             <div class="feature-item__content">
               <p class="feature-item__title">五大科目全覆蓋</p>
-              <p class="feature-item__desc">數學、物理、化學、生物、英文，高中各科皆可解題</p>
+              <p class="feature-item__desc">數學、物理、化學、生物、英文，高中各學制與年級試題皆可處理。</p>
             </div>
           </div>
 
@@ -163,6 +163,55 @@
         </div>
       </div>
     </div>
+
+    <!-- Pricing Strategy -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="lp-container">
+        <h2 class="section-title text-center" id="pricing-title" data-animate>彈性點數方案，按需儲值</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">
+          <strong>純文字上傳每題扣 1 點</strong> | <strong>純圖片上傳每題扣 2 點</strong>
+        </p>
+
+        <div class="pricing-cards">
+          <!-- Light Plan -->
+          <div class="pricing-card" data-animate data-delay="1">
+            <h3 class="pricing-card__title">輕度使用</h3>
+            <p class="pricing-card__price">NT$399<span> /次</span></p>
+            <p class="pricing-card__desc">適合偶爾遇到幾題難題的學生</p>
+            <ul class="pricing-card__features">
+              <li>10 點額度</li>
+              <li>支援五大科目解題</li>
+              <li>48 小時詳解交付</li>
+            </ul>
+          </div>
+
+          <!-- Pro Plan (Featured) -->
+          <div class="pricing-card pricing-card--featured" data-animate data-delay="2">
+            <div class="pricing-card__badge">主推方案</div>
+            <h3 class="pricing-card__title">中度使用</h3>
+            <p class="pricing-card__price">NT$899<span> /次</span></p>
+            <p class="pricing-card__desc">最佳 CP 值，滿足每週常規讀書需求</p>
+            <ul class="pricing-card__features">
+              <li>30 點額度（大約 15~30 題）</li>
+              <li>Canvas 解題歷史永久存檔</li>
+              <li>優先媒合臺大醫科解題老師</li>
+            </ul>
+          </div>
+
+          <!-- Unlimited Plan -->
+          <div class="pricing-card" data-animate data-delay="3">
+            <h3 class="pricing-card__title">衝刺訂閱</h3>
+            <p class="pricing-card__price">NT$1,099<span> /月</span></p>
+            <p class="pricing-card__desc">針對考前衝刺期設計</p>
+            <ul class="pricing-card__features">
+              <li>無限題數解答</li>
+              <li>專屬解題優先權</li>
+              <li>解題歷史完整轉化為個人題庫</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CTA -->
     <section class="section" aria-labelledby="cta-title">
@@ -201,10 +250,10 @@
   <!-- Speed Dial FAB -->
   <div class="fab-dial" id="fab-dial">
     <div class="fab-dial__items" id="fab-items">
-      <button class="fab-dial__item fab-dial__item--cta" id="fab-cta">
-        <span class="fab-dial__label">立即登記</span>
+      <a class="fab-dial__item fab-dial__item--cta" href="forms/student-dashboard.html">
+        <span class="fab-dial__label">進入解題平台</span>
         <span class="fab-dial__dot"></span>
-      </button>
+      </a>
       <a class="fab-dial__item" href="forms/demand.html">
         <span class="fab-dial__label">家長需求</span>
         <span class="fab-dial__dot"></span>
