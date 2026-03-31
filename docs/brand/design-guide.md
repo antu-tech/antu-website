@@ -255,4 +255,4 @@ Canvas 預設介面較為陽春，建議透過 CSS Override：
 
 ---
 
-*設計系統由安圖科技有限公司維護 · Antu Technology Co., Ltd.*
+*設計系統由安圖教育維護 · Antu Education*
