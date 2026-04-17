@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留學專欄資源 — 安圖教育</title>
+    <meta name="description" content="安圖教育留學研習專欄。收錄美國學生簽證、碩士申請時程、博士申請指南等全方位的留學申請實戰資源。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <style>
+        .resources-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--color-bg-alt), var(--color-bg));
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .resources-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--color-text-head);
+            margin-bottom: 1.5rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 0;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            background: rgba(201, 165, 90, 0.05);
+        }
+
+        @media (prefers-color-scheme: light) {
+            .resources-hero {
+                background: linear-gradient(to bottom, #F5EFE3, #FDFAF5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <header>
+        <nav class="nav" role="navigation" aria-label="主導覽">
+            <div class="nav__inner">
+                <a href="../index.html" class="nav__logo" aria-label="安圖教育首頁">
+                    安圖<span>教育</span>
+                </a>
+                <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav__links" id="nav-links">
+                    <a href="index.html" class="nav__link">首頁</a>
+                    <a href="resources.html" class="nav__link active">專欄資源</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lp-main">
+        <section class="resources-hero">
+            <div class="lp-container">
+                <p class="subtitle"
+                    style="color: var(--color-accent); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem;">
+                    Resource Library</p>
+                <h1>留學研習專欄</h1>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                    深入淺出的留學攻略，從簽證到時程規劃，陪伴您踏實走過每一段申請路徑。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="lp-container">
+                <div class="filter-tabs" data-animate>
+                    <div class="filter-tab active" data-filter="all">全部文章</div>
+                    <div class="filter-tab" data-filter="visa">簽證指南</div>
+                    <div class="filter-tab" data-filter="master">碩士專區</div>
+                    <div class="filter-tab" data-filter="phd">博士專區</div>
+                    <div class="filter-tab" data-filter="writing">文件寫作</div>
+                </div>
+
+                <div class="resources-grid" id="resources-grid">
+                    <!-- Article 1: Visa -->
+                    <div class="product-card" data-animate data-delay="1" data-category="visa">
+                        <span class="product-card__eyebrow">簽證指南</span>
+                        <h3 class="product-card__title">美國學生簽證（F-1）申請流程完整教學</h3>
+                        <p class="product-card__desc">
+                            從取得 I-20 到面談心法，我們整理出 2026 最新的申請流程，幫您一次掌握所有細節。
+                        </p>
+                        <a href="visa-f1.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article 2: Master -->
+                    <div class="product-card" data-animate data-delay="2" data-category="master">
+                        <span class="product-card__eyebrow">碩士專區</span>
+                        <h3 class="product-card__title">研究所申請時程全攻略：提前預約你的夢想</h3>
+                        <p class="product-card__desc">
+                            研究所申請是一場馬拉松，我們將繁瑣流程簡化為四個階段，陪您按部就班達成目標。
+                        </p>
+                        <a href="timeline-master.html" class="product-card__cta">查看時程</a>
+                    </div>
+
+                    <!-- Article 3: PhD -->
+                    <div class="product-card" data-animate data-delay="3" data-category="phd">
+                        <span class="product-card__eyebrow">博士專區</span>
+                        <h3 class="product-card__title">PhD 全方位申請時程：學術之路的進度圖</h3>
+                        <p class="product-card__desc">
+                            博士申請更強調研究契合度與導師聯繫。我們為您整理了從尋找老師到正式投遞的精密時程。
+                        </p>
+                        <a href="timeline-phd.html" class="product-card__cta">查看時程</a>
+                    </div>
+
+                    <!-- Article 4: Academic LOR -->
+                    <div class="product-card" data-animate data-delay="4" data-category="writing">
+                        <span class="product-card__eyebrow">文件寫作</span>
+                        <h3 class="product-card__title">學術推薦信撰寫指南</h3>
+                        <p class="product-card__desc">
+                            如何爭取教授的高端背書？解析研究潛力、課堂細節與學術洞察力如何成為頂尖名校錄取的關鍵。
+                        </p>
+                        <a href="lor-academic.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article 5: Workplace LOR -->
+                    <div class="product-card" data-animate data-delay="5" data-category="writing">
+                        <span class="product-card__eyebrow">文件寫作</span>
+                        <h3 class="product-card__title">職場推薦信撰寫指南</h3>
+                        <p class="product-card__desc">
+                            實習或工作推薦信該如何下筆？解析執行力、理論實務結合與專業韌性如何展現您的職場價值。
+                        </p>
+                        <a href="lor-workplace.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <div class="lp-container text-center">
+                <h2 class="section-title" data-animate>需要更專業的協助？</h2>
+                <p data-animate data-delay="1">安圖教育的顧問群皆來自美國頂尖名校，為您提供最精準的客製化諮詢服務。</p>
+                <div style="margin-top: 2rem;" data-animate data-delay="2">
+                    <button class="btn-filled js-open-reg-modal">與顧問預約免費面談</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p class="footer__brand">安圖教育</p>
+        <p class="footer__copy">安圖教育 © 2026　|　Antu Education</p>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+        <div class="reg-modal__card">
+            <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+            <p class="cta-form__title" id="modal-title">登記諮詢資訊</p>
+            <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="安圖教育 — 資源頁面登記">
+                <div class="form-group">
+                    <label for="modal-name">姓名</label>
+                    <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required
+                        autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">聯絡電話</label>
+                    <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678"
+                        required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label>
+                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com"
+                        required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="modal-role">我是</label>
+                    <select id="modal-role" name="role" class="form-input" required>
+                        <option value="" disabled selected>請選擇身分</option>
+                        <option value="applicant">申請者（大學生/社會人士）</option>
+                        <option value="student">學生（國高中）</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">確認登記</button>
+            </form>
+            <div class="modal-success" id="reg-success" hidden aria-live="polite">
+                <div class="modal-success-icon" aria-hidden="true">✓</div>
+                <h3>登記成功！</h3>
+                <p>我們已收到您的資料，將在 2 個工作日內透過電話或 Email 聯絡您。</p>
+                <button class="btn-submit js-close-modal" type="button">關閉</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/site.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const cards = document.querySelectorAll('.product-card');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const filter = tab.getAttribute('data-filter');
+
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    // Filter cards
+                    cards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

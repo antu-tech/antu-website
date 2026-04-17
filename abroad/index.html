@@ -10,6 +10,23 @@
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <style>
+    .index-cta {
+      text-align: center;
+      padding: 8rem 2rem;
+      background: linear-gradient(to bottom, var(--color-bg-alt), var(--color-bg));
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      margin-top: 4rem;
+    }
+
+    @media (prefers-color-scheme: light) {
+      .index-cta {
+        background: linear-gradient(to bottom, #F5EFE3, #FDFAF5);
+        border-color: rgba(201, 165, 90, 0.15);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -26,6 +43,8 @@
           <span></span><span></span><span></span>
         </button>
         <div class="nav__links" id="nav-links">
+          <a href="index.html" class="nav__link">首頁</a>
+          <a href="resources.html" class="nav__link">專欄資源</a>
         </div>
       </div>
     </nav>
@@ -106,6 +125,31 @@
       </div>
     </section>
 
+    <!-- Gradebook -->
+    <section class="section section--alt" aria-labelledby="gradebook-title">
+      <div class="lp-container">
+        <h2 class="section-title text-center" id="gradebook-title" data-animate>安圖如何協助申請</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">清晰的介面顯示顧問的修改建議</p>
+        <div class="demo-item" data-animate style="margin-top: 3rem;">
+          <div class="demo-image-wrapper">
+            <img src="../docs/images/canvasoverview-tabbedcarousel-verticalcomplex-p1c-gradebook-v1a-eng.avif"
+              alt="Canvas Gradebook 介面演示" class="demo-image">
+          </div>
+          <div class="demo-content">
+            <span class="demo-tag">文件修改</span>
+            <h3 class="demo-title">Gradebook 強大功能</h3>
+            <p class="demo-desc">
+              顧問在文件上直接畫記、加註，並附上專屬視訊或語音解說，讓你完全理解修改建議背後的原因和邏輯。
+            </p>
+            <ul class="demo-features">
+              <li>多維度的回饋：螢光筆、畫記加註、語音解說</li>
+              <li>平台的檔案管理與版本紀錄，讓你保持條理清晰</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Features Grid -->
     <section class="section section--dark" aria-labelledby="features-title">
       <div class="lp-container">
@@ -159,39 +203,60 @@
       </div>
     </section>
 
-    <!-- Gradebook -->
-    <section class="section section--alt" aria-labelledby="gradebook-title">
+    <!-- Resources -->
+    <section class="section section--dark" id="resources" aria-labelledby="resources-title">
       <div class="lp-container">
-        <h2 class="section-title text-center" id="gradebook-title" data-animate>Gradebook 如何優化你的文件</h2>
-        <p class="section-subtitle text-center" data-animate data-delay="1">清晰的介面顯示顧問的修改建議</p>
-        <div class="demo-item" data-animate style="margin-top: 3rem;">
-          <div class="demo-image-wrapper">
-            <img src="../docs/images/canvasoverview-tabbedcarousel-verticalcomplex-p1c-gradebook-v1a-eng.avif"
-              alt="Canvas Gradebook 介面演示" class="demo-image">
-          </div>
-          <div class="demo-content">
-            <span class="demo-tag">文件修改</span>
-            <h3 class="demo-title">Gradebook 強大功能</h3>
-            <p class="demo-desc">
-              顧問在文件上直接畫記、加註，並附上專屬視訊或語音解說，讓你完全理解修改建議背後的原因和邏輯。
+        <h2 class="section-title text-center" id="resources-title" data-animate>留學專欄</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">最實用的留學資訊，助您避開申請陷阱</p>
+
+        <div class="product-cards">
+          <!-- Resource Card 1 -->
+          <div class="product-card" data-animate data-delay="1">
+            <span class="product-card__eyebrow">簽證指南</span>
+            <h3 class="product-card__title">美國學生簽證（F-1）申請流程完整教學</h3>
+            <p class="product-card__desc">
+              從取得 I-20 到面談心法，我們整理出 2026 最新的申請流程，幫您一次掌握所有細節。
             </p>
-            <ul class="demo-features">
-              <li>多維度的回饋：螢光筆、畫記加註、語音解說</li>
-              <li>平台的檔案管理與版本紀錄，讓你保持條理清晰</li>
-            </ul>
+            <a href="visa-f1.html" class="product-card__cta">閱讀全文</a>
           </div>
+
+          <!-- Resource Card 2 -->
+          <div class="product-card" data-animate data-delay="2">
+            <span class="product-card__eyebrow">碩士專區</span>
+            <h3 class="product-card__title">研究所申請時程全攻略：提前預約你的夢想</h3>
+            <p class="product-card__desc">
+              研究所申請是一場馬拉松，我們將繁瑣流程簡化為四個階段，陪您按部就班達成目標。
+            </p>
+            <a href="timeline-master.html" class="product-card__cta">看時程表</a>
+          </div>
+
+          <!-- Resource Card 3 -->
+          <div class="product-card" data-animate data-delay="3">
+            <span class="product-card__eyebrow">博士專區</span>
+            <h3 class="product-card__title">PhD 全方位申請時程：學術之路的進度圖</h3>
+            <p class="product-card__desc">
+              博士申請更強調研究契合度與導師聯繫。我們為您整理了從尋找老師到正式投遞的精密時程。
+            </p>
+            <a href="timeline-phd.html" class="product-card__cta">看時程表</a>
+          </div>
+
+          <!-- Add more resource cards here if needed -->
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem;" data-animate>
+          <a href="resources.html" class="btn-outline">探索更多專欄文章</a>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section" aria-labelledby="cta-title">
-      <div class="lp-container" style="text-align:center;">
+    <section class="index-cta" aria-labelledby="cta-title">
+      <div class="lp-container">
         <h2 class="section-title" id="cta-title" data-animate>準備好申請夢想研究所了嗎？</h2>
-        <p class="section-subtitle" data-animate data-delay="1">立即登記，搶先配對</p>
+        <p class="section-subtitle" data-animate data-delay="1">立即登記，搶先配對專屬顧問</p>
         <div style="margin-top: 2rem;" data-animate data-delay="2">
           <button class="btn-filled js-open-reg-modal" aria-label="立即登記">
-            立即登記
+            立即登記諮詢
           </button>
         </div>
       </div>
@@ -260,7 +325,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="../js/site.js"></script>
 </body>
 

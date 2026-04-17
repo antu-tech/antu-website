@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博士申請時程攻略 — 安圖教育</title>
+    <meta name="description" content="2026 最新博士申請時程規劃。從尋找 POI、Cold Email、文件準備到正式投遞，安圖教育帶您掌握學術申請的每一個關鍵節點。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <style>
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--color-text-head);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-header .subtitle {
+            color: var(--color-accent);
+            font-size: var(--fs-lg);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Timeline Graph Styles */
+        .timeline-graph {
+            position: relative;
+            margin: 4rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-graph::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent) 0%, var(--color-divider) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            padding-left: 2.5rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2rem;
+            top: 0.25rem;
+            width: 16px;
+            height: 16px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--color-accent);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-family: var(--font-heading);
+            font-size: var(--fs-xl);
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .timeline-title {
+            font-size: var(--fs-2xl);
+            color: var(--color-text-head);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-card {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .timeline-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        /* PhD Coaching Styles */
+        .coaching-section {
+            margin-top: 8rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4rem 2rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .session-card {
+            background: var(--color-bg-alt);
+            border: 1px dashed var(--color-divider);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .session-card__num {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: var(--fs-3xl);
+            color: var(--color-accent);
+            opacity: 0.2;
+        }
+
+        .session-card h4 {
+            color: var(--color-text-head);
+            margin-bottom: 1rem;
+            font-size: var(--fs-lg);
+        }
+
+        .homework-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(201, 165, 90, 0.15);
+            color: var(--color-accent-light);
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .important-tip {
+            background: rgba(201, 165, 90, 0.05);
+            border-left: 3px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .important-tip strong {
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-footer-cta {
+            text-align: center;
+            margin-top: 8rem;
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, var(--color-bg-alt), var(--color-bg));
+            border: 1px solid var(--color-border);
+        }
+
+        @media (prefers-color-scheme: light) {
+            .session-card__num {
+                opacity: 0.35;
+                color: var(--color-accent-dark);
+            }
+
+            .homework-tag {
+                background: rgba(168, 131, 64, 0.12);
+                color: var(--color-accent-dark);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <header>
+        <nav class="nav" role="navigation" aria-label="主導覽">
+            <div class="nav__inner">
+                <a href="../index.html" class="nav__logo" aria-label="安圖教育首頁">
+                    安圖<span>教育</span>
+                </a>
+                <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav__links" id="nav-links">
+                    <a href="index.html" class="nav__link">首頁</a>
+                    <a href="resources.html" class="nav__link">專欄資源</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lp-main">
+        <section class="section">
+            <div class="article-content">
+                <header class="article-header" data-animate>
+                    <p class="subtitle">PhD Application Pathway</p>
+                    <h1>博士申請全方位時程攻略</h1>
+                    <p style="color: var(--color-text-muted);">追求學術卓越的精密規劃藍圖</p>
+                </header>
+
+                <div class="intro" data-animate>
+                    <p>博士申請與碩士申請截然不同。它不只是一份申請書，更是一場關於研究契合度（Research
+                        Fit）的深刻對話。除了文件的精修，如何與潛在導師（POI）建立聯繫，是通往錄取通知書的必經之路。</p>
+                </div>
+
+                <!-- PhD Timeline Graph -->
+                <h2 class="section-title text-center" style="margin-top: 6rem; margin-bottom: 3rem;" data-animate>PhD
+                    申請時程路徑圖</h2>
+                <div class="timeline-graph" data-animate>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Jun — Aug</span>
+                        <h3 class="timeline-title">前期備戰：研究定向與語言</h3>
+                        <div class="timeline-card">
+                            <ul class="timeline-list">
+                                <li>查詢學校老師背景與研究方向</li>
+                                <li>整理 CV 並完成定稿</li>
+                                <li>考取英文檢定（TOEFL/GRE）</li>
+                                <li>尋找志同道合的申請戰友</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Aug — Sep</span>
+                        <h3 class="timeline-title">主動出擊：建立導師連結</h3>
+                        <div class="timeline-card">
+                            <ul class="timeline-list">
+                                <li>開始寄送 Cold Email 給潛在導師 (POI)</li>
+                                <li>針對研究方向進行初步溝通</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Sep</span>
+                        <h3 class="timeline-title">定位與啟動：選校與文件初稿</h3>
+                        <div class="timeline-card">
+                            <ul class="timeline-list">
+                                <li>正式確定選校清單</li>
+                                <li>聯絡推薦信教授並獲得撰寫承諾</li>
+                                <li>完成 SOP、PS 第一版初稿</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Oct</span>
+                        <h3 class="timeline-title">深度精修：文件客製化</h3>
+                        <div class="timeline-card">
+                            <ul class="timeline-list">
+                                <li>針對不同老師研究調整 SOP 段落</li>
+                                <li>定稿最終 SOP 萬用模板</li>
+                                <li>進入申請系統填寫基本資訊</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Nov</span>
+                        <h3 class="timeline-title">最後衝刺：上傳與定稿</h3>
+                        <div class="timeline-card">
+                            <ul class="timeline-list">
+                                <li>客製化每間學校的開頭與關鍵字</li>
+                                <li>確認所有文件無誤後上傳系統</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Dec 01</span>
+                        <h3 class="timeline-title">Deadline：正式交件</h3>
+                        <div class="timeline-card">
+                            <p style="color: var(--color-accent); font-weight: 600;">大功告成！在 12/1 前完成所有投遞動作。</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Coaching Content -->
+                <div class="coaching-section" data-animate>
+                    <h2 class="section-title text-center">安圖教育：PhD 全方位輔導進程</h2>
+                    <p class="text-center" style="max-width: 600px; margin: 0 auto;">我們會根據上述時程，透過五次深度面談，陪伴您攻克每一個關卡。</p>
+
+                    <div class="session-grid">
+                        <!-- Session 1 -->
+                        <div class="session-card">
+                            <span class="session-card__num">01</span>
+                            <h4>第一階段：方向確立</h4>
+                            <p>討論選校/選科系、研究領域定向、講解 CV 寫作關鍵重點。</p>
+                            <span class="homework-tag">Homework: 整理學術 CV 初稿</span>
+                        </div>
+
+                        <!-- Session 2 -->
+                        <div class="session-card">
+                            <span class="session-card__num">02</span>
+                            <h4>第二階段：落點與時程</h4>
+                            <p>給予 CV 修改建議、進行落點分析、討論選校策略並排定細部時間軸。</p>
+                            <span class="homework-tag">Homework: 報名考試、修改 CV</span>
+                        </div>
+
+                        <!-- Session 3 -->
+                        <div class="session-card">
+                            <span class="session-card__num">03</span>
+                            <h4>第三階段：SOP 啟動</h4>
+                            <p>進行 CV 二次修改、深度討論 SOP 寫作架構與核心敘事。</p>
+                            <span class="homework-tag">Homework: 完成 SOP Ver.1</span>
+                        </div>
+
+                        <!-- Session 4 -->
+                        <div class="session-card">
+                            <span class="session-card__num">04</span>
+                            <h4>第四階段：外聯與溝通</h4>
+                            <p>CV 三次修改、溝通推薦信老師意願策略、POI Cold Email 寫作教學。</p>
+                            <span class="homework-tag">Homework: 查出最想聯繫的 POI 名單</span>
+                        </div>
+
+                        <!-- Session 5 -->
+                        <div class="session-card">
+                            <span class="session-card__num">05</span>
+                            <h4>第五階段：衝刺定稿</h4>
+                            <p>SOP/PS 修改 *N、討論 Cold Email 回覆、撰寫各校老師專屬段落。</p>
+                            <span class="homework-tag">Final Check: 全校文件上傳準時投遞</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-footer-cta" data-animate>
+                    <h2 class="section-title">提交申請，邁向學術之路</h2>
+                    <p>安圖教育的 PhD 顧問多為在美國頂尖研究型大學攻讀博士的學長姐，深知如何協助您在激烈的競爭中脫穎而出。</p>
+                    <div style="margin-top: 2rem;">
+                        <button class="btn-filled js-open-reg-modal">預約面談</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p class="footer__brand">安圖教育</p>
+        <p class="footer__copy">安圖教育 © 2026　|　Antu Education</p>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+        <div class="reg-modal__card">
+            <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+            <p class="cta-form__title" id="modal-title">登記諮詢資訊</p>
+            <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="安圖教育 — PhD 時程頁面登記">
+                <div class="form-group">
+                    <label for="modal-name">姓名</label>
+                    <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required
+                        autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">聯絡電話</label>
+                    <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678"
+                        required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label>
+                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com"
+                        required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="modal-role">我是</label>
+                    <select id="modal-role" name="role" class="form-input" required>
+                        <option value="" disabled selected>請選擇身分</option>
+                        <option value="applicant">申請者（大學生/社會人士）</option>
+                        <option value="student">學生（國高中）</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">確認登記</button>
+            </form>
+            <div class="modal-success" id="reg-success" hidden aria-live="polite">
+                <div class="modal-success-icon" aria-hidden="true">✓</div>
+                <h3>登記成功！</h3>
+                <p>我們已收到您的資料，將在 2 個工作日內透過電話或 Email 聯絡您。</p>
+                <button class="btn-submit js-close-modal" type="button">關閉</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/site.js"></script>
+</body>
+
+</html>

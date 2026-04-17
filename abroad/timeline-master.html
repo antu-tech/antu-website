@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碩士申請時程攻略 — 安圖教育</title>
+    <meta name="description" content="2026 最新研究所申請時程規劃。從第一階段的面談、文件準備，到最後的投遞與成績寄送，一步步帶您達成申請目標。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <style>
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--color-text-head);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-header .subtitle {
+            color: var(--color-accent);
+            font-size: var(--fs-lg);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Timeline Graph Styles */
+        .timeline-graph {
+            position: relative;
+            margin: 4rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-graph::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent) 0%, var(--color-divider) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            padding-left: 2.5rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2rem;
+            top: 0.25rem;
+            width: 16px;
+            height: 16px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--color-accent);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-family: var(--font-heading);
+            font-size: var(--fs-xl);
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .timeline-title {
+            font-size: var(--fs-2xl);
+            color: var(--color-text-head);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-card {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-accent);
+        }
+
+        .timeline-card h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: var(--fs-lg);
+            border-bottom: 1px solid var(--color-divider);
+            padding-bottom: 0.5rem;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .timeline-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        /* Details Section Styles */
+        .details-section {
+            margin-top: 8rem;
+        }
+
+        .phase-block {
+            margin-bottom: 5rem;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--color-divider);
+            padding-bottom: 1rem;
+        }
+
+        .phase-num {
+            font-size: var(--fs-3xl);
+            font-family: var(--font-heading);
+            color: var(--color-accent-dark);
+            opacity: 0.5;
+        }
+
+        .phase-title {
+            font-size: var(--fs-xl);
+            color: var(--color-text-head);
+        }
+
+        .step-subtext {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .important-tip {
+            background: rgba(201, 165, 90, 0.05);
+            border-left: 3px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .important-tip strong {
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-footer-cta {
+            text-align: center;
+            margin-top: 8rem;
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, var(--color-bg-alt), var(--color-bg));
+            border: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            .phase-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <header>
+        <nav class="nav" role="navigation" aria-label="主導覽">
+            <div class="nav__inner">
+                <a href="../index.html" class="nav__logo" aria-label="安圖教育首頁">
+                    安圖<span>教育</span>
+                </a>
+                <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav__links" id="nav-links">
+                    <a href="index.html" class="nav__link">首頁</a>
+                    <a href="resources.html" class="nav__link">專欄資源</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lp-main">
+        <section class="section">
+            <div class="article-content">
+                <header class="article-header" data-animate>
+                    <p class="subtitle">Process Guide</p>
+                    <h1>研究所申請時程攻略</h1>
+                    <p style="color: var(--color-text-muted);">從選校到投遞，一目了然的進度藍圖</p>
+                </header>
+
+                <!-- Timeline Visual Graph -->
+                <h2 class="section-title text-center" style="margin-bottom: 3rem;" data-animate>申請路徑圖</h2>
+                <div class="timeline-graph" data-animate>
+                    <!-- Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Sep — Mar</span>
+                        <h3 class="timeline-title">第一階段：初期規劃與文件雛形</h3>
+                        <div class="timeline-card">
+                            <h4>核心目標</h4>
+                            <ul class="timeline-list">
+                                <li>完成兩次核心面談</li>
+                                <li>CV / 綜合 SOP 初稿與定稿</li>
+                                <li>初步落點分析與策略制定</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Apr — Jun</span>
+                        <h3 class="timeline-title">第二階段：實力累積與各校版本</h3>
+                        <div class="timeline-card">
+                            <h4>核心目標</h4>
+                            <ul class="timeline-list">
+                                <li>英文檢定（TOEFL/GRE/IELTS）完成</li>
+                                <li>SOP 分校版本完成（選校原因精修）</li>
+                                <li>(如有) PS 個人陳述定稿</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Jul — Aug</span>
+                        <h3 class="timeline-title">第三階段：推薦信與實體文件</h3>
+                        <div class="timeline-card">
+                            <h4>核心目標</h4>
+                            <ul class="timeline-list">
+                                <li>推薦信（LoR）定稿完成</li>
+                                <li>申請實體成績單（彌封章準備）</li>
+                                <li>確認各校文件格式細節</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Sep — Oct</span>
+                        <h3 class="timeline-title">最後衝刺：正式投遞階段</h3>
+                        <div class="timeline-card">
+                            <h4>核心目標</h4>
+                            <ul class="timeline-list">
+                                <li>投遞系統填寫、文件上傳、繳費</li>
+                                <li>官方成績單寄送（ETS/學校）</li>
+                                <li>把握滾動式錄取（Rolling Admission）優勢</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Breakdown -->
+                <div class="details-section">
+                    <h2 class="section-title" data-animate>各階段詳細安排</h2>
+
+                    <div class="phase-block" data-animate>
+                        <div class="phase-header">
+                            <span class="phase-num">Phase 01</span>
+                            <h3 class="phase-title">Sep ~ Mar：奠定勝局的關鍵</h3>
+                        </div>
+                        <p>這段期間顧問將帶領您進行兩次重要面談。除了引導您使用 Canvas 平台進行進度管控，也會針對您的背景進行「深度落點分析」。</p>
+                        <div class="important-tip">
+                            <strong>第一次面談重點：</strong>
+                            <ul class="timeline-list">
+                                <li>Canvas 系統操作教學與應繳文件提醒</li>
+                                <li>初步落點分析與初步選校藍圖</li>
+                                <li>英文檢定進度確認與報名時程建議</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="phase-block" data-animate>
+                        <div class="phase-header">
+                            <span class="phase-num">Phase 02</span>
+                            <h3 class="phase-title">Apr ~ Jun：文件精修與語言達標</h3>
+                        </div>
+                        <p>第二階段的核心是「差異化」。顧問會協助您針對不同目標學校，客製化 SOP 的「選校原因（Why School）」，並完成 PS（Personal Statement）的初稿與定稿。
+                        </p>
+                        <div class="important-tip">
+                            <strong>關鍵動作：</strong>
+                            <p>開始尋找合適的推薦人（建議 3 位），並初步與其溝通撰寫意願。同時，請務必在此階段前完成語言考試，確保成績能在系統開放前寄出。</p>
+                        </div>
+                    </div>
+
+                    <div class="phase-block" data-animate>
+                        <div class="phase-header">
+                            <span class="phase-num">Phase 03</span>
+                            <h3 class="phase-title">Jul ~ Aug：推薦信與文件末檢</h3>
+                        </div>
+                        <p>進入暑假，是與教授、主管密集溝通 LOR 的時機。顧問會根據您的申請組合，提供 LOR 模板討論，並提醒您至教務處申請實體成績單並加蓋「彌封章」。</p>
+                    </div>
+
+                    <div class="phase-block" data-animate>
+                        <div class="phase-header">
+                            <span class="phase-num">Phase 04</span>
+                            <h3 class="phase-title">Sep ~ Oct：正式投遞與系統填寫</h3>
+                        </div>
+                        <p>九月初系統開放即展開投遞，具有「滾動式錄取」特性的學校在早期投遞具有極大優勢。填寫系統、上傳文件、繳費，並透過 ETS 官方寄送 TOEFL/GRE 成績。</p>
+                    </div>
+                </div>
+
+                <div class="blog-footer-cta" data-animate>
+                    <h2 class="section-title">把握時程，成就頂尖</h2>
+                    <p>好的時程安排能讓申請事半功倍。安圖教育的 Canvas 系統能為您精準追蹤每一個關鍵節點，告別趕工焦慮。</p>
+                    <div style="margin-top: 2rem;">
+                        <button class="btn-filled js-open-reg-modal">立即預約諮詢</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p class="footer__brand">安圖教育</p>
+        <p class="footer__copy">安圖教育 © 2026　|　Antu Education</p>
+    </footer>
+
+    <!-- Registration Modal (Keep consistent) -->
+    <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+        <div class="reg-modal__card">
+            <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+            <p class="cta-form__title" id="modal-title">登記諮詢資訊</p>
+            <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="安圖教育 — 時程攻略頁面登記">
+                <div class="form-group">
+                    <label for="modal-name">姓名</label>
+                    <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required
+                        autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">聯絡電話</label>
+                    <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678"
+                        required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label>
+                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com"
+                        required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="modal-role">我是</label>
+                    <select id="modal-role" name="role" class="form-input" required>
+                        <option value="" disabled selected>請選擇身分</option>
+                        <option value="applicant">申請者（大學生/社會人士）</option>
+                        <option value="student">學生（國高中）</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">確認登記</button>
+            </form>
+            <div class="modal-success" id="reg-success" hidden aria-live="polite">
+                <div class="modal-success-icon" aria-hidden="true">✓</div>
+                <h3>登記成功！</h3>
+                <p>我們已收到您的資料，將在 2 個工作日內透過電話或 Email 聯絡您。</p>
+                <button class="btn-submit js-close-modal" type="button">關閉</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/site.js"></script>
+</body>
+
+</html>
