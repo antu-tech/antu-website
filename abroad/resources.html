@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>留學專欄資源 — 安圖教育</title>
     <meta name="description" content="安圖教育留學研習專欄。收錄美國學生簽證、碩士申請時程、博士申請指南等全方位的留學申請實戰資源。">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=20260418">
     <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
@@ -56,13 +56,15 @@
             color: var(--color-accent);
             background: rgba(201, 165, 90, 0.05);
         }
-
-        @media (prefers-color-scheme: light) {
-            .resources-hero {
-                background: linear-gradient(to bottom, #F5EFE3, #FDFAF5);
-            }
-        }
     </style>
+
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
 
 <body>
@@ -105,6 +107,8 @@
                     <div class="filter-tab" data-filter="visa">簽證指南</div>
                     <div class="filter-tab" data-filter="master">碩士專區</div>
                     <div class="filter-tab" data-filter="phd">博士專區</div>
+                    <div class="filter-tab" data-filter="selection">選校策略</div>
+                    <div class="filter-tab" data-filter="major">專業專題</div>
                     <div class="filter-tab" data-filter="writing">文件寫作</div>
                 </div>
 
@@ -116,7 +120,7 @@
                         <p class="product-card__desc">
                             從取得 I-20 到面談心法，我們整理出 2026 最新的申請流程，幫您一次掌握所有細節。
                         </p>
-                        <a href="visa-f1.html" class="product-card__cta">立即閱讀</a>
+                        <a href="resources/visa-f1.html" class="product-card__cta">立即閱讀</a>
                     </div>
 
                     <!-- Article 2: Master -->
@@ -126,7 +130,7 @@
                         <p class="product-card__desc">
                             研究所申請是一場馬拉松，我們將繁瑣流程簡化為四個階段，陪您按部就班達成目標。
                         </p>
-                        <a href="timeline-master.html" class="product-card__cta">查看時程</a>
+                        <a href="resources/timeline-master.html" class="product-card__cta">查看時程</a>
                     </div>
 
                     <!-- Article 3: PhD -->
@@ -136,7 +140,7 @@
                         <p class="product-card__desc">
                             博士申請更強調研究契合度與導師聯繫。我們為您整理了從尋找老師到正式投遞的精密時程。
                         </p>
-                        <a href="timeline-phd.html" class="product-card__cta">查看時程</a>
+                        <a href="resources/timeline-phd.html" class="product-card__cta">查看時程</a>
                     </div>
 
                     <!-- Article 4: Academic LOR -->
@@ -146,7 +150,7 @@
                         <p class="product-card__desc">
                             如何爭取教授的高端背書？解析研究潛力、課堂細節與學術洞察力如何成為頂尖名校錄取的關鍵。
                         </p>
-                        <a href="lor-academic.html" class="product-card__cta">立即閱讀</a>
+                        <a href="resources/lor-academic.html" class="product-card__cta">立即閱讀</a>
                     </div>
 
                     <!-- Article 5: Workplace LOR -->
@@ -156,7 +160,97 @@
                         <p class="product-card__desc">
                             實習或工作推薦信該如何下筆？解析執行力、理論實務結合與專業韌性如何展現您的職場價值。
                         </p>
-                        <a href="lor-workplace.html" class="product-card__cta">立即閱讀</a>
+                        <a href="resources/lor-workplace.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article 6: Geography Strategy -->
+                    <div class="product-card" data-animate data-delay="6" data-category="selection">
+                        <span class="product-card__eyebrow">選校策略</span>
+                        <h3 class="product-card__title">美國留學選校地理學：熱鬧 vs 偏遠</h3>
+                        <p class="product-card__desc">
+                            排名是門面，地理位置則是你的職涯推動力。分析 2026 美國留學熱門地點的就業優勢與城市特性。
+                        </p>
+                        <a href="resources/geography.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: Top 30 Strategy -->
+                    <div class="product-card" data-animate data-delay="7" data-category="selection">
+                        <span class="product-card__eyebrow">選校策略</span>
+                        <h3 class="product-card__title">美國 Top 30 夢幻名校：2026 錄取趨勢</h3>
+                        <p class="product-card__desc">
+                            排名只是起點，戰略才是通往夢想校的門票。深度解析 2026 衝刺 Top 30 的核心心法。
+                        </p>
+                        <a href="resources/top30-strategies.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: Safety Schools -->
+                    <div class="product-card" data-animate data-delay="8" data-category="selection">
+                        <span class="product-card__eyebrow">選校策略</span>
+                        <h3 class="product-card__title">保底校不保底？打造 2026 最安全清單</h3>
+                        <p class="product-card__desc">
+                            預防全軍沒收，從科學定義「保底」開始。教您如何避開保底陷阱，確保申請季大獲全勝。
+                        </p>
+                        <a href="resources/safety-schools.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: Metro vs Rural -->
+                    <div class="product-card" data-animate data-delay="9" data-category="selection">
+                        <span class="product-card__eyebrow">選校策略</span>
+                        <h3 class="product-card__title">都會 vs 農村：留學生活的地理平衡</h3>
+                        <p class="product-card__desc">
+                            排名在左，生活在右。分析美國大城市與大學城的資源分佈與職涯成長差異。
+                        </p>
+                        <a href="resources/metro-rural.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: DS Special -->
+                    <div class="product-card" data-animate data-delay="10" data-category="major">
+                        <span class="product-card__eyebrow">專業專題</span>
+                        <h3 class="product-card__title">2026 DS 申請：從 MIT 到 NEU</h3>
+                        <p class="product-card__desc">
+                            解析全美 30+ 所 DS 名校的錄取偏好與市場價值。從研發到就業，找到你的最佳選校策略。
+                        </p>
+                        <a href="resources/ds-guide.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: BME Special -->
+                    <div class="product-card" data-animate data-delay="11" data-category="major">
+                        <span class="product-card__eyebrow">專業專題</span>
+                        <h3 class="product-card__title">2026 BME 申請：JHU 為首名校之路</h3>
+                        <p class="product-card__desc">
+                            跨越工程與醫學的邊界。深度剖析頂尖生醫工程項目的錄取標準與未來研發職涯。
+                        </p>
+                        <a href="resources/bme-guide.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: CS/EE Special -->
+                    <div class="product-card" data-animate data-delay="12" data-category="major">
+                        <span class="product-card__eyebrow">專業專題</span>
+                        <h3 class="product-card__title">2026 CS/EE 全攻略：競爭地圖與策略</h3>
+                        <p class="product-card__desc">
+                            當 AI 遇上硬體。解析美國電資學院在 2026 年的錄取變革與軟硬結合的就業藍海。
+                        </p>
+                        <a href="resources/cs-ee-guide.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: GRE Guide -->
+                    <div class="product-card" data-animate data-delay="13" data-category="master">
+                        <span class="product-card__eyebrow">申請要求</span>
+                        <h3 class="product-card__title">2026 GRE 需求大解密：考還是不考？</h3>
+                        <p class="product-card__desc">
+                            後疫情時代的名校標化考政策全解析。哪些名校取消了，哪些依然是錄取的隱形門檻？
+                        </p>
+                        <a href="resources/gre-guide.html" class="product-card__cta">立即閱讀</a>
+                    </div>
+
+                    <!-- Article: MEng vs MS -->
+                    <div class="product-card" data-animate data-delay="14" data-category="master">
+                        <span class="product-card__eyebrow">碩士專區</span>
+                        <h3 class="product-card__title">MEng vs. MS：就業導向碩士適應全攻略</h3>
+                        <p class="product-card__desc">
+                            打破學位迷思。詳細對照工程碩士與理學碩士在課程設計、求職速度與學術深度的差異。
+                        </p>
+                        <a href="resources/meng-vs-ms.html" class="product-card__cta">立即閱讀</a>
                     </div>
                 </div>
             </div>

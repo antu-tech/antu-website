@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>研究所申請顧問 — 安圖教育</title>
   <meta name="description" content="頂尖顧問帶你申請夢想研究所。顧問資歷雙重驗證，Canvas 全程存檔，SOP 逐字批改，比機構便宜，比私人可靠。">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260418">
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
@@ -17,16 +17,16 @@
       background: linear-gradient(to bottom, var(--color-bg-alt), var(--color-bg));
       border-top: 1px solid var(--color-border);
       border-bottom: 1px solid var(--color-border);
-      margin-top: 4rem;
-    }
-
-    @media (prefers-color-scheme: light) {
-      .index-cta {
-        background: linear-gradient(to bottom, #F5EFE3, #FDFAF5);
-        border-color: rgba(201, 165, 90, 0.15);
-      }
     }
   </style>
+
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
 
 <body>
@@ -157,42 +157,42 @@
         <p class="section-subtitle text-center" data-animate data-delay="1">從選校策略到文件定稿，全程有安圖教育守護</p>
         <div class="features-grid">
 
-          <div class="feature-item" data-animate data-delay="1">
+          <div class="feature-item glass-panel" data-animate data-delay="1">
             <div class="feature-item__content">
               <p class="feature-item__title">顧問雙重身分驗證</p>
               <p class="feature-item__desc">臺大學生證 ＋ 國外研究所證明，確保顧問資歷真實可信</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="2">
+          <div class="feature-item glass-panel" data-animate data-delay="2">
             <div class="feature-item__content">
               <p class="feature-item__title">Canvas Session 存檔</p>
               <p class="feature-item__desc">每次諮詢的筆記、行動事項自動存檔，隨時可回顧</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="3">
+          <div class="feature-item glass-panel" data-animate data-delay="3">
             <div class="feature-item__content">
               <p class="feature-item__title">CV/SOP/LoR 多維度修改</p>
               <p class="feature-item__desc">不只文字批註，透過 Gradebook 錄製語音/視訊詳解，並在文件上畫記，溝通零誤差</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="4">
+          <div class="feature-item glass-panel" data-animate data-delay="4">
             <div class="feature-item__content">
               <p class="feature-item__title">申請進度追蹤看板</p>
               <p class="feature-item__desc">選校清單、截止日期、待辦事項，一個看板全部掌握</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="5">
+          <div class="feature-item glass-panel" data-animate data-delay="5">
             <div class="feature-item__content">
               <p class="feature-item__title">平台保障</p>
               <p class="feature-item__desc">顧問已讀不回？可更換同等資歷顧問，不影響申請進度</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="6">
+          <div class="feature-item glass-panel" data-animate data-delay="6">
             <div class="feature-item__content">
               <p class="feature-item__title">彈性付款方式</p>
               <p class="feature-item__desc">支援信用卡、銀行轉帳、LINE Pay、街口支付等多元付款</p>
@@ -309,11 +309,14 @@
         <div class="form-group">
           <label for="modal-role">我是</label>
           <select id="modal-role" name="role" class="form-input" required>
-            <option value="" disabled selected>請選擇身分</option>
-            <option value="applicant">申請者（大學生/社會人士）</option>
-            <option value="consultant">臺大學長姐（有意擔任顧問）</option>
-            <option value="other">其他</option>
-          </select>
+                        <option value="" disabled selected>請選擇身分</option>
+                        <option value="student-highschool">高中生</option>
+                        <option value="student-college">大學生</option>
+                        <option value="student-grad">碩博士生</option>
+                        <option value="professional">在職人士</option>
+                        <option value="parent">家長</option>
+                        <option value="other">其他</option>
+                    </select>
         </div>
         <button type="submit" class="btn-submit">送出登記</button>
       </form>

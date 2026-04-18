@@ -6,12 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>安圖教育 — 找家教，從此不再靠運氣</title>
   <meta name="description" content="安圖教育為您媒合已驗證的臺大醫學系學生，並提供結構化數位學習平台。雙重身分驗證、作業測驗系統、完課保障。">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260418">
 
   <!-- Favicons -->
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
 
 <body>
@@ -191,42 +199,42 @@
         <p class="section-subtitle text-center" data-animate data-delay="1">從媒合到上課，全程有安圖教育守護</p>
         <div class="features-grid">
 
-          <div class="feature-item" data-animate data-delay="1">
+          <div class="feature-item glass-panel" data-animate data-delay="1">
             <div class="feature-item__content">
               <p class="feature-item__title">Canvas 學習平台</p>
               <p class="feature-item__desc">業界標準 LMS，提供檔案管理、作業繳交、測驗回饋與互動功能</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="2">
+          <div class="feature-item glass-panel" data-animate data-delay="2">
             <div class="feature-item__content">
               <p class="feature-item__title">自動化學習報告</p>
               <p class="feature-item__desc">系統自動彙整上課紀錄與進度，定時寄送給家長</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="3">
+          <div class="feature-item glass-panel" data-animate data-delay="3">
             <div class="feature-item__content">
               <p class="feature-item__title">臺大醫學系筆記庫</p>
               <p class="feature-item__desc">獨家收錄臺大醫學系在學生整理的高品質學習資源</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="4">
+          <div class="feature-item glass-panel" data-animate data-delay="4">
             <div class="feature-item__content">
               <p class="feature-item__title">雙重身分驗證</p>
               <p class="feature-item__desc">臺大學生信箱 + 學生證 OCR 雙重核實，杜絕假冒</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="5">
+          <div class="feature-item glass-panel" data-animate data-delay="5">
             <div class="feature-item__content">
               <p class="feature-item__title">完課保障</p>
               <p class="feature-item__desc">家教臨時缺席時，轉為線上教學、提供替代家教選項</p>
             </div>
           </div>
 
-          <div class="feature-item" data-animate data-delay="6">
+          <div class="feature-item glass-panel" data-animate data-delay="6">
             <div class="feature-item__content">
               <p class="feature-item__title">彈性付款方式</p>
               <p class="feature-item__desc">支援信用卡、銀行轉帳、Line Pay、街口支付等多元付款</p>

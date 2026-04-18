@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>使用指南 — 安圖教育</title>
   <meta name="description" content="了解安圖教育如何運作——從找師資到月底報告，三種情境完整說明。">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260418">
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <style>
     .inner-hero { --hero-bg-img: url('https://images.unsplash.com/photo-1434030216411-0b793f4b6d4c?auto=format&fit=crop&w=1920&q=80'); }
@@ -126,7 +126,7 @@
       .timeline-step { grid-template-columns: 1.75rem 1fr; gap: 0 1rem; }
       .timeline-step__num { width: 1.75rem; height: 1.75rem; font-size: var(--fs-sm); }
     }
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       .timeline-step__note {
         background: rgba(201,165,90,0.12);
         border-color: rgba(201,165,90,0.4);
@@ -138,6 +138,14 @@
       }
     }
   </style>
+
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
 <body>
 

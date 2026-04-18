@@ -6,10 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>安圖教育 — 以 Canvas 驅動的專業教育平台</title>
   <meta name="description" content="安圖教育提供家教、研究所申請顧問、高中解題三大服務，共享同一套 Canvas 智能學習系統。">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260418">
   <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
 
 <body>
