@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,13 @@
   <link rel="stylesheet" href="../css/style.css?v=20260418">
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <style>
-    .inner-hero { --hero-bg-img: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1920&q=80'); }
-    .inner-hero__sub { max-width: 560px; }
+    .inner-hero {
+      --hero-bg-img: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1920&q=80');
+    }
+
+    .inner-hero__sub {
+      max-width: 560px;
+    }
 
     /* ── FAQ list ──────────────────────────────────────────── */
     .faq-section {
@@ -17,11 +23,16 @@
       margin: 0 auto;
       padding: 3.5rem 1.5rem 2rem;
     }
+
     .faq-item {
       border-bottom: 1px solid var(--color-border);
       padding: 1.75rem 0;
     }
-    .faq-item:first-child { border-top: 1px solid var(--color-border); }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+
     .faq-q {
       font-family: var(--font-heading);
       font-size: var(--fs-xl);
@@ -31,6 +42,7 @@
       align-items: flex-start;
       gap: .75rem;
     }
+
     .faq-q::before {
       content: "Q";
       flex-shrink: 0;
@@ -39,8 +51,8 @@
       font-weight: 700;
       letter-spacing: .1em;
       color: var(--color-accent);
-      background: rgba(201,165,90,.12);
-      border: 1px solid rgba(201,165,90,.3);
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
       width: 1.75rem;
       height: 1.75rem;
       display: flex;
@@ -48,13 +60,18 @@
       justify-content: center;
       margin-top: .15rem;
     }
+
     .faq-a {
       font-size: var(--fs-base);
       color: var(--color-text);
       line-height: 1.8;
       padding-left: 2.5rem;
     }
-    .faq-a strong { color: var(--color-text-head); }
+
+    .faq-a strong {
+      color: var(--color-text-head);
+    }
+
     .faq-a a {
       color: var(--color-accent);
       text-decoration: underline;
@@ -67,18 +84,22 @@
       margin: 1rem auto 0;
       padding: 0 1.5rem;
     }
+
     .contact-box__inner {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
+      box-shadow: var(--shadow-sm);
     }
+
     .contact-box__title {
       font-family: var(--font-heading);
       font-size: var(--fs-2xl);
       color: var(--color-text-head);
       margin-bottom: .5rem;
     }
+
     .contact-box__sub {
       font-size: var(--fs-base);
       color: var(--color-text-muted);
@@ -86,17 +107,27 @@
     }
 
     @media (max-width: 600px) {
-      .faq-section { padding-left: 1rem; padding-right: 1rem; }
-      .contact-box { padding-left: 1rem; padding-right: 1rem; }
-      .contact-box__inner { padding: 1.25rem; }
-    }
-    @media (prefers-color-scheme: dark) {
+      .faq-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .contact-box {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
       .contact-box__inner {
-        background: rgba(28,37,53,0.04);
+        padding: 1.25rem;
       }
-      .faq-q::before {
-        background: rgba(201,165,90,0.15);
-      }
+    }
+
+    :root.dark .contact-box__inner {
+      background: var(--color-surface);
+    }
+
+    :root.dark .faq-q::before {
+      background: var(--color-surface);
     }
   </style>
 
@@ -108,6 +139,7 @@
     }
   </script>
 </head>
+
 <body>
 
   <div id="scroll-progress" aria-hidden="true"></div>
@@ -196,7 +228,9 @@
       <div class="faq-item" data-animate>
         <p class="faq-q">為什麼只有臺大醫學系學生才能當師資？</p>
         <div class="faq-a">
-          <p>安圖的核心價值是<strong>師資可信賴、教學成效可驗證。</strong>臺大醫學系是臺灣錄取分數最高的科系之一，我們選擇從這個群體出發，確保師資品質有一致的基準。平台採用雙重身分驗證，讓家長確認老師的身分是真實的。</p>
+          <p>
+            安圖的核心價值是<strong>師資可信賴、教學成效可驗證。</strong>臺大醫學系是臺灣錄取分數最高的科系之一，我們選擇從這個群體出發，確保師資品質有一致的基準。平台採用雙重身分驗證，讓家長確認老師的身分是真實的。
+          </p>
         </div>
       </div>
 
@@ -252,22 +286,22 @@
   </footer>
 
   <script>
-  (function() {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('[data-animate]').forEach(function(el) { observer.observe(el); });
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
 
-    var bar = document.getElementById('scroll-progress');
-    if (bar) {
-      window.addEventListener('scroll', function() {
-        var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
-        bar.style.width = (t > 0 ? Math.min(s/t*100,100) : 0) + '%';
-      }, { passive: true });
-    }
-  })();
+      var bar = document.getElementById('scroll-progress');
+      if (bar) {
+        window.addEventListener('scroll', function () {
+          var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
+          bar.style.width = (t > 0 ? Math.min(s / t * 100, 100) : 0) + '%';
+        }, { passive: true });
+      }
+    })();
   </script>
 
   <!-- Speed Dial FAB -->
@@ -300,7 +334,7 @@
     </div>
     <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
       <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M12 5v14M5 12h14"/>
+        <path d="M12 5v14M5 12h14" />
       </svg>
       問卷選單
     </button>
@@ -312,10 +346,20 @@
       <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
       <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
         <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
-        <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
-        <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
-        <div class="form-group"><label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label><input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required autocomplete="email"></div>
-        <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input" required><option value="" disabled selected>請選擇身分</option><option value="parent">家長</option><option value="tutor">臺大醫學系學生</option><option value="other">其他</option></select></div>
+        <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name"
+            class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
+        <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone"
+            class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
+        <div class="form-group"><label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label><input
+            type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required
+            autocomplete="email"></div>
+        <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input"
+            required>
+            <option value="" disabled selected>請選擇身分</option>
+            <option value="parent">家長</option>
+            <option value="tutor">臺大醫學系學生</option>
+            <option value="other">其他</option>
+          </select></div>
         <button type="submit" class="btn-submit">送出登記</button>
       </form>
       <div class="modal-success" id="reg-success" hidden aria-live="polite">
@@ -328,4 +372,5 @@
   </div>
   <script src="../js/site.js"></script>
 </body>
+
 </html>

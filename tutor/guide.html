@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,134 +9,206 @@
   <link rel="stylesheet" href="../css/style.css?v=20260418">
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <style>
-    .inner-hero { --hero-bg-img: url('https://images.unsplash.com/photo-1434030216411-0b793f4b6d4c?auto=format&fit=crop&w=1920&q=80'); }
+    .inner-hero {
+      --hero-bg-img: url('https://images.unsplash.com/photo-1434030216411-0b793f4b6d4c?auto=format&fit=crop&w=1920&q=80');
+    }
 
     /* ── Tab switcher ──────────────────────────────────────── */
     .tabs-section {
-      padding: 3rem 1.5rem 0;
+      padding: 3.5rem 1.5rem 0;
     }
+
     .tabs-bar {
       display: flex;
       gap: 0;
       max-width: 860px;
       margin: 0 auto 2.5rem;
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 2px solid var(--color-border-subtle);
     }
+
     .tab-btn {
       flex: 1;
       background: none;
       border: none;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      padding: .85rem 1rem;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      padding: 1rem;
       font-family: var(--font-base);
       font-size: var(--fs-base);
       font-weight: 500;
       color: var(--color-text-muted);
       cursor: pointer;
-      transition: color .2s, border-color .2s;
+      transition: all var(--transition);
       text-align: center;
     }
-    .tab-btn:hover { color: var(--color-text); }
+
+    .tab-btn:hover {
+      color: var(--color-accent);
+    }
+
     .tab-btn.active {
       color: var(--color-accent);
       border-bottom-color: var(--color-accent);
+      background: var(--color-surface);
     }
-    .tab-pane { display: none; }
-    .tab-pane.active { display: block; }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
 
     /* ── Timeline ──────────────────────────────────────────── */
     .timeline {
       max-width: 860px;
       margin: 0 auto;
-      padding: 0 0 3rem;
+      padding: 1rem 0 4rem;
     }
+
     .timeline-step {
       display: grid;
-      grid-template-columns: 2.75rem 1fr;
+      grid-template-columns: 3.5rem 1fr;
       gap: 0 1.5rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      position: relative;
     }
+
     .timeline-step__num {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 50%;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 0;
       background: var(--color-accent);
-      color: var(--color-bg);
+      color: #fff;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: var(--fs-lg);
-      line-height: 1;
+      font-size: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-sizing: border-box;
       flex-shrink: 0;
-      margin-top: 0;
-      padding-bottom: .1rem;
     }
-    .timeline-step__body {}
+
     .timeline-step__title {
       font-family: var(--font-heading);
-      font-size: var(--fs-xl);
+      font-size: 1.35rem;
       color: var(--color-text-head);
-      margin-bottom: .4rem;
+      margin-bottom: .5rem;
     }
+
     .timeline-step__desc {
       font-size: var(--fs-base);
       color: var(--color-text);
-      line-height: 1.75;
+      line-height: 1.8;
     }
+
     .timeline-step__note {
       display: inline-block;
-      margin-top: .6rem;
+      margin-top: .875rem;
       font-size: var(--fs-sm);
-      color: var(--color-accent);
-      background: rgba(201,165,90,.1);
-      border: 1px solid rgba(201,165,90,.25);
-      padding: .2rem .75rem;
+      color: var(--color-accent-dark);
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
+      padding: .35rem .875rem;
     }
 
     /* ── Feature chips ─────────────────────────────────────── */
     .feature-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: .5rem;
+      gap: .75rem;
       margin-top: 2rem;
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
     }
+
     .feature-chip {
-      background: var(--color-surface-raised);
+      background: #fff;
       border: 1px solid var(--color-border);
-      padding: .4rem 1rem;
+      padding: .5rem 1rem;
       font-size: var(--fs-sm);
       color: var(--color-text);
+      box-shadow: var(--shadow-sm);
     }
+
     .feature-chip strong {
-      color: var(--color-text-head);
+      color: var(--color-accent-dark);
+      font-weight: 700;
+    }
+
+    :root.dark .feature-chip {
+      background: var(--color-surface);
+      color: var(--color-text-secondary);
     }
 
     /* ── Responsive ────────────────────────────────────────── */
-    @media (max-width: 600px) {
-      .tabs-section { padding-left: 1rem; padding-right: 1rem; }
-      .tabs-bar { flex-direction: column; border-bottom: none; gap: .25rem; }
-      .tab-btn { border: 1px solid var(--color-border); border-bottom: none; text-align: left; padding: .75rem 1rem; }
-      .tab-btn.active { border-color: var(--color-accent); background: rgba(201,165,90,.08); }
-      .timeline-step { grid-template-columns: 1.75rem 1fr; gap: 0 1rem; }
-      .timeline-step__num { width: 1.75rem; height: 1.75rem; font-size: var(--fs-sm); }
+    @media (max-width: 768px) {
+      .tabs-bar {
+        border-bottom: none;
+        gap: .5rem;
+      }
     }
-    @media (prefers-color-scheme: dark) {
-      .timeline-step__note {
-        background: rgba(201,165,90,0.12);
-        border-color: rgba(201,165,90,0.4);
-        color: var(--color-accent-dark);
+
+    @media (max-width: 600px) {
+      .tabs-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
-      .feature-chip {
-        background: rgba(28,37,53,0.05);
-        border-color: rgba(28,37,53,0.12);
+
+      .tabs-bar {
+        flex-direction: column;
+        border-bottom: none;
+        gap: .25rem;
       }
+
+      .tab-btn {
+        border: 1px solid var(--color-border);
+        border-bottom: none;
+        text-align: left;
+        padding: .75rem 1rem;
+      }
+
+      .tab-btn.active {
+        border-color: var(--color-accent);
+        background: rgba(201, 165, 90, .08);
+      }
+
+      .timeline-step {
+        grid-template-columns: 1.75rem 1fr;
+        gap: 0 1rem;
+      }
+
+      .timeline-step__num {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: var(--fs-sm);
+      }
+    }
+
+    :root.dark .timeline-step__note {
+      background: rgba(201, 165, 90, 0.12);
+      border-color: rgba(201, 165, 90, 0.4);
+      color: var(--color-accent-dark);
+    }
+
+    .tab-btn {
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+    }
+
+    .tab-btn.active {
+      border-color: var(--color-accent);
+    }
+
+    .timeline-step {
+      grid-template-columns: 2.75rem 1fr;
+      gap: 0 1rem;
+    }
+
+    .timeline-step__num {
+      width: 2.75rem;
+      height: 2.75rem;
+      font-size: 1.125rem;
+    }
     }
   </style>
 
@@ -147,6 +220,7 @@
     }
   </script>
 </head>
+
 <body>
 
   <div id="scroll-progress" aria-hidden="true"></div>
@@ -370,7 +444,9 @@
 
       <!-- Platform features (shared) -->
       <div style="max-width:860px; margin:0 auto; padding-bottom:2rem;">
-        <p style="font-size:var(--fs-sm); letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); margin-bottom:1rem;">平台提供的工具（三種情境皆適用）</p>
+        <p
+          style="font-size:var(--fs-sm); letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); margin-bottom:1rem;">
+          平台提供的工具（三種情境皆適用）</p>
         <div class="feature-chips">
           <span class="feature-chip"><strong>作業繳交</strong> 老師出題，學生繳交，平台保存記錄</span>
           <span class="feature-chip"><strong>成績簿</strong> 考試狀況一目了然，增進親師溝通效率</span>
@@ -428,12 +504,12 @@
     </div>
     <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
       <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M12 5v14M5 12h14"/>
+        <path d="M12 5v14M5 12h14" />
       </svg>
       問卷選單
     </button>
   </div>
-<!-- Registration Modal -->
+  <!-- Registration Modal -->
   <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="reg-modal__backdrop" id="modal-backdrop"></div>
     <div class="reg-modal__card">
@@ -443,15 +519,18 @@
         <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
         <div class="form-group">
           <label for="modal-name">姓名</label>
-          <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name">
+          <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required
+            autocomplete="name">
         </div>
         <div class="form-group">
           <label for="modal-phone">聯絡電話</label>
-          <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel">
+          <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required
+            autocomplete="tel">
         </div>
         <div class="form-group">
           <label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label>
-          <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required autocomplete="email">
+          <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required
+            autocomplete="email">
         </div>
         <div class="form-group">
           <label for="modal-role">我是</label>
@@ -476,38 +555,39 @@
   <script src="../js/site.js"></script>
 
   <script>
-  // Tab switching
-  (function() {
-    var btns = document.querySelectorAll('.tab-btn');
-    var panes = document.querySelectorAll('.tab-pane');
-    btns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        btns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-        panes.forEach(function(p) { p.classList.remove('active'); });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected','true');
-        document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+    // Tab switching
+    (function () {
+      var btns = document.querySelectorAll('.tab-btn');
+      var panes = document.querySelectorAll('.tab-pane');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          panes.forEach(function (p) { p.classList.remove('active'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+        });
       });
-    });
 
-    // Scroll animations
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    document.querySelectorAll('[data-animate]').forEach(function(el) { observer.observe(el); });
+      // Scroll animations
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
 
-    // Scroll progress bar
-    var bar = document.getElementById('scroll-progress');
-    if (bar) {
-      window.addEventListener('scroll', function() {
-        var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
-        bar.style.width = (t > 0 ? Math.min(s/t*100,100) : 0) + '%';
-      }, { passive: true });
-    }
-  })();
+      // Scroll progress bar
+      var bar = document.getElementById('scroll-progress');
+      if (bar) {
+        window.addEventListener('scroll', function () {
+          var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
+          bar.style.width = (t > 0 ? Math.min(s / t * 100, 100) : 0) + '%';
+        }, { passive: true });
+      }
+    })();
   </script>
 
 </body>
+
 </html>

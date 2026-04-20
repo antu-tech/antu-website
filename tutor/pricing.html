@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,13 @@
   <link rel="stylesheet" href="../css/style.css?v=20260418">
   <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
   <style>
-    .inner-hero { --hero-bg-img: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80'); }
-    .inner-hero__sub { max-width: 640px; }
+    .inner-hero {
+      --hero-bg-img: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80');
+    }
+
+    .inner-hero__sub {
+      max-width: 640px;
+    }
 
     /* ── Role callout ──────────────────────────────────────── */
     .role-callout {
@@ -17,12 +23,14 @@
       margin: 3.5rem auto 0;
       padding: 0 1.5rem;
     }
+
     .callout-box {
       border: 1px solid var(--color-accent);
-      background: rgba(201,165,90,.07);
+      background: var(--color-surface-raised);
       padding: 1.75rem 2rem;
       position: relative;
     }
+
     .callout-box__label {
       font-size: var(--fs-xs);
       letter-spacing: .18em;
@@ -30,11 +38,13 @@
       color: var(--color-accent);
       margin-bottom: .75rem;
     }
+
     .callout-box__text {
       font-size: var(--fs-lg);
       color: var(--color-text-head);
       line-height: 1.75;
     }
+
     .callout-box__text strong {
       color: var(--color-accent);
     }
@@ -45,22 +55,26 @@
       margin: 3rem auto 0;
       padding: 0 1.5rem;
     }
+
     .fee-section__title {
       font-family: var(--font-heading);
       font-size: var(--fs-2xl);
       color: var(--color-text-head);
       margin-bottom: 1.5rem;
     }
+
     .fee-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
+
     .fee-card {
       padding: 1.5rem;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
     }
+
     .fee-card__label {
       font-size: var(--fs-xs);
       letter-spacing: .15em;
@@ -68,34 +82,42 @@
       color: var(--color-text-muted);
       margin-bottom: .5rem;
     }
+
     .fee-card__title {
       font-family: var(--font-heading);
       font-size: var(--fs-xl);
       color: var(--color-text-head);
       margin-bottom: .5rem;
     }
+
     .fee-card__amount {
       font-size: var(--fs-2xl);
       font-weight: 700;
       color: var(--color-text-head);
       margin-bottom: .75rem;
     }
+
     .fee-card__amount span {
       font-size: var(--fs-base);
       font-weight: 400;
       color: var(--color-text-muted);
     }
+
     .fee-card__desc {
       font-size: var(--fs-sm);
       color: var(--color-text);
       line-height: 1.7;
     }
+
     .fee-card--accent {
-      border-color: rgba(201,165,90,.4);
-      background: rgba(201,165,90,.06);
+      border-color: var(--color-accent);
+      background: var(--color-bg-alt);
     }
+
     .fee-card--accent .fee-card__title,
-    .fee-card--accent .fee-card__amount { color: var(--color-accent); }
+    .fee-card--accent .fee-card__amount {
+      color: var(--color-accent);
+    }
 
     .fee-note {
       margin-top: 1rem;
@@ -105,7 +127,10 @@
       border-left: 2px solid var(--color-accent);
       background: var(--color-surface);
     }
-    .fee-note strong { color: var(--color-text-head); }
+
+    .fee-note strong {
+      color: var(--color-text-head);
+    }
 
     /* ── Includes list ─────────────────────────────────────── */
     .includes-section {
@@ -113,17 +138,20 @@
       margin: 3.5rem auto 0;
       padding: 0 1.5rem;
     }
+
     .includes-section__title {
       font-family: var(--font-heading);
       font-size: var(--fs-2xl);
       color: var(--color-text-head);
       margin-bottom: .5rem;
     }
+
     .includes-section__sub {
       font-size: var(--fs-base);
       color: var(--color-text-muted);
       margin-bottom: 1.75rem;
     }
+
     .includes-list {
       list-style: none;
       padding: 0;
@@ -131,6 +159,7 @@
       grid-template-columns: 1fr 1fr;
       gap: .75rem 1.5rem;
     }
+
     .includes-list li {
       display: flex;
       align-items: flex-start;
@@ -139,6 +168,7 @@
       color: var(--color-text);
       line-height: 1.6;
     }
+
     .includes-list li::before {
       content: "✓";
       color: var(--status-success);
@@ -146,28 +176,47 @@
       flex-shrink: 0;
       margin-top: .15rem;
     }
+
     .includes-list li strong {
       color: var(--color-text-head);
       display: block;
     }
 
     @media (max-width: 600px) {
-      .fee-split { grid-template-columns: 1fr; }
-      .includes-list { grid-template-columns: 1fr; }
-      .role-callout { padding-left: 1rem; padding-right: 1rem; }
-      .fee-section { padding-left: 1rem; padding-right: 1rem; }
-      .includes-section { padding-left: 1rem; padding-right: 1rem; }
-      .callout-box { padding: 1.25rem; }
-    }
-    @media (prefers-color-scheme: dark) {
+      .fee-split {
+        grid-template-columns: 1fr;
+      }
+
+      .includes-list {
+        grid-template-columns: 1fr;
+      }
+
+      .role-callout {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .fee-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .includes-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
       .callout-box {
-        background: rgba(201,165,90,0.08);
-        border-color: rgba(201,165,90,0.5);
+        padding: 1.25rem;
       }
-      .fee-note {
-        background: rgba(28,37,53,0.04);
-      }
-      .includes-list li::before { color: #27AE60; }
+    }
+
+    :root.dark .callout-box {
+      padding: 1.25rem;
+    }
+
+    :root.dark .fee-card--accent {
+      background: rgba(255, 255, 255, 0.03);
     }
   </style>
 
@@ -179,6 +228,7 @@
     }
   </script>
 </head>
+
 <body>
 
   <div id="scroll-progress" aria-hidden="true"></div>
@@ -311,22 +361,22 @@
   </footer>
 
   <script>
-  (function() {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('[data-animate]').forEach(function(el) { observer.observe(el); });
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
 
-    var bar = document.getElementById('scroll-progress');
-    if (bar) {
-      window.addEventListener('scroll', function() {
-        var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
-        bar.style.width = (t > 0 ? Math.min(s/t*100,100) : 0) + '%';
-      }, { passive: true });
-    }
-  })();
+      var bar = document.getElementById('scroll-progress');
+      if (bar) {
+        window.addEventListener('scroll', function () {
+          var s = window.scrollY, t = document.body.scrollHeight - window.innerHeight;
+          bar.style.width = (t > 0 ? Math.min(s / t * 100, 100) : 0) + '%';
+        }, { passive: true });
+      }
+    })();
   </script>
 
   <!-- Speed Dial FAB -->
@@ -359,7 +409,7 @@
     </div>
     <button class="fab-dial__trigger" id="fab-trigger" aria-label="開啟選單" aria-expanded="false">
       <svg class="fab-dial__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M12 5v14M5 12h14"/>
+        <path d="M12 5v14M5 12h14" />
       </svg>
       問卷選單
     </button>
@@ -371,10 +421,20 @@
       <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
       <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
         <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
-        <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
-        <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
-        <div class="form-group"><label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label><input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required autocomplete="email"></div>
-        <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input" required><option value="" disabled selected>請選擇身分</option><option value="parent">家長</option><option value="tutor">臺大醫學系學生</option><option value="other">其他</option></select></div>
+        <div class="form-group"><label for="modal-name">姓名</label><input type="text" id="modal-name" name="name"
+            class="form-input" placeholder="請輸入您的姓名" required autocomplete="name"></div>
+        <div class="form-group"><label for="modal-phone">聯絡電話</label><input type="tel" id="modal-phone" name="phone"
+            class="form-input" placeholder="0912-345-678" required autocomplete="tel"></div>
+        <div class="form-group"><label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label><input
+            type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required
+            autocomplete="email"></div>
+        <div class="form-group"><label for="modal-role">我是</label><select id="modal-role" name="role" class="form-input"
+            required>
+            <option value="" disabled selected>請選擇身分</option>
+            <option value="parent">家長</option>
+            <option value="tutor">臺大醫學系學生</option>
+            <option value="other">其他</option>
+          </select></div>
         <button type="submit" class="btn-submit">送出登記</button>
       </form>
       <div class="modal-success" id="reg-success" hidden aria-live="polite">
@@ -387,4 +447,5 @@
   </div>
   <script src="../js/site.js"></script>
 </body>
+
 </html>
