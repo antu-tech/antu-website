@@ -1,627 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frappe LMS for Corporate Training — Antu Technology</title>
-    <meta name="description" content="Self-hosted learning management system for pharmaceutical and regulated industries. Full data ownership, compliance-ready, and built for scale.">
-    <style>
-        :root {
-            --primary: #0f4c81;
-            --primary-dark: #0a3358;
-            --accent: #d4af37;
-            --text: #1a1a1a;
-            --text-light: #4a4a4a;
-            --bg: #ffffff;
-            --bg-alt: #f6f8fa;
-            --border: #e2e8f0;
-            --radius: 0;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background: var(--bg);
-        }
-
-        .container {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Header */
-        header {
-            border-bottom: 1px solid var(--border);
-            background: var(--bg);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        nav a {
-            margin-left: 32px;
-            text-decoration: none;
-            color: var(--text-light);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--text);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 28px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 1.5px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-sm {
-            padding: 8px 20px;
-            font-size: 13px;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 96px 0 80px;
-            background: var(--bg-alt);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            line-height: 1.1;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
-        }
-
-        .hero p.lead {
-            font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            background: #fff;
-            border: 1px solid var(--border);
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-light);
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .hero-visual {
-            background: #fff;
-            border: 1px solid var(--border);
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-
-        .hero-visual h3 {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-light);
-            margin-bottom: 24px;
-        }
-
-        .metric-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .metric-row:last-child {
-            border-bottom: none;
-        }
-
-        .metric-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .metric-label {
-            font-size: 13px;
-            color: var(--text-light);
-            margin-top: 4px;
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            max-width: 640px;
-            margin-bottom: 56px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            font-size: 17px;
-            color: var(--text-light);
-        }
-
-        /* Pain points / trust */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .trust-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            padding: 32px;
-            transition: box-shadow 0.2s;
-        }
-
-        .trust-card:hover {
-            box-shadow: var(--shadow);
-        }
-
-        .trust-card h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .trust-card p {
-            font-size: 14px;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        .icon {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-alt);
-            font-size: 14px;
-        }
-
-        /* Capabilities */
-        .capabilities {
-            background: var(--bg-alt);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .cap-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .cap-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 24px;
-            background: #fff;
-            border: 1px solid var(--border);
-        }
-
-        .cap-item h4 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .cap-item p {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        /* Use cases */
-        .usecase-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .usecase-card {
-            border: 1px solid var(--border);
-            padding: 32px;
-            background: #fff;
-        }
-
-        .usecase-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .usecase-card ul {
-            list-style: none;
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .usecase-card ul li {
-            padding: 6px 0;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .usecase-card ul li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* CTA */
-        .cta-section {
-            background: var(--primary);
-            color: #fff;
-            text-align: center;
-            padding: 96px 0;
-        }
-
-        .cta-section h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .cta-section p {
-            font-size: 17px;
-            opacity: 0.9;
-            max-width: 560px;
-            margin: 0 auto 32px;
-        }
-
-        .cta-section .btn-outline {
-            color: #fff;
-            border-color: rgba(255,255,255,0.6);
-        }
-
-        .cta-section .btn-outline:hover {
-            background: #fff;
-            color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 48px 0;
-            background: var(--bg);
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .footer-brand {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .footer-links a {
-            margin-left: 24px;
-            font-size: 14px;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--text);
-        }
-
-        /* Responsive */
-        @media (max-width: 880px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .trust-grid,
-            .usecase-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cap-list {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero {
-                padding: 64px 0;
-            }
-
-            nav {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安圖教育 — 以 Canvas 驅動的專業教育平台</title>
+  <meta name="description" content="安圖教育提供家教、研究所申請顧問、高中解題三大服務，共享同一套 Canvas 智能學習系統。">
+  <link rel="stylesheet" href="css/style.css?v=20260418">
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+
+  <script>
+    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
+
 <body>
 
-<header>
-    <div class="container header-inner">
-        <a href="#" class="logo">Antu<span>.</span></a>
-        <nav>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#use-cases">Use Cases</a>
-            <a href="#compliance">Compliance</a>
-            <a href="#demo" class="btn btn-primary btn-sm">Request Demo</a>
-        </nav>
-    </div>
-</header>
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-<section class="hero">
-    <div class="container">
-        <div class="hero-grid">
-            <div>
-                <h1>Corporate training that keeps your data where it belongs.</h1>
-                <p class="lead">Frappe LMS, deployed on your infrastructure. Built for pharmaceutical and regulated industries that demand data ownership, audit trails, and compliance without compromise.</p>
-                <div class="hero-badges">
-                    <span class="badge">Self-Hosted</span>
-                    <span class="badge">GDPR Ready</span>
-                    <span class="badge">21 CFR Part 11</span>
-                    <span class="badge">Open Source</span>
-                </div>
-                <div class="hero-actions">
-                    <a href="#demo" class="btn btn-primary">Request a Demo</a>
-                    <a href="#capabilities" class="btn btn-outline">Explore Capabilities</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <h3>Why teams switch</h3>
-                <div class="metric-row">
-                    <div>
-                        <div class="metric-value">100%</div>
-                        <div class="metric-label">Data residency on-prem</div>
-                    </div>
-                </div>
-                <div class="metric-row">
-                    <div>
-                        <div class="metric-value">60%</div>
-                        <div class="metric-label">Lower TCO vs SaaS LMS</div>
-                    </div>
-                </div>
-                <div class="metric-row">
-                    <div>
-                        <div class="metric-value">Zero</div>
-                        <div class="metric-label">Vendor lock-in</div>
-                    </div>
-                </div>
-            </div>
+  <header>
+    <nav class="nav" role="navigation" aria-label="主導覽">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="安圖教育首頁">
+          安圖<span>教育</span>
+        </a>
+        <button class="nav__hamburger" aria-label="開啟選單" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="nav-links">
+          <a href="abroad/index.html" class="nav__link">留學</a>
+          <a href="tutor/index.html" class="nav__link">家教</a>
+          <a href="solve/index.html" class="nav__link">解題</a>
         </div>
-    </div>
-</section>
+      </div>
+    </nav>
+  </header>
 
-<section id="compliance">
-    <div class="container">
-        <div class="section-header">
-            <h2>Built for regulated industries</h2>
-            <p>When training records are evidence, you cannot afford gaps in custody, access, or audit. Our deployment model puts you in full control.</p>
-        </div>
-        <div class="trust-grid">
-            <div class="trust-card">
-                <h3><span class="icon">🔒</span> Data Ownership</h3>
-                <p>Your training data lives on your servers, behind your firewall, governed by your policies. No third-party access. No data mining. Full sovereignty.</p>
-            </div>
-            <div class="trust-card">
-                <h3><span class="icon">📋</span> Audit Trails</h3>
-                <p>Complete immutable logs for every course completion, assessment attempt, and certification status. Export-ready for regulatory inspections.</p>
-            </div>
-            <div class="trust-card">
-                <h3><span class="icon">🛡️</span> Compliance Ready</h3>
-                <p>Designed to support GMP, FDA 21 CFR Part 11, GDPR, and HIPAA frameworks. Role-based access, electronic signatures, and validation documentation available.</p>
-            </div>
-        </div>
-    </div>
-</section>
+  <main class="lp-main">
 
-<section id="capabilities" class="capabilities">
-    <div class="container">
-        <div class="section-header">
-            <h2>Capabilities that scale with your workforce</h2>
-            <p>From batch-record training to SOP rollouts, manage the full lifecycle of corporate learning without complexity.</p>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-headline"
+      style="--hero-bg-img: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1920&q=80');">
+      <div class="lp-container">
+        <p class="hero__eyebrow">留學・家教・解題</p>
+        <h1 class="hero__headline" id="hero-headline">
+          專業教育系統
+        </h1>
+        <p class="hero__subheadline">
+          Canvas Learning Management System
+        </p>
+        <div class="hero__cta">
+          <button class="btn-filled js-open-reg-modal" aria-label="立即登記">
+            立即登記
+          </button>
         </div>
-        <div class="cap-list">
-            <div class="cap-item">
-                <div>
-                    <h4>Course & Content Management</h4>
-                    <p>SCORM-compatible content, video, documents, and assessments. Version control for SOPs and training materials.</p>
-                </div>
-            </div>
-            <div class="cap-item">
-                <div>
-                    <h4>Certification & Recertification</h4>
-                    <p>Auto-expire certifications, trigger retraining workflows, and maintain qualification matrices by role or department.</p>
-                </div>
-            </div>
-            <div class="cap-item">
-                <div>
-                    <h4>Assessment & Quizzing</h4>
-                    <p>Randomized question banks, passing thresholds, retake policies, and detailed per-learner performance analytics.</p>
-                </div>
-            </div>
-            <div class="cap-item">
-                <div>
-                    <h4>Role-Based Access</h4>
-                    <p>Granular permissions for trainers, QA reviewers, line managers, and external auditors. LDAP and SSO integration supported.</p>
-                </div>
-            </div>
-            <div class="cap-item">
-                <div>
-                    <h4>Reporting & Analytics</h4>
-                    <p>Training completion dashboards, gap analysis, compliance scorecards, and scheduled exports to CSV or PDF.</p>
-                </div>
-            </div>
-            <div class="cap-item">
-                <div>
-                    <h4>On-Premise or Private Cloud</h4>
-                    <p>Deploy on bare metal, VMware, or your private AWS/Azure/GCP tenant. Air-gapped options available for high-security sites.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        <button class="hero__scroll-arrow" aria-label="向下捲動"
+          onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
 
-<section id="use-cases">
-    <div class="container">
-        <div class="section-header">
-            <h2>Pharma use cases</h2>
-            <p>Trusted configurations for the scenarios that matter most in life sciences.</p>
-        </div>
-        <div class="usecase-grid">
-            <div class="usecase-card">
-                <h3>GMP & Manufacturing Training</h3>
-                <ul>
-                    <li>Batch record operator qualification</li>
-                    <li>Cleanroom behavior and gowning SOPs</li>
-                    <li>Equipment training and OJT sign-off</li>
-                    <li>Annual refresher automation</li>
-                </ul>
-            </div>
-            <div class="usecase-card">
-                <h3>Quality & Validation</h3>
-                <ul>
-                    <li>CSV and computer systems training</li>
-                    <li>CAPA and deviation procedure drills</li>
-                    <li>Vendor and contractor onboarding</li>
-                    <li>Audit readiness evidence packages</li>
-                </ul>
-            </div>
-            <div class="usecase-card">
-                <h3>Commercial & Medical Affairs</h3>
-                <ul>
-                    <li>Pharmacovigilance training modules</li>
-                    <li>Medical rep certification tracks</li>
-                    <li>Speaker bureau compliance programs</li>
-                    <li>Territory and product launch playbooks</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Product Cards -->
+    <section class="section" id="products" aria-labelledby="products-title">
+      <div class="lp-container">
+        <h2 class="section-title text-center" id="products-title" data-animate>核心服務</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">皆由臺大師資提供，透過 Canvas LMS 確保品質</p>
 
-<section id="demo" class="cta-section">
-    <div class="container">
-        <h2>See it running on your terms.</h2>
-        <p>We will deploy a private demo instance configured for pharmaceutical training workflows. No shared environments. No data leaves your review.</p>
-        <a href="mailto:hello@antu-tech.com?subject=Demo%20Request%3A%20Frappe%20LMS%20for%20Corporate%20Training" class="btn btn-outline">Request Demo Access</a>
-    </div>
-</section>
+        <div class="product-cards">
 
-<footer>
-    <div class="container footer-inner">
-        <div class="footer-brand">
-            © 2026 Antu Technology. All rights reserved.
-        </div>
-        <div class="footer-links">
-            <a href="mailto:hello@antu-tech.com">hello@antu-tech.com</a>
-            <a href="#">Privacy</a>
-            <a href="#">Security</a>
-        </div>
-    </div>
-</footer>
+          <div class="product-card" data-animate data-delay="1">
+            <span class="product-card__eyebrow">研究所申請</span>
+            <h3 class="product-card__title">臺大學長姐手把手，帶你申請夢想研究所</h3>
+            <p class="product-card__desc">
+              Session 全程在系統建檔，告別 Email 討論串。CV/SOP/LoR 修改，比機構便宜，比私人可靠。
+            </p>
+            <a href="abroad/index.html" class="product-card__cta">了解更多</a>
+          </div>
 
+          <div class="product-card" data-animate data-delay="2">
+            <span class="product-card__eyebrow">家教</span>
+            <h3 class="product-card__title">找家教，從此不再靠運氣</h3>
+            <p class="product-card__desc">
+              臺大醫學系家教，使用與世界頂尖大學相同的教學平台，讓學習成效可見、可追蹤、有保障。
+            </p>
+            <a href="tutor/index.html" class="product-card__cta">了解更多</a>
+          </div>
+
+          <div class="product-card" data-animate data-delay="3">
+            <span class="product-card__eyebrow">高中解題</span>
+            <h3 class="product-card__title">卡關了？48小時內取得詳解</h3>
+            <p class="product-card__desc">
+              上傳題目，臺大學生 48 小時內詳解交付。不只給答案，還能在算式照片上畫記糾正、附加語音解釋。
+            </p>
+            <a href="solve/index.html" class="product-card__cta">了解更多</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Canvas Platform Section -->
+    <section class="section section--alt" aria-labelledby="canvas-title">
+      <div class="lp-container">
+        <h2 class="section-title text-center" id="canvas-title" data-animate>完整的教育系統</h2>
+        <p class="section-subtitle text-center" data-animate data-delay="1">Canvas LMS 是我們的核心基礎設施，讓每項服務都具備透明度與可追蹤性</p>
+
+        <div class="features-grid">
+          <div class="feature-item" data-animate data-delay="1">
+            <div class="feature-item__content">
+              <p class="feature-item__title">進度全透明</p>
+              <p class="feature-item__desc">講義筆記、作業成績、解題紀錄全部在系統存檔，隨時可查</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate data-delay="2">
+            <div class="feature-item__content">
+              <p class="feature-item__title">師資雙重驗證</p>
+              <p class="feature-item__desc">臺大學生信箱 + 學生證 OCR，可靠的身份核實機制</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate data-delay="3">
+            <div class="feature-item__content">
+              <p class="feature-item__title">自動化報告</p>
+              <p class="feature-item__desc">系統自動彙整學習數據，定時發送給家長或申請者</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate data-delay="4">
+            <div class="feature-item__content">
+              <p class="feature-item__title">完課保障</p>
+              <p class="feature-item__desc">三大服務皆提供退費或補課保障，消除風險</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate data-delay="5">
+            <div class="feature-item__content">
+              <p class="feature-item__title">彈性付款</p>
+              <p class="feature-item__desc">信用卡、LINE Pay、街口支付、Apple Pay 多元支援</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate data-delay="6">
+            <div class="feature-item__content">
+              <p class="feature-item__title">臺大師資庫</p>
+              <p class="feature-item__desc">家教、顧問、解題老師均來自臺大，品質有保障</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Philosophy -->
+    <section class="founder-section" aria-labelledby="founder-title">
+      <div class="lp-container">
+        <p class="founder-eyebrow" data-animate>創辦人理念</p>
+        <h2 class="founder-title" id="founder-title" data-animate data-delay="1">想讓事情運作，<br>你需要一個系統。</h2>
+        <blockquote class="founder-quote" data-animate data-delay="2">
+          <span style="display: block; letter-spacing: 0.05em; line-height: 1.8; margin-bottom: 0.5rem;">I have to
+            believe in a world outside my own mind. I have to believe that my actions still have meaning, even if I
+            can't remember them.</span>
+          <strong style="letter-spacing: 0.05em">— Leonard Shelby, Memento《記憶拼圖》</strong>
+        </blockquote>
+        <p class="founder-body" data-animate data-delay="3">
+          缺乏系統的學習，如同主角無法保留的記憶：散落各處的講義、寫過就忘的錯題、憑感覺制定的進度。當知識無法沉澱歸檔，每次都像在重新學習，投入再多時間，也只剩支離破碎的輪廓。
+        </p>
+        <p class="founder-body" style="margin-top: 1rem;" data-animate data-delay="4">
+          <strong style="color: var(--color-accent);">安圖教育將 Canvas LMS 作為核心系統，讓努力有跡可循。</strong>
+        </p>
+
+        <div class="founder-sig" data-animate data-delay="6">
+          <span class="founder-sig__line" aria-hidden="true"></span>
+          <span class="founder-sig__text">安圖教育 創辦人</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <div class="payment-icons" role="region" aria-label="支援付款方式">
+      <div class="lp-container">
+        <p class="payment-icons__label">支援付款方式</p>
+        <div class="payment-icons__list">
+          <span class="payment-badge">銀行轉帳</span>
+          <span class="payment-badge">信用卡</span>
+          <span class="payment-badge">Line Pay</span>
+          <span class="payment-badge">街口支付</span>
+          <span class="payment-badge">Apple Pay</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__brand">安圖教育</p>
+    <p class="footer__copy">安圖教育 © 2026　|　Antu Education</p>
+  </footer>
+
+
+  <!-- Registration Modal -->
+  <div class="reg-modal" id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="reg-modal__backdrop" id="modal-backdrop"></div>
+    <div class="reg-modal__card">
+      <button class="reg-modal__close" id="modal-close" aria-label="關閉">✕</button>
+      <p class="cta-form__title" id="modal-title">登記搶先體驗</p>
+      <form id="reg-form" action="https://formspree.io/f/mbdznqrk" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="安圖教育 — 新用戶登記興趣">
+        <div class="form-group">
+          <label for="modal-name">姓名</label>
+          <input type="text" id="modal-name" name="name" class="form-input" placeholder="請輸入您的姓名" required
+            autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="modal-phone">聯絡電話</label>
+          <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="0912-345-678" required
+            autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="modal-email">電子郵件 <span aria-hidden="true">*</span></label>
+          <input type="email" id="modal-email" name="email" class="form-input" placeholder="example@gmail.com" required
+            autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="modal-role">我是</label>
+          <select id="modal-role" name="role" class="form-input" required>
+            <option value="" disabled selected>請選擇身分</option>
+            <option value="parent">家長</option>
+            <option value="tutor">老師</option>
+            <option value="student">學生（高中/大學）</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">送出登記</button>
+      </form>
+      <div class="modal-success" id="reg-success" hidden aria-live="polite">
+        <div class="modal-success-icon" aria-hidden="true">✓</div>
+        <h3>登記成功！</h3>
+        <p>我們已收到您的資料，將在 2 個工作日內透過電話或 Email 聯絡您。</p>
+        <button class="btn-submit js-close-modal" type="button">關閉</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/site.js"></script>
 </body>
+
 </html>
